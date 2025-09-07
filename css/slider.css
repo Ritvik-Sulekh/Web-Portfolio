@@ -1,0 +1,109 @@
+/* Remove the universal reset so it doesn't override your theme */
+/* * { box-sizing: border-box; margin: 0; padding: 0; } */
+
+/* Scope carousel styles under .carousel-container only */
+.carousel-container {
+  width: 100%;
+  max-width: 850px;
+  height: 450px;
+  margin: 50px auto;            /* center horizontally, keep space top/bottom */
+  perspective: 1400px;
+  position: relative;
+  overflow: visible;
+  /* ❌ remove flexbox here — it was breaking layout */
+}
+
+/* Rotating carousel */
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: rotateCarousel 20s linear infinite;
+}
+
+/* Each card */
+.carousel .slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.carousel .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center image */
+.carousel-container .center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-container .center-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Auto-rotation animation */
+@keyframes rotateCarousel {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(-360deg); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .carousel-container { width: 100%; height: 340px; }
+  .carousel .slide { width: 90px; height: 130px; }
+  .carousel-container .center-image { width: 80px; height: 80px; }
+}
+
+@media (max-width: 992px) {
+  .carousel-container { height: 350px; }
+  .slide { width: 110px; height: 160px; }
+  .center-image { width: 90px; height: 90px; transform: scale(0.7); }
+}
+
+@media (max-width: 600px) {
+  .carousel-container { height: 280px; }
+  .slide { width: 90px; height: 130px; }
+  .center-image { width: 70px; height: 70px; transform: scale(0.7); }
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  color: #0066cc;
+  font-weight: 600;
+  margin: 3rem auto 1rem auto;
+  border-radius: 12px;
+  max-width: 90%;
+  position: relative;
+}
