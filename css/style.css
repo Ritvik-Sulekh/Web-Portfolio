@@ -266,9 +266,15 @@ footer {
   margin-bottom: 2rem;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center; /* center the buttons */
+    gap: 20px; /* space between buttons */
+    margin-top: 1.5rem;
+}
+
 .resume-container .btn {
   display: inline-block;
-  gap: 20px; /* 👈 adjust this value for more/less space */
   background: #0066cc;
   color: #fff;
   padding: 1rem 2rem;
