@@ -312,12 +312,14 @@ footer {
   padding: 12px 24px;
   border: 3px solid transparent;
   border-radius: 12px;
-  background: white;
+  background: linear-gradient(45deg, #ff4fbf, #0066cc);
   background-clip: padding-box;
   position: relative;
   margin-bottom: 24px;
   font-weight: 600;
   font-size: 1rem;
+  color: #fff; /* ✅ Make text white */
+  text-align: center; /* optional: center text */
 }
 
 .testimonial-count-box::before {
