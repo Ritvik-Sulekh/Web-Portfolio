@@ -1,0 +1,245 @@
+/* ------------------------------
+   Dark Mode & Toggle Styles
+------------------------------ */
+
+/* Ensure body fills full viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #222;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ------------------------------
+   Galaxy Dark Mode with Constellations
+------------------------------ */
+
+body.dark-mode {
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000010 100%);
+  color: #f4f7fb;          /* default text color */
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto;        /* allow scrolling */
+}
+
+/* Make all normal text light, but do NOT force links */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode li,
+body.dark-mode div {
+  color: #f4f7fb;
+}
+
+/* Special link colors */
+body.dark-mode a {
+  color: #66b3ff;
+}
+body.dark-mode a:hover {
+  color: #ff80c0;
+}
+
+/* ------------------------------
+   Stars / Constellations
+------------------------------ */
+
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,180,255,0.9) 1px, transparent 1.6px);
+  background-size: 80px 80px;
+  filter: blur(1px);
+  animation: stars-twinkle 4s infinite alternate;
+}
+
+@keyframes stars-twinkle {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.9; }
+  100% { opacity: 0.4; }
+}
+
+/* Example constellation (lines connecting stars) */
+.constellation {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.constellation canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ------------------------------
+   Dark Mode Visual Elements
+------------------------------ */
+
+/* Hide everything by default (light mode) */
+.shooting-star,
+.comet,
+.constellation {
+  display: none;
+}
+
+/* Show only in dark mode */
+body.dark-mode .shooting-star,
+body.dark-mode .comet,
+body.dark-mode .constellation {
+  display: block;
+}
+
+/* Shooting Star */
+.shooting-star {
+  position: fixed;
+  left: -300px;
+  width: 250px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,255,255,0) 0%, rgba(0,200,255,0.9) 50%, rgba(0,255,255,0) 100%);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(1px);
+  transform: rotate(-20deg);
+  animation: shoot 3s linear infinite;
+}
+@keyframes shoot {
+  0%   { transform: translateX(0) rotate(-20deg); opacity: 0; }
+  5%   { opacity: 1; }
+  70%  { transform: translateX(120vw) rotate(-20deg); opacity: 0.6; }
+  100% { transform: translateX(140vw) rotate(-20deg); opacity: 0; }
+}
+
+/* Comet */
+.comet {
+  position: fixed;
+  top: 60%;
+  left: -400px;
+  width: 350px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(160,255,255,0) 0%, rgba(60,220,255,0.85) 20%, rgba(160,255,255,0.15) 60%, rgba(160,255,255,0) 100%);
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(1px);
+  transform: rotate(-8deg);
+  animation: comet-move 10s linear infinite;
+}
+@keyframes comet-move {
+  0%   { transform: translateX(0) rotate(-8deg); opacity: 0; }
+  10%  { opacity: 1; }
+  70%  { transform: translateX(1200px) rotate(-8deg); opacity: 0.6; }
+  100% { transform: translateX(1400px) rotate(-8deg); opacity: 0; }
+}
+
+/* ---------- Section Overrides for Dark Mode ---------- */
+
+body.dark-mode a { color: #66b3ff; }
+body.dark-mode a:hover { color: #ff80c0; }
+
+body.dark-mode header {
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .hero {
+  background: rgba(20, 30, 50, 0.75);
+  color: #e0e6f5;
+}
+body.dark-mode .hero h2 { color: #66b3ff; }
+
+body.dark-mode .btn {
+  background: #1e3a8a;
+}
+body.dark-mode .btn:hover {
+  background: transparent;
+  border: 2px solid #ff80c0;
+  color: #ff80c0;
+}
+
+body.dark-mode .resume-container {
+  background: rgba(20, 30, 50, 0.85);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+body.dark-mode .resume-container iframe { border: 1px solid #444; }
+
+body.dark-mode footer {
+  background: rgba(20, 30, 50, 0.75);
+  color: #9bb8ff;
+}
+
+body.dark-mode .testimonial-box {
+  background: rgba(30, 40, 60, 0.9);
+  color: #e6eaf5;
+}
+body.dark-mode .testimonial-name { color: #a0c4ff; }
+
+body.dark-mode .business-card {
+  background: rgba(25, 35, 55, 0.9);
+}
+body.dark-mode .card-right h3 {
+  background: linear-gradient(90deg, #ff80c0, #66b3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .blog-card,
+body.dark-mode .blog-post {
+  background: rgba(30, 40, 60, 0.95);
+  color: #e0e6f5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+body.dark-mode .blog-card a,
+body.dark-mode .blog-post a { color: #66b3ff; }
+body.dark-mode .blog-card a:hover,
+body.dark-mode .blog-post a:hover { color: #ff80c0; }
+
+/* ---------- Toggle Switch ---------- */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+  margin: 15px;
+}
+.theme-toggle input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 34px;
+  transition: background-color 0.4s, background-image 0.4s;
+  background-color: #ffb15d;
+  background-image: url('../assets/clouds/clouds.png');
+  background-size: 30px 20px;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  border-radius: 50%;
+  background-color: #fff480;
+  transition: transform 0.4s, background-color 0.4s;
+}
+input:checked + .slider {
+  background-color: #0d1b2a;
+  background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 4px 6px, 12px 10px;
+}
+input:checked + .slider::before {
+  transform: translateX(26px);
+  background-color: white;
+}
