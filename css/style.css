@@ -313,27 +313,29 @@ footer {
   border-radius: 12px;
   font-weight: 600;
   font-size: 1rem;
+  color: #fff;                /* ✅ Force text to white */
   text-align: center;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 0;
-  color: #fff; /* white text */
 
-  /* Solid background inside */
-  background: #0d1b2a; 
+  /* Gradient background */
+  background: linear-gradient(45deg, #ff4fbf, #0066cc);
+  position: relative;
+  z-index: 1;
 }
 
-/* Gradient border using pseudo-element */
+/* Optional glow/border effect */
 .testimonial-count-box::before {
   content: "";
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 15px; /* slightly bigger for border effect */
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  padding: 3px; /* spacing for border look */
   background: linear-gradient(45deg, #ff4fbf, #0066cc);
-  z-index: -1; /* keeps border behind content */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
 }
 
 .testimonial-slider-wrapper {
