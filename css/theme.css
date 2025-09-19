@@ -13,7 +13,7 @@ html, body {
 }
 
 /* ------------------------------
-   Galaxy Dark Mode with Constellations
+   Galaxy Dark Mode 
 ------------------------------ */
 
 body.dark-mode {
@@ -47,56 +47,18 @@ body.dark-mode a:hover {
 }
 
 /* ------------------------------
-   Stars / Constellations
------------------------------- */
-
-body.dark-mode::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(0,180,255,0.9) 1px, transparent 1.6px);
-  background-size: 80px 80px;
-  filter: blur(1px);
-  animation: stars-twinkle 4s infinite alternate;
-}
-
-@keyframes stars-twinkle {
-  0%   { opacity: 0.4; }
-  50%  { opacity: 0.9; }
-  100% { opacity: 0.4; }
-}
-
-/* Example constellation (lines connecting stars) */
-.constellation {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.constellation canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* ------------------------------
    Dark Mode Visual Elements
 ------------------------------ */
 
 /* Hide everything by default (light mode) */
 .shooting-star,
-.comet,
-.constellation {
+.comet {
   display: none;
 }
 
 /* Show only in dark mode */
 body.dark-mode .shooting-star,
-body.dark-mode .comet,
-body.dark-mode .constellation {
+body.dark-mode .comet {
   display: block;
 }
 
