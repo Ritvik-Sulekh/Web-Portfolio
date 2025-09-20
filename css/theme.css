@@ -195,7 +195,34 @@ body.dark-mode .funnel-step .desc {
   height: 34px;
   cursor: pointer;
   margin: 15px;
+  border-radius: 40px;
+  box-shadow: 
+    0 0 0 3px transparent,
+    0 0 12px rgba(255, 153, 102, 0.8),
+    0 0 20px rgba(255, 94, 98, 0.6); /* extra glow layer */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
+
+.theme-toggle:hover {
+  box-shadow: 
+    0 0 0 3px transparent,
+    0 0 18px rgba(255, 153, 102, 1),
+    0 0 28px rgba(255, 94, 98, 0.9);
+  transform: scale(1.05); /* slight pop effect */
+}
+
+/* ✨ Optional: animated shimmer pulse */
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 12px rgba(255, 153, 102, 0.7), 0 0 20px rgba(255, 94, 98, 0.6); }
+  50%  { box-shadow: 0 0 18px rgba(255, 153, 102, 1),   0 0 28px rgba(255, 94, 98, 0.9); }
+  100% { box-shadow: 0 0 12px rgba(255, 153, 102, 0.7), 0 0 20px rgba(255, 94, 98, 0.6); }
+}
+
+.theme-toggle:focus-visible {
+  animation: glowPulse 1.5s infinite ease-in-out;
+}
+
+/* ---------- Toggle Switch Function ---------- */
 .theme-toggle input { opacity: 0; width: 0; height: 0; }
 .slider {
   position: absolute;
