@@ -677,3 +677,97 @@ footer {
     padding: 1rem;
   }
 }
+
+/* ------------------------------
+  Funnel Section Styling
+------------------------------ */
+
+/* Funnel Section Styling */
+.funnel-section {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2); /* 20% opacity */
+  margin: 2rem auto;
+  border-radius: 10px;
+}
+
+.funnel-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0073e6;
+}
+
+.funnel-section p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.funnel-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Funnel Steps */
+.funnel-step {
+  position: relative;
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  color: #fff; /* Text white */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Funnel shape widths decreasing top → bottom */
+.step1 { background: #ff6fa3; width: 100%; } /* Pink */
+.step2 { background: #ff85b2; width: 90%; }  /* Lighter Pink */
+.step3 { background: #80c1ff; width: 75%; } /* Light Blue */
+.step4 { background: #4da6ff; width: 60%; } /* Medium Blue */
+.step5 { background: #1a8cff; width: 45%; } /* Deep Blue */
+/* Light mode - decreasing width */
+.step6 { background: #0040cc; width: 35%; }
+
+/* Center the funnel steps */
+.funnel-step { margin-left: auto; margin-right: auto; }
+
+/* Hover effect */
+.funnel-step:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Number styling (largest) */
+.number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+/* Conversion % styling (medium, larger than title) */
+.conversion {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Description / title (smallest) */
+.desc {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .step1 { width: 95%; }
+  .step2 { width: 90%; }
+  .step3 { width: 85%; }
+  .step4 { width: 80%; }
+  .step5 { width: 75%; }
+
+  .number { font-size: 2rem; }
+  .conversion { font-size: 1.2rem; }
+  .desc { font-size: 0.9rem; }
+}
