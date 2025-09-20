@@ -167,6 +167,26 @@ body.dark-mode .blog-post a { color: #66b3ff; }
 body.dark-mode .blog-card a:hover,
 body.dark-mode .blog-post a:hover { color: #ff80c0; }
 
+/* Dark mode for funnel in iim.html */
+body.dark-mode .funnel-section {
+  background: rgba(15, 20, 35, 0.9);
+  color: #ffffff;
+}
+
+body.dark-mode .funnel-step.step1 { background: #cc3399 !important; }
+body.dark-mode .funnel-step.step2 { background: #b32d8c !important; }
+body.dark-mode .funnel-step.step3 { background: #3399cc !important; }
+body.dark-mode .funnel-step.step4 { background: #2673b8 !important; }
+body.dark-mode .funnel-step.step5 { background: #1a5c99 !important; }
+/* Dark mode - step6 */
+body.dark-mode .funnel-step.step6 { background: #003366 !important; }
+
+body.dark-mode .funnel-step .number,
+body.dark-mode .funnel-step .conversion,
+body.dark-mode .funnel-step .desc {
+  color: #ffffff !important;
+}
+
 /* ---------- Toggle Switch ---------- */
 .theme-toggle {
   position: relative;
