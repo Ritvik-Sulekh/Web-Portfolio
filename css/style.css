@@ -771,3 +771,21 @@ footer {
   .conversion { font-size: 1.2rem; }
   .desc { font-size: 0.9rem; }
 }
+
+/* ------------------------------
+  Role Animation 
+------------------------------ */
+
+#role {
+  color: #ff69b4; /* hot pink text */
+  border-right: 2px solid #ff69b4; /* hot pink cursor */
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinkCursor 0.8s steps(1) infinite; /* make it blink */
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
