@@ -727,8 +727,23 @@ footer {
 .step3 { background: #80c1ff; width: 75%; } /* Light Blue */
 .step4 { background: #4da6ff; width: 60%; } /* Medium Blue */
 .step5 { background: #1a8cff; width: 45%; } /* Deep Blue */
+
 /* Light mode - decreasing width */
-.step6 { background: #0040cc; width: 35%; }
+.step6 {
+  background: #0040cc;
+  width: 35%;
+  position: relative; /* allow absolute positioning */
+}
+
+/* Crown tilted diagonally, top-left */
+.step6::after {
+  content: "👑";
+  position: absolute;
+  top: -20px;   /* vertical adjustment */
+  left: -20px;  /* move to left corner */
+  font-size: 2rem;
+  transform: rotate(-30deg); /* tilt crown */
+}
 
 /* Center the funnel steps */
 .funnel-step { margin-left: auto; margin-right: auto; }
