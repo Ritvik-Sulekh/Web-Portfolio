@@ -1,0 +1,103 @@
+:root {
+  --bubble-size: 60px;   /* smaller circle */
+  --logo-size: 30px;     /* smaller logo */
+  --gap: 1.25rem;
+  --float-duration: 5s;
+}
+
+/* Hero wrapper controls stacking */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero box (your original .hero) */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  margin: 3rem auto;
+  max-width: 900px;
+  backdrop-filter: blur(5px);
+  z-index: 2; /* text above bubbles */
+}
+
+.skills-section {
+  position: relative;
+  padding-top: 20px; /* space for summary */
+}
+
+.skills-container {
+  position: relative;
+  height: 300px; /* total space for rows */
+}
+
+/* Bubble belts container */
+.skills-showcase {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  padding-top: 50px;   /* optional extra space above first row */
+  height: 310px;       /* enough for 3 rows + padding + float */
+  overflow: hidden;  
+  z-index: 1;
+}
+
+/* Each belt row */
+.skills-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  animation: row-scroll var(--row-speed, 30s) linear infinite;
+  will-change: transform;
+  position: absolute;
+  white-space: nowrap; /* prevent wrapping */
+}
+
+.skills-row:nth-child(1) { top: 0;   margin-top: 60px;     /* push it down safely */}
+.skills-row:nth-child(2) { top: 165px; margin-top: 60px;     /* push it down safely */}
+
+/* Bubble */
+.skill-bubble {
+  flex: 0 0 auto;
+  width: var(--bubble-size);
+  text-align: center;
+  animation: float var(--float-duration) ease-in-out infinite;
+}
+
+/* Circle container */
+.bubble-circle {
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .25s;
+  margin: 0 auto;
+}
+
+.bubble-circle img { width: var(--logo-size); height: var(--logo-size); }
+.skill-bubble p { font-size: 0.75rem; margin-top: 0.4rem; color: #222; }
+.bubble-circle:hover { transform: scale(1.1); }
+
+/* Marquee animation */
+@keyframes row-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50%)); } /* seamless loop with duplicated content */
+}
+
+/* Floating effect */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
