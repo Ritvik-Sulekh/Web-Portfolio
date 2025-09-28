@@ -43,7 +43,7 @@
   width: 100%;
   max-width: 900px;
   padding-top: 50px;   /* optional extra space above first row */
-  height: 410px;       /* enough for 3 rows + padding + float */
+  height: 520px;       /* enough for 4 rows + padding + float */
   overflow: hidden;  
   z-index: 1;
 }
@@ -63,6 +63,7 @@
 .skills-row:nth-child(1) { top: 0;   margin-top: 60px;     /* push it down safely */}
 .skills-row:nth-child(2) { top: 165px; margin-top: 80px;     /* push it down safely */}
 .skills-row:nth-child(3) { top: 330px; margin-top: 100px;     /* push it down safely */}
+.skills-row:nth-child(4) { top: 495px; margin-top: 120px;     /* push it down safely */}
 
 /* Bubble */
 .skill-bubble {
