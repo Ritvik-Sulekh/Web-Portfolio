@@ -223,7 +223,10 @@ body.dark-mode .funnel-step .desc {
 }
 
 /* ---------- Toggle Switch Function ---------- */
-.theme-toggle input { opacity: 0; width: 0; height: 0; }
+.theme-toggle input { 
+  opacity: 0; width: 0; height: 0; 
+}
+
 .slider {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -233,22 +236,53 @@ body.dark-mode .funnel-step .desc {
   background-image: url('../assets/clouds/clouds.png');
   background-size: 30px 20px;
 }
+
+/* Sun (default knob) */
 .slider::before {
   content: "";
   position: absolute;
   height: 26px; width: 26px;
   left: 4px; bottom: 4px;
   border-radius: 50%;
-  background-color: #fff480;
+  background-color: #fff480; /* sun */
   transition: transform 0.4s, background-color 0.4s;
 }
+
+/* Hidden "mask" for crescent */
+.slider::after {
+  content: "";
+  position: absolute;
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: transform 0.4s, background-color 0.4s, left 0.4s;
+}
+
+/* Night background */
 input:checked + .slider {
   background-color: #0d1b2a;
-  background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 4px 6px, 12px 10px;
 }
+
+/* Crescent moon knob */
 input:checked + .slider::before {
   transform: translateX(26px);
-  background-color: white;
+  background-color: white; /* moon base */
+}
+
+/* Dark circle overlapping → creates crescent */
+input:checked + .slider::after {
+  transform: translateX(26px);   /* move with knob */
+  background-color: #0d1b2a;     /* same as sky */
+  left: -2px;                    /* push mask to the right side */
+
+ /* mimic sky with stars */
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 4px 6px, 12px 10px;
 }
