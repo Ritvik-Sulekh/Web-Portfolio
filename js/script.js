@@ -5,13 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slider && countEl) {
     const testimonials = slider.querySelectorAll('.testimonial-box');
     countEl.textContent = testimonials.length;
-
-    // Adjust animation duration based on content width
-    const sliderWidth = slider.scrollWidth;
-    const wrapperWidth = slider.parentElement.offsetWidth;
-    const totalDistance = sliderWidth + wrapperWidth; // distance it travels
-    const pxPerSecond = 80; // speed control
-    const duration = Math.max(20, Math.round(totalDistance / pxPerSecond));
-    slider.style.setProperty('--marquee-speed', `${duration}s`);
   }
+
+  // ===== Fade + Gradient Highlight Row on Scroll =====
+  const rows = document.querySelectorAll('.testimonial-row');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      // Remove active/highlight from all rows
+      rows.forEach(row => {
+        row.classList.remove('active');
+        row.querySelectorAll('.testimonial-box').forEach(box => box.classList.remove('highlight'));
+      });
+
+      entries.forEach(entry => {
+        if(entry.isIntersecting && entry.intersectionRatio > 0.5){
+          const row = entry.target;
+          row.classList.add('active');
+          row.querySelectorAll('.testimonial-box').forEach(box => box.classList.add('highlight'));
+        }
+      });
+    },
+    {
+      threshold: 0.5
+    }
+  );
+
+  rows.forEach(row => observer.observe(row));
 });
