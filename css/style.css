@@ -313,68 +313,98 @@ footer {
   border-radius: 12px;
   font-weight: 600;
   font-size: 1rem;
-  color: #fff;                /* ✅ Force text to white */
+  color: #fff;
   text-align: center;
-
-  /* Gradient background */
   background: linear-gradient(45deg, #ff4fbf, #0066cc);
   position: relative;
   z-index: 1;
 }
 
-/* Optional glow/border effect */
-.testimonial-count-box::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 12px;
-  padding: 3px; /* spacing for border look */
-  background: linear-gradient(45deg, #ff4fbf, #0066cc);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  z-index: -1;
-}
-
 .testimonial-slider-wrapper {
-  overflow: hidden;
   position: relative;
   padding: 20px 0;
 }
 
+/* ------------------------------
+   Testimonial Row & Grid
+------------------------------ */
 .testimonial-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* space between rows */
+}
+
+/* Slightly faded by default */
+.testimonial-row {
   display: grid;
-  grid-template-columns: repeat(6, auto);
-  justify-content: start;
-  align-items: start;
-  gap: 20px;
-  will-change: transform;
-  animation: slide-left var(--marquee-speed, 30s) linear infinite;
-  padding-right: 100px;
-  animation-play-state: running;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+  gap: 24px;
+  opacity: 0.7; /* slightly faded by default */
+  transition: opacity 0.3s ease;
 }
 
-.testimonial-slider-wrapper:hover .testimonial-slider {
-  animation-play-state: paused;
+/* Entire row unfades on hover */
+.testimonial-row:hover {
+  opacity: 1;
 }
 
+/* ------------------------------
+   Testimonial Box
+------------------------------ */
 .testimonial-box {
   background: #fff;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   text-align: left;
-  transition: transform 0.25s ease;
-  display: inline-block;
-  width: auto;
-  max-width: 250px;
-  height: auto;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  overflow: hidden;
+  border: 2px solid transparent; /* fallback */
+  z-index: 0;
 }
 
-.testimonial-box:hover { transform: translateY(-4px); }
+/* Hover scale + shadow + gradient border */
+.testimonial-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-image: linear-gradient(45deg, #ff4fbf, #0066cc, #00ffcc, #ff4fbf) 1;
+  border-image-slice: 1;
+}
 
+/* Gradient border pseudo-element */
+.testimonial-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background-size: 400% 400%;
+  animation: gradient 4s linear infinite;
+  z-index: -1;       /* behind the box */
+  opacity: 0;        /* hidden by default */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box;
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* Show gradient border only on hover */
+.testimonial-box:hover::before {
+  opacity: 1;
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Testimonial name */
 .testimonial-name {
   margin-top: 10px;
   font-weight: 600;
@@ -382,9 +412,38 @@ footer {
   opacity: 0.9;
 }
 
-@keyframes slide-left {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* ------------------------------
+   Testimonial Responsive
+------------------------------ */
+@media (max-width: 1200px) {
+  .testimonial-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------
+   Dark Mode
+------------------------------ */
+@media (prefers-color-scheme: dark) {
+  .testimonial-row {
+    opacity: 0.7; /* keep slightly faded by default */
+  }
+  .testimonial-box {
+    background: #fff; /* keep white even in dark mode */
+    color: #000;      /* text color can be black or dark */
+  }
 }
 
 /* ------------------------------
