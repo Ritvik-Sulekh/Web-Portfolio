@@ -187,6 +187,32 @@ body.dark-mode .funnel-step .desc {
   color: #ffffff !important;
 }
 
+/* ---------- Icon Cards - Dark Mode - Index Page ---------- */
+body.dark-mode .grid-card {
+  background:#0F1423E6; /* Royal Blue */
+  color: #ffffff;
+  border: 1px solid #0F1423E6;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  transition: 0.3s ease;
+}
+
+body.dark-mode .grid-card:hover {
+  background:#0F1423E6; /* Slightly brighter Royal Blue */
+  border-color: #90a9ff; /* Light blue accent (matches your theme) */
+  box-shadow: 0 0 20px rgba(144, 169, 255, 0.7); /* Soft outer glow */
+  transform: translateY(-6px);
+}
+
+/* Make icons white in dark mode */
+body.dark-mode .grid-card .icon {
+  color: #ffffff;
+}
+
+/* Optional: Subtext readability in dark mode */
+body.dark-mode .grid-card p {
+  color: #e6eaff;
+}
+
 /* ---------- Toggle Switch ---------- */
 .theme-toggle {
   position: relative;
