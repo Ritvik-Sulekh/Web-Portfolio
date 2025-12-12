@@ -18,7 +18,7 @@ html, body {
 
 body.dark-mode {
   background: radial-gradient(ellipse at bottom, #0d2a10 0%, #001002 100%);
-  color: #f4f7fb;          /* default text color */
+  color: #f4fbf5;          /* default text color */
   position: relative;
   min-height: 100vh;
   overflow-y: auto;        /* allow scrolling */
@@ -35,7 +35,7 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode li,
 body.dark-mode div {
-  color: #f4f7fb;
+  color: #f4fbf4;
 }
 
 /* Special link colors */
@@ -155,7 +155,7 @@ body.dark-mode header {
 
 body.dark-mode .hero {
   background: rgba(21, 50, 20, 0.75);
-  color: #e0e6f5;
+  color: #e1f5e0;
 }
 body.dark-mode .hero h2 { color: #69ff66; }
 
@@ -197,7 +197,7 @@ body.dark-mode .card-right h3 {
 body.dark-mode .blog-card,
 body.dark-mode .blog-post {
   background: rgba(30, 60, 30, 0.95);
-  color: #e0e6f5;
+  color: #e0f5e3;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 body.dark-mode .blog-card a,
@@ -248,7 +248,7 @@ body.dark-mode .grid-card .icon {
 
 /* Optional: Subtext readability in dark mode */
 body.dark-mode .grid-card p {
-  color: #e6eaff;
+  color: #e6ffe8;
 }
 
 /* ---------- Toggle Switch ---------- */
