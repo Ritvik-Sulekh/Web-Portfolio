@@ -55,7 +55,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #0066cc; /* fallback for Safari */
+  color: #03cc00; /* fallback for Safari */
   display: inline-block;
   padding: 5px 15px;
   border-radius: 8px;
@@ -63,18 +63,18 @@ body {
   transition: all 0.3s ease;
 
   /* Gradient text */
-  background: linear-gradient(90deg, #ff3399, #0066cc);
+  background: linear-gradient(90deg, #ff3399, #00cc1b);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #0066cc; /* ✅ visible in Safari */
+  -webkit-text-fill-color: #00cc07; /* ✅ visible in Safari */
 }
 
 /* Hover: visible rounded gradient box with white text */
 .logo a:hover,
 .logo a:focus {
   color: #ffffff; /* ensure readable text on gradient */
-  background: linear-gradient(90deg, #ff3399 0%, #0066cc 100%);
+  background: linear-gradient(90deg, #ff3399 0%, #00cc29 100%);
   border: 2px solid transparent;               /* border becomes visible via border-image */
-  border-image: linear-gradient(90deg, #ff3399 0%, #0066cc 100%) 1;
+  border-image: linear-gradient(90deg, #ff3399 0%, #00cc11 100%) 1;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   outline: none; /* keep focus styles custom (optional: add visible focus ring if needed) */
 }
@@ -108,17 +108,17 @@ nav {
 }
 
 .logo a {
-  color: #0066cc;
+  color: #00cc11;
   text-decoration: none;
-  background: linear-gradient(90deg, #0066cc);
+  background: linear-gradient(90deg, #0acc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
 }
 
 .logo a:hover {
-  color: #0066cc; /* fallback if gradient not supported */
-  background: linear-gradient(90deg, #ff3399, #0066cc);
+  color: #03cc00; /* fallback if gradient not supported */
+  background: linear-gradient(90deg, #ff3399, #00cc1b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -138,7 +138,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #0066cc;
+  color: #00cc00;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border: 2px solid transparent;
@@ -147,7 +147,7 @@ nav {
 }
 
 .nav-links a:hover {
-  background: linear-gradient(90deg, #ff3399, #0066cc); /* proper gradient */
+  background: linear-gradient(90deg, #ff3399, #00cc00); /* proper gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* gradient text visible */
   border: 2px solid #ff3399;
@@ -169,7 +169,7 @@ nav {
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #0066cc;
+  color: #00cc00;
 }
 
 .hero p {
@@ -180,7 +180,7 @@ nav {
 
 .btn {
   display: inline-block;
-  background: #0066cc;
+  background: #00cc07;
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -215,7 +215,7 @@ footer {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(5px);
-  color: #0066cc;
+  color: #00cc11;
   font-weight: 600;
   margin: 3rem auto 1rem auto;
   border-radius: 12px;
@@ -275,7 +275,7 @@ footer {
 
 .resume-container .btn {
   display: inline-block;
-  background: #0066cc;
+  background: #00cc1b;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 10px;
@@ -304,7 +304,7 @@ footer {
 .testimonial-section h2 {
   font-size: 2rem;
   margin-bottom: 12px;
-  color: #0066cc;
+  color: #00cc07;
 }
 
 .testimonial-count-box {
@@ -315,7 +315,7 @@ footer {
   font-size: 1rem;
   color: #fff;
   text-align: center;
-  background: linear-gradient(45deg, #ff4fbf, #0066cc);
+  background: linear-gradient(45deg, #ff4fbf, #00cc0e);
   position: relative;
   z-index: 1;
 }
@@ -367,7 +367,7 @@ footer {
 .testimonial-box:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  border-image: linear-gradient(45deg, #ff4fbf, #0066cc, #00ffcc, #ff4fbf) 1;
+  border-image: linear-gradient(45deg, #ff4fbf, #00cc14, #00ffcc, #ff4fbf) 1;
   border-image-slice: 1;
 }
 
@@ -469,7 +469,7 @@ footer {
   top: 0;
   width: 8px;
   height: 100%;
-  background: linear-gradient(to bottom, #ffb6c1, #0073e6);
+  background: linear-gradient(to bottom, #ffb6c1, #00e61b);
   border-radius: 15px 0 0 15px;
 }
 
@@ -480,7 +480,7 @@ footer {
   right: -20px;
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, #0073e6, #00c6ff);
+  background: linear-gradient(135deg, #04e600, #00ff2f);
   border-radius: 20px;
   opacity: 0.1;
   transform: rotate(25deg);
@@ -523,14 +523,14 @@ footer {
   margin: 0 0 8px;
   font-size: 1.8rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #ffb6c1, #0073e6);
+  background: linear-gradient(90deg, #ffb6c1, #08e600);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card-right strong {
-  color: #0073e6;
+  color: #00e613;
   font-weight: 600;
 }
 
@@ -540,7 +540,7 @@ footer {
 }
 
 .social-links a {
-  color: #0073e6;
+  color: #00e60c;
   text-decoration: none;
   margin: 0 5px;
 }
@@ -578,7 +578,7 @@ footer {
 }
 
 .blog-card a {
-  color: #0073e6;
+  color: #00e600;
   text-decoration: none;
 }
 
@@ -609,7 +609,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   padding: 8px 16px;
-  background: linear-gradient(90deg, #ffb6c1, #0073e6);
+  background: linear-gradient(90deg, #ffb6c1, #00e604);
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -753,7 +753,7 @@ footer {
 .funnel-section h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #0073e6;
+  color: #00e626;
 }
 
 .funnel-section p {
@@ -783,13 +783,13 @@ footer {
 /* Funnel shape widths decreasing top → bottom */
 .step1 { background: #ff6fa3; width: 100%; } /* Pink */
 .step2 { background: #ff85b2; width: 90%; }  /* Lighter Pink */
-.step3 { background: #80c1ff; width: 75%; } /* Light Blue */
-.step4 { background: #4da6ff; width: 60%; } /* Medium Blue */
-.step5 { background: #1a8cff; width: 45%; } /* Deep Blue */
+.step3 { background: #88ff80; width: 75%; } /* Light Blue */
+.step4 { background: #4dff4d; width: 60%; } /* Medium Blue */
+.step5 { background: #1aff53; width: 45%; } /* Deep Blue */
 
 /* Light mode - decreasing width */
 .step6 {
-  background: #0040cc;
+  background: #00cc14;
   width: 35%;
   position: relative; /* allow absolute positioning */
 }
