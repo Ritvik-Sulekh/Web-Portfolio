@@ -63,7 +63,7 @@ body {
   transition: all 0.3s ease;
 
   /* Gradient text */
-  background: linear-gradient(90deg, #ff3399, #00cc1b);
+  background: linear-gradient(90deg, #337eff, #00cc1b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: #00cc07; /* ✅ visible in Safari */
 }
@@ -72,9 +72,9 @@ body {
 .logo a:hover,
 .logo a:focus {
   color: #ffffff; /* ensure readable text on gradient */
-  background: linear-gradient(90deg, #ff3399 0%, #00cc29 100%);
+  background: linear-gradient(90deg, #00cc1b 0%, #337eff 100%);
   border: 2px solid transparent;               /* border becomes visible via border-image */
-  border-image: linear-gradient(90deg, #ff3399 0%, #00cc11 100%) 1;
+  border-image: linear-gradient(90deg, #00cc1b 0%, #337eff 100%) 1;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   outline: none; /* keep focus styles custom (optional: add visible focus ring if needed) */
 }
@@ -118,7 +118,7 @@ nav {
 
 .logo a:hover {
   color: #03cc00; /* fallback if gradient not supported */
-  background: linear-gradient(90deg, #ff3399, #00cc1b);
+  background: linear-gradient(90deg, #00cc1b, #337eff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
