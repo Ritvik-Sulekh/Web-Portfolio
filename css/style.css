@@ -498,6 +498,17 @@ footer {
   opacity: 0.1;
 }
 
+.business-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.business-card:hover {
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.9),
+    0 0 10px rgba(0,0,0,0.4),
+    0 0 25px rgba(0,255,80,0.8);
+}
+
 .card-left {
   padding-right: 20px;
   border-right: 2px solid #eee;
