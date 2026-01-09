@@ -13,15 +13,15 @@ html, body {
 }
 
 /* ------------------------------
-   Galaxy Dark Mode with Constellations
+   Moonlight Dark Mode with Constellations
 ------------------------------ */
 
 body.dark-mode {
-  background: radial-gradient(ellipse at bottom, #0d2a10 0%, #001002 100%);
-  color: #f4fbf5;          /* default text color */
+  background: radial-gradient(ellipse at bottom, #162a5a 0%, #060b1f 100%);
+  color: #f8fbff;
   position: relative;
   min-height: 100vh;
-  overflow-y: auto;        /* allow scrolling */
+  overflow-y: auto;
 }
 
 /* Make all normal text light, but do NOT force links */
@@ -35,15 +35,15 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode li,
 body.dark-mode div {
-  color: #f4fbf4;
+  color: #eef4ff;
 }
 
 /* Special link colors */
 body.dark-mode a {
-  color: #75ff66;
+  color: #9fdcff;
 }
 body.dark-mode a:hover {
-  color: #ff80c0;
+  color: #ffb7d9;
 }
 
 /* ------------------------------
@@ -56,16 +56,16 @@ body.dark-mode::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(0, 255, 60, 0.9) 1px, transparent 1.6px);
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1.6px);
   background-size: 80px 80px;
-  filter: blur(1px);
+  filter: blur(0.8px);
   animation: stars-twinkle 4s infinite alternate;
 }
 
 @keyframes stars-twinkle {
-  0%   { opacity: 0.4; }
-  50%  { opacity: 0.9; }
-  100% { opacity: 0.4; }
+  0%   { opacity: 0.35; }
+  50%  { opacity: 0.85; }
+  100% { opacity: 0.35; }
 }
 
 /* Example constellation (lines connecting stars) */
@@ -106,7 +106,12 @@ body.dark-mode .constellation {
   left: -300px;
   width: 250px;
   height: 2px;
-  background: linear-gradient(90deg, rgba(0, 255, 64, 0) 0%, rgba(0, 255, 42, 0.9) 50%, rgba(0, 255, 0, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(180,220,255,0.95) 50%,
+    rgba(255,255,255,0) 100%
+  );
   opacity: 0;
   z-index: 1;
   pointer-events: none;
@@ -114,6 +119,7 @@ body.dark-mode .constellation {
   transform: rotate(-20deg);
   animation: shoot 3s linear infinite;
 }
+
 @keyframes shoot {
   0%   { transform: translateX(0) rotate(-20deg); opacity: 0; }
   5%   { opacity: 1; }
@@ -128,7 +134,13 @@ body.dark-mode .constellation {
   left: -400px;
   width: 350px;
   height: 3px;
-  background: linear-gradient(90deg, rgba(160, 255, 169, 0) 0%, rgba(60, 255, 89, 0.85) 20%, rgba(160, 255, 168, 0.15) 60%, rgba(160, 255, 171, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(200,220,255,0.85) 20%,
+    rgba(255,200,220,0.25) 60%,
+    rgba(255,255,255,0) 100%
+  );
   opacity: 0.8;
   z-index: 1;
   pointer-events: none;
@@ -136,6 +148,7 @@ body.dark-mode .constellation {
   transform: rotate(-8deg);
   animation: comet-move 10s linear infinite;
 }
+
 @keyframes comet-move {
   0%   { transform: translateX(0) rotate(-8deg); opacity: 0; }
   10%  { opacity: 1; }
@@ -145,114 +158,86 @@ body.dark-mode .constellation {
 
 /* ---------- Section Overrides for Dark Mode ---------- */
 
-body.dark-mode a { color: #69ff66; }
-body.dark-mode a:hover { color: #ff80c0; }
+body.dark-mode a { color: #9fdcff; }
+body.dark-mode a:hover { color: #ffb7d9; }
 
 body.dark-mode header {
-  background: rgba(10, 30, 10, 0.8);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
 }
 
 body.dark-mode .hero {
-  background: rgba(21, 50, 20, 0.75);
-  color: #e1f5e0;
+  background: rgba(255,255,255,0.08);
+  color: #eef4ff;
 }
-body.dark-mode .hero h2 { color: #69ff66; }
+body.dark-mode .hero h2 { color: #9fdcff; }
 
 body.dark-mode .btn {
-  background: #1e8a25;
+  background: linear-gradient(135deg, #9fdcff, #ffb7d9);
+  color: #0a1028;
 }
 body.dark-mode .btn:hover {
   background: transparent;
-  border: 2px solid #ff80c0;
-  color: #ff80c0;
+  border: 2px solid #ffb7d9;
+  color: #ffb7d9;
 }
 
 body.dark-mode .resume-container {
-  background: rgba(20, 50, 26, 0.85);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 6px 20px rgba(160,200,255,0.35);
 }
-body.dark-mode .resume-container iframe { border: 1px solid #444; }
+body.dark-mode .resume-container iframe {
+  border: 1px solid rgba(255,255,255,0.2);
+}
 
 body.dark-mode footer {
-  background: rgba(20, 50, 27, 0.75);
-  color: #9dff9b;
+  background: rgba(255,255,255,0.08);
+  color: #eef4ff;
 }
 
 body.dark-mode .testimonial-box {
-  background: rgba(30, 60, 34, 0.9);
-  color: #e6eaf5;
+  background: rgba(255,255,255,0.08);
+  color: #eef4ff;
 }
-body.dark-mode .testimonial-name { color: #a1ffa0; }
+body.dark-mode .testimonial-name {
+  color: #ffb7d9;
+}
 
 body.dark-mode .business-card {
-  background: rgba(25, 55, 30, 0.9);
+  background: rgba(255,255,255,0.08);
 }
 body.dark-mode .card-right h3 {
-  background: linear-gradient(90deg, #ff80c0, #66ff8f);
+  background: linear-gradient(90deg, #ffb7d9, #9fdcff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-body.dark-mode .blog-card,
-body.dark-mode .blog-post {
-  background: rgba(30, 60, 30, 0.95);
-  color: #e0f5e3;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-body.dark-mode .blog-card a,
-body.dark-mode .blog-post a { color: #66ff7d; }
-body.dark-mode .blog-card a:hover,
-body.dark-mode .blog-post a:hover { color: #ff80c0; }
+/* ---------- Icon Cards ---------- */
 
-/* Dark mode for funnel in iim.html */
-body.dark-mode .funnel-section {
-  background: rgba(15, 35, 17, 0.9);
-  color: #ffffff;
-}
-
-body.dark-mode .funnel-step.step1 { background: #cc3399 !important; }
-body.dark-mode .funnel-step.step2 { background: #b32d8c !important; }
-body.dark-mode .funnel-step.step3 { background: #33cc3b !important; }
-body.dark-mode .funnel-step.step4 { background: #26b83c !important; }
-body.dark-mode .funnel-step.step5 { background: #1a991a !important; }
-/* Dark mode - step6 */
-body.dark-mode .funnel-step.step6 { background: #006602 !important; }
-
-body.dark-mode .funnel-step .number,
-body.dark-mode .funnel-step .conversion,
-body.dark-mode .funnel-step .desc {
-  color: #ffffff !important;
-}
-
-/* ---------- Icon Cards - Dark Mode - Index Page ---------- */
 body.dark-mode .grid-card {
-  background:#0f230fe6; /* Royal Blue */
+  background: rgba(255,255,255,0.08);
   color: #ffffff;
-  border: 1px solid #0f2313e6;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px rgba(160,200,255,0.4);
   transition: 0.3s ease;
 }
 
 body.dark-mode .grid-card:hover {
-  background:#0f2311e6; /* Slightly brighter Royal Blue */
-  border-color: #90ff97; /* Light blue accent (matches your theme) */
-  box-shadow: 0 0 20px rgba(144, 255, 151, 0.7); /* Soft outer glow */
+  box-shadow: 0 0 26px rgba(255,180,220,0.8);
   transform: translateY(-6px);
 }
 
-/* Make icons white in dark mode */
 body.dark-mode .grid-card .icon {
   color: #ffffff;
 }
 
-/* Optional: Subtext readability in dark mode */
 body.dark-mode .grid-card p {
-  color: #e6ffe8;
+  color: #eef4ff;
 }
 
 /* ---------- Toggle Switch ---------- */
-/* Common toggle styles (your existing base) */
+/* SAME SUN–MOON TOGGLE, RECOLORED ONLY */
+
 .theme-toggle {
   position: relative;
   display: inline-block;
@@ -261,35 +246,36 @@ body.dark-mode .grid-card p {
   cursor: pointer;
   margin: 15px;
   border-radius: 40px;
-  box-shadow: 
+  box-shadow:
     0 0 0 3px transparent,
-    0 0 12px rgba(255, 153, 102, 0.8),
-    0 0 20px rgba(255, 94, 98, 0.6); /* extra glow layer */
+    0 0 12px rgba(160,200,255,0.8),
+    0 0 20px rgba(255,180,220,0.6);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
-  box-shadow: 
+  box-shadow:
     0 0 0 3px transparent,
-    0 0 18px rgba(255, 153, 102, 1),
-    0 0 28px rgba(255, 94, 98, 0.9);
-  transform: scale(1.05); /* slight pop effect */
+    0 0 18px rgba(160,200,255,1),
+    0 0 28px rgba(255,180,220,0.9);
+  transform: scale(1.05);
 }
 
-/* ✨ Optional: animated shimmer pulse */
+/* ✨ glow pulse */
 @keyframes glowPulse {
-  0%   { box-shadow: 0 0 12px rgba(255, 153, 102, 0.7), 0 0 20px rgba(255, 94, 98, 0.6); }
-  50%  { box-shadow: 0 0 18px rgba(255, 153, 102, 1),   0 0 28px rgba(255, 94, 98, 0.9); }
-  100% { box-shadow: 0 0 12px rgba(255, 153, 102, 0.7), 0 0 20px rgba(255, 94, 98, 0.6); }
+  0%   { box-shadow: 0 0 12px rgba(160,200,255,0.7), 0 0 20px rgba(255,180,220,0.6); }
+  50%  { box-shadow: 0 0 18px rgba(160,200,255,1),   0 0 28px rgba(255,180,220,0.9); }
+  100% { box-shadow: 0 0 12px rgba(160,200,255,0.7), 0 0 20px rgba(255,180,220,0.6); }
 }
 
 .theme-toggle:focus-visible {
   animation: glowPulse 1.5s infinite ease-in-out;
 }
 
-/* ---------- Toggle Switch Function ---------- */
-.theme-toggle input { 
-  opacity: 0; width: 0; height: 0; 
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
@@ -297,57 +283,59 @@ body.dark-mode .grid-card p {
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 34px;
   transition: background-color 0.4s, background-image 0.4s;
-  background-color: #ffb15d;
+  background-color: #ffd6eb;
   background-image: url('../assets/clouds/clouds.png');
   background-size: 30px 20px;
 }
 
-/* Sun (default knob) */
+/* Sun */
 .slider::before {
   content: "";
   position: absolute;
-  height: 26px; width: 26px;
-  left: 4px; bottom: 4px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   border-radius: 50%;
-  background-color: #fff480; /* sun */
+  background-color: #fff4b8;
   transition: transform 0.4s, background-color 0.4s;
 }
 
-/* Hidden "mask" for crescent */
+/* Crescent mask */
 .slider::after {
   content: "";
   position: absolute;
-  height: 26px; width: 26px;
-  left: 4px; bottom: 4px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   border-radius: 50%;
   background-color: transparent;
   transition: transform 0.4s, background-color 0.4s, left 0.4s;
 }
 
-/* Night background */
+/* Night */
 input:checked + .slider {
-  background-color: #102a0d;
-  background-image: radial-gradient(white 1px, transparent 1px),
-                    radial-gradient(white 1px, transparent 1px);
+  background-color: #0c163a;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 4px 6px, 12px 10px;
 }
 
-/* Crescent moon knob */
 input:checked + .slider::before {
   transform: translateX(26px);
-  background-color: white; /* moon base */
+  background-color: #ffffff;
 }
 
-/* Dark circle overlapping → creates crescent */
 input:checked + .slider::after {
-  transform: translateX(26px);   /* move with knob */
-  background-color: #0d2a10;     /* same as sky */
-  left: -2px;                    /* push mask to the right side */
-
- /* mimic sky with stars */
-  background-image: radial-gradient(white 1px, transparent 1px),
-                    radial-gradient(white 1px, transparent 1px);
+  transform: translateX(26px);
+  background-color: #0c163a;
+  left: -2px;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 4px 6px, 12px 10px;
 }
