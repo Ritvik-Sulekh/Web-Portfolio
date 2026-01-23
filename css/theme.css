@@ -1,0 +1,666 @@
+/* =========================================================
+   GLOBAL RESET & ROOT VARIABLES
+   ========================================================= */
+
+:root {
+  --moon-blue: #9fdcff;
+  --starlight-pink: #ffb7d9;
+  --night-bg-deep: #060b1f;
+  --night-bg-mid: #162a5a;
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.14);
+  --glass-blur: blur(10px);
+  --text-light: #eef4ff;
+  --text-muted: #ff6fae;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1fbf8f;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* =========================================================
+   DARK MODE – MOONLIGHT STARGAZING THEME
+   ========================================================= */
+
+body.dark-mode {
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--night-bg-mid) 0%,
+    var(--night-bg-deep) 100%
+  );
+  color: var(--text-light);
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Text normalization */
+body.dark-mode p,
+body.dark-mode li {
+  line-height: 1.65;
+  letter-spacing: 0.2px;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode div {
+  color: var(--text-light);
+}
+
+/* Links */
+body.dark-mode a {
+  color: var(--moon-blue);
+  text-decoration: none;
+}
+
+body.dark-mode a:hover {
+  color: var(--starlight-pink);
+}
+
+/* =========================================================
+   STAR FIELD BACKGROUND
+   ========================================================= */
+
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-size: 80px 80px;
+  opacity: 0.55;
+  animation: stars-twinkle 6s infinite alternate;
+}
+
+@keyframes stars-twinkle {
+  0%   { opacity: 0.45; }
+  50%  { opacity: 0.65; }
+  100% { opacity: 0.45; }
+}
+
+/* =========================================================
+   ENSURE CONTENT ABOVE STARS
+   ========================================================= */
+
+header,
+main,
+section,
+footer,
+.hero,
+.blog,
+.resume-container,
+.testimonial-box,
+.business-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   OPTIONAL COSMIC ELEMENTS
+   ========================================================= */
+
+.shooting-star,
+.comet,
+.constellation {
+  display: none;
+}
+
+body.dark-mode .shooting-star,
+body.dark-mode .comet,
+body.dark-mode .constellation {
+  display: block;
+}
+
+/* Shooting star */
+.shooting-star {
+  position: fixed;
+  left: -300px;
+  top: 30%;
+  width: 250px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0),
+    rgba(180,220,255,0.9),
+    rgba(255,255,255,0)
+  );
+  opacity: 0;
+  filter: blur(1px);
+  transform: rotate(-20deg);
+  animation: shoot 6s linear infinite;
+}
+
+@keyframes shoot {
+  0%   { opacity: 0; transform: translateX(0) rotate(-20deg); }
+  10%  { opacity: 1; }
+  70%  { opacity: 0.6; transform: translateX(120vw) rotate(-20deg); }
+  100% { opacity: 0; transform: translateX(140vw) rotate(-20deg); }
+}
+
+/* =========================================================
+   GLASS SECTIONS (CONSISTENT)
+   ========================================================= */
+
+body.dark-mode header,
+body.dark-mode .hero,
+body.dark-mode footer,
+body.dark-mode .resume-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* =========================================================
+   NAVBAR – DARK MODE OVERRIDES (NO LAYOUT CHANGE)
+   ========================================================= */
+
+body.dark-mode header {
+  background: rgba(255, 255, 255, 0.06); /* transparent glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  padding: 1rem 2rem;  /* same as light mode */
+}
+
+body.dark-mode nav {
+  display: flex;
+  align-items: center;  /* vertical center */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body.dark-mode .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Base logo */
+body.dark-mode .logo a {
+  background: linear-gradient(
+    90deg,
+    var(--moon-blue),
+    var(--starlight-pink)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.3s ease;
+  text-shadow:
+    0 0 4px rgba(159, 220, 255, 0.8),
+    0 0 6px rgba(255, 183, 220, 0.6); /* subtle neon glow */
+}
+
+/* Hover logo */
+body.dark-mode .logo a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--starlight-pink),
+    var(--moon-blue)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* keep the same subtle glow */
+  border: 1.5px solid rgba(160, 200, 255, 0.55);
+  text-shadow:
+    0 0 6px rgba(255, 183, 220, 0.85),
+    0 0 8px rgba(159, 220, 255, 0.7);
+}
+
+/* Nav links */
+body.dark-mode .nav-links a {
+  color: var(--text-light); /* fallback */
+  border-color: transparent;
+  margin: 0; /* remove extra margins from responsive adjustments */
+  font-size: 0.9rem; /* smaller text */
+  display: flex;
+  flex-wrap: wrap; /* ✅ wraps on smaller screens */
+}
+
+/* Nav link hover – neon glass */
+body.dark-mode .nav-links a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--moon-blue),
+    var(--starlight-pink)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1.5px solid rgba(160, 200, 255, 0.55);
+  box-shadow:
+    0 0 10px rgba(160, 200, 255, 0.35),
+    0 0 14px rgba(255, 180, 220, 0.25);
+}
+
+/* ------------------------------
+   Responsive Navbar Dark Mode
+------------------------------ */
+
+/* Medium screens (≤ 992px) */
+@media (max-width: 992px) {
+  body.dark-mode nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  body.dark-mode .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: unset;
+    margin-top: 10px;
+  }
+}
+
+/* Small screens (≤ 768px) */
+@media (max-width: 768px) {
+  body.dark-mode .logo {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  body.dark-mode .nav-links {
+    justify-content: center;
+    gap: 10px;
+    flex: 1 1 100%;
+  }
+}
+
+/* Extra small screens (≤ 600px) */
+@media (max-width: 600px) {
+  body.dark-mode .logo a {
+    font-size: 1.2rem;
+  }
+
+  body.dark-mode .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+body.dark-mode .hero h2 {
+  color: var(--moon-blue);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+body.dark-mode .btn {
+  background: linear-gradient(135deg, var(--moon-blue), var(--starlight-pink));
+  color: #0a1028;
+  border: none;
+  transition: 0.3s ease;
+}
+
+body.dark-mode .btn:hover {
+  background: transparent;
+  border: 2px solid var(--starlight-pink);
+  color: var(--starlight-pink);
+}
+
+/* =========================================================
+   BLOG – FIX WHITE BACKGROUND
+   ========================================================= */
+
+body.dark-mode .blog {
+  background: linear-gradient(
+    160deg,
+    rgba(14, 32, 74, 0.92),
+    rgba(8, 14, 38, 0.88)
+  );
+  border: 1px solid rgba(160,200,255,0.22);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.55),
+    0 0 22px rgba(160,200,255,0.25);
+}
+
+body.dark-mode .blog h2,
+body.dark-mode .blog h3,
+body.dark-mode .blog p,
+body.dark-mode .blog li {
+  color: var(--text-light);
+}
+
+body.dark-mode .blog-card {
+  background: rgba(255, 255, 255, 0.10); /* same glass, slightly stronger */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px; /* unchanged */
+  padding: 20px;       /* unchanged */
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(160, 200, 255, 0.25);
+  transition: transform 0.2s;
+}
+
+/* =========================================================
+   TESTIMONIALS – BLUE & PINK OUTLINE
+   ========================================================= */
+
+body.dark-mode .testimonial-box {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid transparent;
+  border-image: linear-gradient(
+    135deg,
+    var(--moon-blue),
+    var(--starlight-pink)
+  ) 1;
+  box-shadow: 0 6px 22px rgba(160,200,255,0.35);
+}
+
+body.dark-mode .testimonial-name {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+
+  /* Base text */
+  color: #ffffff;
+  font-weight: 600;
+
+  /* Subtle frosted backing */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+
+  /* TRUE neon shine */
+  text-shadow:
+    0 0 4px rgba(160, 210, 255, 0.9),
+    0 0 10px rgba(160, 210, 255, 0.7),
+    0 0 16px rgba(255, 160, 210, 0.6),
+    0 0 22px rgba(255, 160, 210, 0.45);
+}
+
+/* =========================================================
+   TESTIMONIAL SECTION – DARK MODE (TRANSPARENT GLASS)
+   ========================================================= */
+
+body.dark-mode .testimonial-section h2 {
+  color: var(--moon-blue);
+}
+
+/* Count box – glass, not gradient */
+body.dark-mode .testimonial-count-box {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-light);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(160, 200, 255, 0.25);
+}
+
+/* Slider wrapper – subtle glass separation */
+body.dark-mode .testimonial-slider-wrapper {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   BUSINESS CARD – REMOVE GREEN / OLD PINK
+   ========================================================= */
+
+body.dark-mode .business-card {
+  background: linear-gradient(
+    160deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 10px 30px rgba(160,200,255,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+body.dark-mode .business-card p,
+body.dark-mode .business-card span {
+  color: var(--text-light);
+}
+
+body.dark-mode .card-right h3 {
+  background: linear-gradient(
+    90deg,
+    var(--moon-blue),
+    var(--starlight-pink)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   FUNNEL SECTION – DARK MODE (GLASS / MOONLIGHT)
+   ========================================================= */
+
+body.dark-mode .funnel-section {
+  background: rgba(255, 255, 255, 0.08); /* glass, not white */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .funnel-section h2 {
+  color: var(--moon-blue); /* remove neon green */
+}
+
+body.dark-mode .funnel-section p {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   FUNNEL STEPS – DARK MODE COLORS
+   (same widths & structure)
+   ========================================================= */
+
+body.dark-mode .funnel-step {
+  color: var(--text-light);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.55),
+    0 0 18px rgba(160, 200, 255, 0.25);
+}
+
+/* Moonlight gradient progression (top → bottom) */
+body.dark-mode .step1 {
+  background: linear-gradient(135deg, #7ecbff, #5b8dff);
+}
+
+body.dark-mode .step2 {
+  background: linear-gradient(135deg, #6ab6ff, #4f7cff);
+}
+
+body.dark-mode .step3 {
+  background: linear-gradient(135deg, #5fa0ff, #3e63ff);
+}
+
+body.dark-mode .step4 {
+  background: linear-gradient(135deg, #4c86ff, #2f4bcc);
+}
+
+body.dark-mode .step5 {
+  background: linear-gradient(135deg, #3a6dff, #2539a6);
+}
+
+body.dark-mode .step6 {
+  background: linear-gradient(
+    135deg,
+    var(--moon-blue),
+    var(--starlight-pink)
+  );
+}
+
+/* Crown visibility in dark mode */
+body.dark-mode .step6::after {
+  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.8));
+}
+
+/* Hover – same behavior, softer glow */
+body.dark-mode .funnel-step:hover {
+  box-shadow:
+    0 0 28px rgba(160, 200, 255, 0.45),
+    0 0 14px rgba(255, 180, 220, 0.25);
+}
+
+/* =========================================================
+   ICON / GRID CARDS
+   ========================================================= */
+
+body.dark-mode .grid-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px rgba(160,200,255,0.4);
+  transition: 0.3s ease;
+}
+
+body.dark-mode .grid-card:hover,
+body.dark-mode .testimonial-box:hover,
+body.dark-mode .business-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(160,200,255,0.55);
+}
+
+/* =========================================================
+   SUN–MOON TOGGLE (SAME STRUCTURE, RECOLORED)
+   ========================================================= */
+
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin: 0; /* or margin-left: 10px; to slightly separate from nav links */
+  box-shadow:
+    0 0 12px rgba(160,200,255,0.7),
+    0 0 20px rgba(255,180,220,0.6);
+  transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  background-color: #fac49a;
+  background-image: url('../assets/clouds/clouds.png');
+  background-size: 30px 20px;
+  transition: 0.4s;
+}
+
+/* Sun */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: #fff4b8;
+  transition: 0.4s;
+}
+
+/* Moon mask */
+.slider::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: 0.4s;
+}
+
+/* Night state */
+input:checked + .slider {
+  background-color: #0c163a;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 4px 6px, 12px 10px;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+  background-color: #ffffff;
+  box-shadow:
+    0 0 8px rgba(180,220,255,0.9),
+    0 0 16px rgba(160,200,255,0.6);
+}
+
+input:checked + .slider::after {
+  transform: translateX(26px);
+  left: -2px;
+  background-color: #0c163a;
+}
+
+/* Toggle hint */
+.theme-toggle::after {
+  content: "☀︎ / ☾";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .shooting-star,
+  .comet,
+  body.dark-mode::before {
+    animation: none;
+  }
+}
+
+/* ------------------------------
+   Dark Mode
+------------------------------ */
+@media (prefers-color-scheme: dark) {
+  .testimonial-row {
+    opacity: 0.7; /* keep slightly faded by default */
+  }
+  .testimonial-box {
+    background: #fff; /* keep white even in dark mode */
+    color: #000;      /* text color can be black or dark */
+  }
+}

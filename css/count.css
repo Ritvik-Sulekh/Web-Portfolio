@@ -1,0 +1,46 @@
+/* ================= COUNT BOX ================= */
+
+.count-box {
+  max-width: 260px;
+  margin: 20px auto;
+
+  padding: 18px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 105, 180, 0.6);
+  border-radius: 14px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Label */
+.count-label {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-bottom: 6px;
+
+  color: #ff69b4; /* light green */
+}
+
+/* Value */
+.count-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  color: #66bb6a; /* light green */
+}
+
+/* ================= CARD (minimal, for demo) ================= */
+
+.card-container {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.card {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Card</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/theme.css"> 
+</head>
+<body>
+  <div class="main-content">
+    <!-- Navbar -->
+    <header>
+      <nav> 
+        
+        <!-- Switch Button -->
+        <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+        </label>
+
+        <!-- Dark Mode Sky Layers -->
+        <div class="shooting-star"></div>
+        <div class="comet"></div>
+
+        <!-- Constellation Canvas -->
+        <div class="constellation">
+          <canvas id="constellationCanvas"></canvas>
+        </div>
+        
+        <!-- Replaced site-logo div with h1 logo -->
+        <h1 class="logo"><a href="../index.html">ORitvik</a></h1>
+        
+          <details class="dropdown">
+            <summary>Professional</summary>
+            <a href="resume.html">ATS Resumes</a>
+            <a href="experience.html">Work Experience</a>
+            <a href="internship.html">Internships</a>
+            <a href="por.html">PORs</a>
+            <a href="freelancer.html">Freelancer</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="skills.html">Skills</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Education</summary>
+            <a href="education.html">Education</a>
+            <a href="certificate.html">Certifications</a>
+            <a href="iim.html" class="active">Top 0.2%</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Projects</summary>
+            <a href="projects.html">Projects</a>
+            <a href="ppt-portfolio.html">Work Portfolio</a>
+            <a href="case.html">Case Competitions</a>
+            <a href="publication.html">Publications</a>
+            <a href="blog.html">Blogs</a>
+          </details>
+          
+          <details class="dropdown">
+            <summary>Contacts</summary>
+            <a href="bcard.html">Business Card</a>
+          </details>
+
+      </nav>
+    </header>
+
+    <!-- Contact / Business Card Section -->
+    <section class="hero">
+      <h2>Business Card</h2>
+          <h4>Reach out to me, using my digital business card, as follows:</h4>
+
+        <div class="business-card">
+            <span class="decor-circle"></span> <!-- adds bottom-left circle -->
+            <div class="card-left">
+                <img src="../assets/profile/pic.png" alt="My Photo">
+            </div>
+
+            <div class="card-right">
+                <h3>Ritvik Singh Sulekh</h3>
+                <p><strong>Previous Role:</strong> FinOps Manager</p>
+                <hr>
+                <p><strong>Mobile/WhatsApp:</strong> +91-(7043929151)</p>
+                <p><strong>Email-ID:</strong> <a href="mailto:ritvik.sulekh@gmail.com">ritvik.sulekh@gmail.com</a></p>
+                <p><strong>Current Location:</strong> Vadodara, Gujarat, India</p>
+                <div class="social-links">
+                <a href="https://www.linkedin.com/in/ritviksinghsulekh/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                <a href="https://github.com/Ritvik-Sulekh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    </div>
+  
+    <!-- Footer -->
+    <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Load footer
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => { document.getElementById("footer").innerHTML = data; });
+  </script>
+
+  <script src="../js/script.js"></script>
+  <script src="/js/favicon.js"></script>
+  <script src="../js/theme.js"></script>
+  
+  <script src="/js/drop.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* ================================
+   Card Container
+================================ */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* ================================
+   Glass Card – LIGHT MODE (default)
+================================ */
+.card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1.5px solid rgba(255, 105, 180, 0.6); /* pink */
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 0 1px rgba(255, 255, 255, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/* ================================
+   Text – LIGHT MODE
+================================ */
+.card h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #49d150; /* pink */
+}
+
+.card h3 {
+  margin: 6px 0;
+  font-size: 1.2em;
+  color: #ff69b4; /* green */
+}
+
+.card .dates,
+.card li,
+.card .skills {
+  color: #49d150;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+/* Links – light */
+.card a {
+  color: #ff69b4;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #69cbff;
+  text-decoration: underline;
+}
+
+/* ================================
+   DARK MODE (when .dark exists)
+================================ */
+.dark .card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 1px rgba(255, 255, 255, 0.6);
+
+  color: #ffffff; /* 👈 all text inherits this */
+}
+
+/* Force inheritance for ALL children */
+.dark .card * {
+  color: inherit;
+}

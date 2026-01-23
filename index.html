@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <!-- Navbar -->
+    <header>
+      <nav> 
+        
+        <!-- Switch Button -->
+        <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+        </label>
+
+        <!-- Dark Mode Sky Layers -->
+        <div class="shooting-star"></div>
+        <div class="comet"></div>
+
+        <!-- Constellation Canvas -->
+        <div class="constellation">
+          <canvas id="constellationCanvas"></canvas>
+        </div>
+        
+        <!-- Replaced site-logo div with h1 logo -->
+        <h1 class="logo"><a href="index.html">ORitvik</a></h1>
+        
+          <details class="dropdown">
+            <summary>Professional</summary>
+            <a href="html/resume.html">ATS Resumes</a>
+            <a href="html/experience.html">Work Experience</a>
+            <a href="html/internship.html">Internships</a>
+            <a href="html/por.html">PORs</a>
+            <a href="html/freelancer.html">Freelancer</a>
+            <a href="html/testimonial.html">Testimonials</a>
+            <a href="html/skills.html">Skills</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Education</summary>
+            <a href="html/education.html">Education</a>
+            <a href="html/certificate.html">Certifications</a>
+            <a href="html/iim.html" class="active">Top 0.2%</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Projects</summary>
+            <a href="html/projects.html">Projects</a>
+            <a href="html/ppt-portfolio.html">Work Portfolio</a>
+            <a href="html/case.html">Case Competitions</a>
+            <a href="html/publication.html">Publications</a>
+            <a href="html/blog.html">Blogs</a>
+          </details>
+          
+          <details class="dropdown">
+            <summary>Contacts</summary>
+            <a href="html/bcard.html">Business Card</a>
+          </details>
+
+      </nav>
+    </header>
+
+    <script>
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("site-logo").innerHTML = data;
+        });
+    </script>
+
+    <!-- Portfolio Section -->
+    <section class="hero">
+      
+      <h2>Welcome to my Portfolio!</h2>
+
+        <br>
+
+          <h1>Hello, my name is</h1>
+          <h2>Ritvik Singh Sulekh</h2>
+
+          <h1>I am a <span id="role"></span></h1>
+
+        <br>
+
+          <h1>*My Career Highlights*</h1>
+
+        <!-- Summary Bar -->
+        <div class="summary-bar">
+          
+          <a href="html/education.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Highest Qualification</div>
+            <div class="value" id="highest-qualification">MBA (IIM Udaipur)</div>
+          </div>
+          </a>
+
+          <a href="html/experience.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Experience</div>
+            <div class="value" id="experience">~6 months</div>
+          </div>
+          </a>
+
+          <a href="html/internship.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Internships</div>
+            <div class="value" id="experience">1 years 4 months</div>
+          </div>
+          </a>
+
+          <a href="html/por.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">PORs</div>
+            <div class="value" id="por-count">#16</div>
+          </div>
+          </a>
+
+          <a href="html/projects.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Projects</div>
+            <div class="value" id="por-count">#4</div>
+          </div>
+          </a>
+
+          <a href="html/certificate.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Certifications</div>
+            <div class="value" id="projects-count">#14</div>
+          </div>
+          </a>
+
+          <a href="html/case.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Case Competitions</div>
+            <div class="value" id="por-count">#5</div>
+          </div>
+          </a>
+
+          <a href="html/freelancer.html" class="metric-link" target="_blank" rel="noopener noreferrer">
+          <div class="metric">
+            <div class="label">Freelance</div>
+            <div class="value" id="projects-count">#1</div>
+          </div>
+          </a>
+
+        </div>
+        
+          <!-- 3D Carousel Section -->
+          <div class="carousel-container">
+            <!-- Rotating ring -->
+            <div class="carousel" id="carousel">      
+                <div class="slide"><img src="assets/cards/card%201.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%202.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%203.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%204.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%205.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%206.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%207.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%208.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%209.png" alt=""></div>
+                <div class="slide"><img src="assets/cards/card%2010.png" alt=""></div>
+            </div>
+          </div>
+
+      </section>
+    </div>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            // If running on file:// just inject directly
+            if (location.protocol === "file:") {
+              document.getElementById("footer").innerHTML = `
+                <footer>
+                  <p>© 2025 My Website | All Rights Reserved</p>
+                </footer>
+              `;
+              return;
+            }
+
+        // Otherwise try fetch
+        fetch("html/footer.html")
+          .then(response => {
+            if (!response.ok) throw new Error("Footer file not found");
+            return response.text();
+          })
+
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+
+          .catch(error => {
+            console.error("Error loading footer:", error);
+            document.getElementById("footer").innerHTML =
+              "<footer><p style='color:red;'>⚠ Footer could not be loaded.</p></footer>";
+              });
+          }
+        );
+        
+        </script>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/favicon.js"></script>
+
+    <link rel="stylesheet" href="css/slider.css">
+    <script src="js/slider.js" defer></script>
+
+    <link rel="stylesheet" href="/css/bar.css">
+    
+    <link rel="stylesheet" href="/css/theme.css">
+    <script src="/js/theme.js"></script>
+
+    <!-- include the script -->
+    <script src="/js/role.js"></script>
+
+    <script src="/js/drop.js"></script>
+
+</body>
+</html>
+

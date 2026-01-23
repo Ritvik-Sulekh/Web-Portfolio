@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Blog</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      
+      <nav>
+
+        <!-- Switch Button -->
+        <label class="theme-toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+
+        <!-- Dark Mode Sky Layers -->
+        <div class="shooting-star"></div>
+        <div class="comet"></div>
+
+        <!-- Constellation Canvas -->
+        <div class="constellation">
+          <canvas id="constellationCanvas"></canvas>
+        </div>
+
+        <!-- Replaced site-logo div with h1 logo -->
+        <h1 class="logo"><a href="../../index.html">ORitvik</a></h1>
+        
+          <details class="dropdown">
+            <summary>Professional</summary>
+            <a href="../../html/resume.html">ATS Resumes</a>
+            <a href="../../html/experience.html">Work Experience</a>
+            <a href="../../html/internship.html">Internships</a>
+            <a href="../../html/por.html">PORs</a>
+            <a href="../../html/freelancer.html">Freelancer</a>
+            <a href="../../html/testimonial.html">Testimonials</a>
+            <a href="../../html/skills.html">Skills</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Education</summary>
+            <a href="../../html/education.html">Education</a>
+            <a href="../../html/certificate.html">Certifications</a>
+            <a href="../../html/iim.html" class="active">Top 0.2%</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Projects</summary>
+            <a href="../../html/projects.html">Projects</a>
+            <a href="../../html/ppt-portfolio.html">Work Portfolio</a>
+            <a href="../../html/case.html">Case Competitions</a>
+            <a href="../../html/publication.html">Publications</a>
+            <a href="../../html/blog.html">Blogs</a>
+          </details>
+          
+          <details class="dropdown">
+            <summary>Contacts</summary>
+            <a href="../../html/bcard.html">Business Card</a>
+          </details>
+
+      </nav>
+
+    </header>
+
+    <article class="blog-post">
+      <h2>My First Blog</h2>
+      <p class="blog-date">2026-01-10</p>
+      <p>
+        Welcome to my very first blog post! 🎉<br>
+        Here, I’ll be sharing updates, insights, and thoughts about my projects and journey.
+      </p>
+      <a href="../blog.html" class="btn">← Back to Blog</a>
+    </article>
+
+    <div id="footer"></div>
+  </div>
+
+  <script>
+    fetch("../header.html")
+      .then(res => res.text())
+      .then(data => { document.getElementById("site-logo").innerHTML = data; });
+
+    fetch("../footer.html")
+      .then(res => res.text())
+      .then(data => { document.getElementById("footer").innerHTML = data; });
+  </script>
+
+  <script src="js/script.js"></script>
+  
+  <script src="/js/favicon.js"></script>
+
+  <link rel="stylesheet" href="../../css/theme.css">
+  <script src="../../js/theme.js"></script>
+
+  <script src="/js/drop.js"></script>
+  
+</body>
+</html>

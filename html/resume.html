@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATS Resumes</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <!-- Navbar -->
+    <header>
+      <nav>
+        
+        <!-- Switch Button -->
+        <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+        </label>
+
+        <!-- Dark Mode Sky Layers -->
+        <div class="shooting-star"></div>
+        <div class="comet"></div>
+
+        <!-- Constellation Canvas -->
+        <div class="constellation">
+          <canvas id="constellationCanvas"></canvas>
+        </div>
+
+        <!-- Replaced site-logo div with h1 logo -->
+        <h1 class="logo"><a href="../index.html">ORitvik</a></h1>
+        
+          <details class="dropdown">
+            <summary>Professional</summary>
+            <a href="resume.html">ATS Resumes</a>
+            <a href="experience.html">Work Experience</a>
+            <a href="internship.html">Internships</a>
+            <a href="por.html">PORs</a>
+            <a href="freelancer.html">Freelancer</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="skills.html">Skills</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Education</summary>
+            <a href="education.html">Education</a>
+            <a href="certificate.html">Certifications</a>
+            <a href="iim.html" class="active">Top 0.2%</a>
+          </details>
+
+          <details class="dropdown">
+            <summary>Projects</summary>
+            <a href="projects.html">Projects</a>
+            <a href="ppt-portfolio.html">Work Portfolio</a>
+            <a href="case.html">Case Competitions</a>
+            <a href="publication.html">Publications</a>
+            <a href="blog.html">Blogs</a>
+          </details>
+          
+          <details class="dropdown">
+            <summary>Contacts</summary>
+            <a href="bcard.html">Business Card</a>
+          </details>
+          
+      </nav>
+    </header>
+
+    <script>
+      fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+      document.getElementById("site-logo").innerHTML = data;
+      });
+    </script>
+
+    <!-- PPT / PDF Section -->
+    <section class="hero">
+      <h2>My ATS Friendly Resumes</h2>
+
+      <!-- Embedded PDF from Google Drive -->
+        <section class="resume-section">
+            <div class="resume-container" style="display: flex; flex-direction: column; gap: 40px;">
+
+                <!-- PDF 1 -->
+                <div class="iframe-container" style="width: 100%;">
+                    <iframe src="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/preview"
+                            frameborder="0"
+                            width="100%"
+                            height="100vh"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="btn-container">
+                    <a href="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/view" target="_blank" class="btn">Download Resume 1</a>
+                </div>
+
+                <!-- PDF 2 -->
+                <div class="iframe-container" style="width: 100%;">
+                    <iframe src="https://drive.google.com/file/d/1-hDlRx2_X5EhZn_70PKejjkqjYdHOoCx/preview"
+                            frameborder="0"
+                            width="100%"
+                            height="100vh"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="btn-container">
+                    <a href="https://drive.google.com/file/d/1-hDlRx2_X5EhZn_70PKejjkqjYdHOoCx/view" target="_blank" class="btn">Download Resume 2</a>
+                </div>
+
+            </div>
+        </section>
+  </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <script>
+        fetch("footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      </script>
+    </div>
+
+  <script src="js/script.js"></script>
+  
+  <script src="/js/favicon.js"></script>
+
+  <link rel="stylesheet" href="../css/theme.css">
+  <script src="../js/theme.js"></script>
+
+  <script src="/js/drop.js"></script>
+  
+</body>
+</html>
