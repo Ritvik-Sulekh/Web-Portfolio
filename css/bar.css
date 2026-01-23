@@ -29,8 +29,8 @@
 /* ---------- Dark Mode (manual toggle ONLY) ---------- */
 body.dark-mode {
   /* Dark fallback (mobile-safe) */
-  --card-bg: rgba(18, 18, 18, 0.88);
-  --card-border: rgba(255, 255, 255, 0.18);
+  --card-bg: rgba(10, 15, 35, 0.98); /* solid dark for mobile */
+  --card-border: rgba(160, 200, 255, 0.18);
 
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.85);
@@ -78,23 +78,22 @@ body.dark-mode {
 }
 
 /* ===============================
-   GLASS EFFECT (ONLY IF SUPPORTED)
+   GLASS EFFECT (DESKTOP ONLY)
    =============================== */
-
-@media (max-width: 768px) {
-  .dark .card {
-    background: linear-gradient(
-      160deg,
-      rgba(10, 15, 35, 0.98),
-      rgba(5, 8, 25, 0.98)
-    ) !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-
+@media (min-width: 769px) {
+  body.dark-mode .metric {
+    background: rgba(10, 15, 35, 0.85); /* dark glass */
     border: 1px solid rgba(160, 200, 255, 0.18);
-    box-shadow:
-      0 8px 22px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  body:not(.dark-mode) .metric {
+    background: rgba(255, 255, 255, 0.15); /* light glass */
+    border: 1px solid rgba(255, 105, 180, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
