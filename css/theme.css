@@ -656,11 +656,14 @@ input:checked + .slider::after {
    Dark Mode
 ------------------------------ */
 @media (prefers-color-scheme: dark) {
-  .testimonial-row {
-    opacity: 0.7; /* keep slightly faded by default */
+  body:not(.light-mode) .testimonial-row {
+    opacity: 0.7;
   }
-  .testimonial-box {
-    background: #fff; /* keep white even in dark mode */
-    color: #000;      /* text color can be black or dark */
+
+  body:not(.light-mode) .testimonial-box {
+    background: rgba(255,255,255,0.08);
+    color: var(--text-light);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.16);
   }
 }
