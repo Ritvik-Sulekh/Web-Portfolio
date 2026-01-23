@@ -1,20 +1,24 @@
 /* ================= COUNT BOX ================= */
 
-.count-box {
-  max-width: 260px;
-  margin: 20px auto;
+/* Base logo text */
+body.dark-mode .logo a {
+  background: linear-gradient(90deg, var(--moon-blue), var(--starlight-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  padding: 4px 10px;       /* space for glass box */
+  border-radius: 12px;     /* rounded corners for glass */
+}
 
-  padding: 18px;
-  text-align: center;
-
-  background: rgba(255, 255, 255, 0.15);
-  border: 1.5px solid rgba(255, 105, 180, 0.6);
-  border-radius: 14px;
-
+/* Hover – glass box around logo */
+body.dark-mode .logo a:hover {
+  background: rgba(255, 255, 255, 0.08); /* semi-transparent glass */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
+  border: 1.5px solid rgba(255, 105, 180, 0.6); /* pinkish neon border */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  -webkit-background-clip: text;  /* keep gradient text on top */
+  -webkit-text-fill-color: transparent;
 }
 
 /* Label */
