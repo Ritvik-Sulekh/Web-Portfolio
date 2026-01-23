@@ -26,12 +26,12 @@ html, body {
   padding: 0;
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #1fbf8f;
+  color: #68fe6a;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* =========================================================
-   DARK MODE – MOONLIGHT STARGAZING THEME
+   DARK MODE – MOONLIGHT THEME
    ========================================================= */
 
 body.dark-mode {
@@ -129,7 +129,6 @@ body.dark-mode .constellation {
   display: block;
 }
 
-/* Shooting star */
 .shooting-star {
   position: fixed;
   left: -300px;
@@ -156,7 +155,7 @@ body.dark-mode .constellation {
 }
 
 /* =========================================================
-   GLASS SECTIONS (CONSISTENT)
+   GLASS SECTIONS
    ========================================================= */
 
 body.dark-mode header,
@@ -166,136 +165,70 @@ body.dark-mode .resume-container {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 /* =========================================================
-   NAVBAR – DARK MODE OVERRIDES (NO LAYOUT CHANGE)
+   NAVBAR & DROPDOWN
    ========================================================= */
 
 body.dark-mode header {
-  background: rgba(255, 255, 255, 0.06); /* transparent glass */
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 1000;
-  padding: 1rem 2rem;  /* same as light mode */
+  padding: 1rem 2rem;
 }
 
 body.dark-mode nav {
   display: flex;
-  align-items: center;  /* vertical center */
+  align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
-body.dark-mode .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  flex: 1;
-}
-
-/* Base logo */
 body.dark-mode .logo a {
-  background: linear-gradient(
-    90deg,
-    var(--moon-blue),
-    var(--starlight-pink)
-  );
+  background: linear-gradient(90deg, var(--moon-blue), var(--starlight-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
   text-shadow:
     0 0 4px rgba(159, 220, 255, 0.8),
-    0 0 6px rgba(255, 183, 220, 0.6); /* subtle neon glow */
+    0 0 6px rgba(255, 183, 220, 0.6);
 }
 
-/* Hover logo */
+/* Hover – border box glow around logo text */
 body.dark-mode .logo a:hover {
-  background: linear-gradient(
-    90deg,
-    var(--starlight-pink),
-    var(--moon-blue)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* keep the same subtle glow */
-  border: 1.5px solid rgba(160, 200, 255, 0.55);
-  text-shadow:
-    0 0 6px rgba(255, 183, 220, 0.85),
-    0 0 8px rgba(159, 220, 255, 0.7);
-}
-
-/* Nav links */
-body.dark-mode .nav-links a {
-  color: var(--text-light); /* fallback */
-  border-color: transparent;
-  margin: 0; /* remove extra margins from responsive adjustments */
-  font-size: 0.9rem; /* smaller text */
-  display: flex;
-  flex-wrap: wrap; /* ✅ wraps on smaller screens */
-}
-
-/* Nav link hover – neon glass */
-body.dark-mode .nav-links a:hover {
-  background: linear-gradient(
-    90deg,
-    var(--moon-blue),
-    var(--starlight-pink)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: 1.5px solid rgba(160, 200, 255, 0.55);
+  border: 2px solid rgba(159, 220, 255, 0.8); /* neon blue border */
   box-shadow:
-    0 0 10px rgba(160, 200, 255, 0.35),
-    0 0 14px rgba(255, 180, 220, 0.25);
+    0 0 6px rgba(159, 220, 255, 0.8),
+    0 0 12px rgba(255, 183, 220, 0.6);       /* subtle neon glow */
+  background: linear-gradient(90deg, var(--moon-blue), var(--starlight-pink)); /* text stays gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ------------------------------
-   Responsive Navbar Dark Mode
------------------------------- */
-
-/* Medium screens (≤ 992px) */
-@media (max-width: 992px) {
-  body.dark-mode nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  body.dark-mode .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    flex: unset;
-    margin-top: 10px;
-  }
+body.dark-mode .nav-links a {
+  color: #1ecaff;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--moon-blue), var(--starlight-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.3s ease;
 }
 
-/* Small screens (≤ 768px) */
-@media (max-width: 768px) {
-  body.dark-mode .logo {
-    flex: 1 1 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  body.dark-mode .nav-links {
-    justify-content: center;
-    gap: 10px;
-    flex: 1 1 100%;
-  }
-}
-
-/* Extra small screens (≤ 600px) */
-@media (max-width: 600px) {
-  body.dark-mode .logo a {
-    font-size: 1.2rem;
-  }
-
-  body.dark-mode .nav-links a {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
+body.dark-mode .nav-links a:hover {
+  background: linear-gradient(90deg, var(--starlight-pink), var(--moon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 0 0 10px rgba(160,200,255,0.35), 0 0 14px rgba(255,180,220,0.25);
 }
 
 /* =========================================================
@@ -324,222 +257,73 @@ body.dark-mode .btn:hover {
 }
 
 /* =========================================================
-   BLOG – FIX WHITE BACKGROUND
+   GLASS SECTIONS (BLOG, TESTIMONIALS, BUSINESS)
    ========================================================= */
 
-body.dark-mode .blog {
-  background: linear-gradient(
-    160deg,
-    rgba(14, 32, 74, 0.92),
-    rgba(8, 14, 38, 0.88)
-  );
-  border: 1px solid rgba(160,200,255,0.22);
+body.dark-mode .blog,
+body.dark-mode .blog-card,
+body.dark-mode .testimonial-box,
+body.dark-mode .testimonial-count-box,
+body.dark-mode .testimonial-slider-wrapper,
+body.dark-mode .business-card,
+body.dark-mode .funnel-section,
+body.dark-mode .grid-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
   backdrop-filter: blur(10px);
-  box-shadow:
-    0 10px 28px rgba(0,0,0,0.55),
-    0 0 22px rgba(160,200,255,0.25);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45), 0 0 18px rgba(160,200,255,0.25);
+  border-radius: 12px;
+  transition: 0.2s ease;
 }
 
 body.dark-mode .blog h2,
 body.dark-mode .blog h3,
 body.dark-mode .blog p,
-body.dark-mode .blog li {
-  color: var(--text-light);
-}
-
-body.dark-mode .blog-card {
-  background: rgba(255, 255, 255, 0.10); /* same glass, slightly stronger */
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 12px; /* unchanged */
-  padding: 20px;       /* unchanged */
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.45),
-    0 0 18px rgba(160, 200, 255, 0.25);
-  transition: transform 0.2s;
-}
-
-/* =========================================================
-   TESTIMONIALS – BLUE & PINK OUTLINE
-   ========================================================= */
-
-body.dark-mode .testimonial-box {
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid transparent;
-  border-image: linear-gradient(
-    135deg,
-    var(--moon-blue),
-    var(--starlight-pink)
-  ) 1;
-  box-shadow: 0 6px 22px rgba(160,200,255,0.35);
-}
-
-body.dark-mode .testimonial-name {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 6px;
-
-  /* Base text */
-  color: #ffffff;
-  font-weight: 600;
-
-  /* Subtle frosted backing */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(6px);
-
-  /* TRUE neon shine */
-  text-shadow:
-    0 0 4px rgba(160, 210, 255, 0.9),
-    0 0 10px rgba(160, 210, 255, 0.7),
-    0 0 16px rgba(255, 160, 210, 0.6),
-    0 0 22px rgba(255, 160, 210, 0.45);
-}
-
-/* =========================================================
-   TESTIMONIAL SECTION – DARK MODE (TRANSPARENT GLASS)
-   ========================================================= */
-
-body.dark-mode .testimonial-section h2 {
-  color: var(--moon-blue);
-}
-
-/* Count box – glass, not gradient */
-body.dark-mode .testimonial-count-box {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: var(--text-light);
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.45),
-    0 0 18px rgba(160, 200, 255, 0.25);
-}
-
-/* Slider wrapper – subtle glass separation */
-body.dark-mode .testimonial-slider-wrapper {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-}
-
-/* =========================================================
-   BUSINESS CARD – REMOVE GREEN / OLD PINK
-   ========================================================= */
-
-body.dark-mode .business-card {
-  background: linear-gradient(
-    160deg,
-    rgba(255,255,255,0.12),
-    rgba(255,255,255,0.04)
-  );
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow:
-    0 10px 30px rgba(160,200,255,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.12);
-}
-
+body.dark-mode .blog li,
+body.dark-mode .testimonial-name,
+body.dark-mode .funnel-step,
 body.dark-mode .business-card p,
-body.dark-mode .business-card span {
+body.dark-mode .business-card span,
+body.dark-mode .grid-card p,
+body.dark-mode .grid-card span {
   color: var(--text-light);
 }
 
-body.dark-mode .card-right h3 {
-  background: linear-gradient(
-    90deg,
-    var(--moon-blue),
-    var(--starlight-pink)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* =========================================================
-   FUNNEL SECTION – DARK MODE (GLASS / MOONLIGHT)
+   FUNNEL STEPS
    ========================================================= */
 
-body.dark-mode .funnel-section {
-  background: rgba(255, 255, 255, 0.08); /* glass, not white */
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(10px);
-}
-
-body.dark-mode .funnel-section h2 {
-  color: var(--moon-blue); /* remove neon green */
-}
-
-body.dark-mode .funnel-section p {
-  color: var(--text-muted);
-}
+body.dark-mode .step1 { background: linear-gradient(135deg, #7ecbff, #5b8dff); }
+body.dark-mode .step2 { background: linear-gradient(135deg, #6ab6ff, #4f7cff); }
+body.dark-mode .step3 { background: linear-gradient(135deg, #5fa0ff, #3e63ff); }
+body.dark-mode .step4 { background: linear-gradient(135deg, #4c86ff, #2f4bcc); }
+body.dark-mode .step5 { background: linear-gradient(135deg, #3a6dff, #2539a6); }
+body.dark-mode .step6 { background: linear-gradient(135deg, var(--moon-blue), var(--starlight-pink)); }
 
 /* =========================================================
-   FUNNEL STEPS – DARK MODE COLORS
-   (same widths & structure)
+   HOVER EFFECTS
    ========================================================= */
 
-body.dark-mode .funnel-step {
-  color: var(--text-light);
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.55),
-    0 0 18px rgba(160, 200, 255, 0.25);
-}
-
-/* Moonlight gradient progression (top → bottom) */
-body.dark-mode .step1 {
-  background: linear-gradient(135deg, #7ecbff, #5b8dff);
-}
-
-body.dark-mode .step2 {
-  background: linear-gradient(135deg, #6ab6ff, #4f7cff);
-}
-
-body.dark-mode .step3 {
-  background: linear-gradient(135deg, #5fa0ff, #3e63ff);
-}
-
-body.dark-mode .step4 {
-  background: linear-gradient(135deg, #4c86ff, #2f4bcc);
-}
-
-body.dark-mode .step5 {
-  background: linear-gradient(135deg, #3a6dff, #2539a6);
-}
-
-body.dark-mode .step6 {
-  background: linear-gradient(
-    135deg,
-    var(--moon-blue),
-    var(--starlight-pink)
-  );
-}
-
-/* Crown visibility in dark mode */
-body.dark-mode .step6::after {
-  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.8));
-}
-
-/* Hover – same behavior, softer glow */
-body.dark-mode .funnel-step:hover {
-  box-shadow:
-    0 0 28px rgba(160, 200, 255, 0.45),
-    0 0 14px rgba(255, 180, 220, 0.25);
-}
-
-/* =========================================================
-   ICON / GRID CARDS
-   ========================================================= */
-
-body.dark-mode .grid-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 6px 18px rgba(160,200,255,0.4);
-  transition: 0.3s ease;
-}
-
-body.dark-mode .grid-card:hover,
+body.dark-mode .card-right h3,
+body.dark-mode .step6::after,
 body.dark-mode .testimonial-box:hover,
+body.dark-mode .grid-card:hover,
 body.dark-mode .business-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 24px rgba(160,200,255,0.55);
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .shooting-star,
+  .comet,
+  body.dark-mode::before {
+    animation: none;
+  }
 }
 
 /* =========================================================
@@ -640,30 +424,3 @@ input:checked + .slider::after {
   color: rgba(255,255,255,0.6);
 }
 
-/* =========================================================
-   REDUCED MOTION SUPPORT
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .shooting-star,
-  .comet,
-  body.dark-mode::before {
-    animation: none;
-  }
-}
-
-/* ------------------------------
-   Dark Mode
------------------------------- */
-@media (prefers-color-scheme: dark) {
-  body:not(.light-mode) .testimonial-row {
-    opacity: 0.7;
-  }
-
-  body:not(.light-mode) .testimonial-box {
-    background: rgba(255,255,255,0.08);
-    color: var(--text-light);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.16);
-  }
-}
