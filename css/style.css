@@ -238,8 +238,8 @@ body.dark-mode {
   backdrop-filter: blur(5px);
 }
 
-.hero h1 {
-  color: var(--moon-blue); /* blue from your CSS variable */
+h1 {
+  color: #9fdcff;
 }
 
 .hero h2 {
