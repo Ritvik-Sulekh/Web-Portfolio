@@ -160,18 +160,3 @@ body.dark-mode {
     flex: 1 1 100%;
   }
 }
-
-/* ===============================
-   SYSTEM DARK MODE (NO OVERRIDES)
-   =============================== */
-
-@media (prefers-color-scheme: dark) {
-  body:not(.light-mode):not(.dark-mode) {
-    --card-bg: rgba(18, 18, 18, 0.88);
-    --card-border: rgba(255, 255, 255, 0.18);
-
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.85);
-    --text-dark: #ffffff;
-  }
-}
