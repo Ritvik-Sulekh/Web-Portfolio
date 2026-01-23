@@ -1,3 +1,7 @@
+/* =========================================================
+   CARDS.CSS — GLASS CARDS
+   ========================================================= */
+
 /* ================================
    Card Container
 ================================ */
@@ -15,13 +19,8 @@
    Glass Card – LIGHT MODE (default)
 ================================ */
 .card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0.05)
-  );
-
-  border: 1.5px solid rgba(255, 105, 180, 0.6);
+  background: rgba(255, 255, 255, 0.15); /* light glass */
+  border: 1.5px solid rgba(255, 105, 180, 0.6); /* pink border */
   border-radius: 15px;
   padding: 20px;
 
@@ -48,13 +47,13 @@
 .card h2 {
   margin: 0;
   font-size: 1.5em;
-  color: #49d150;
+  color: #49d150; /* green */
 }
 
 .card h3 {
   margin: 6px 0;
   font-size: 1.2em;
-  color: #ff69b4;
+  color: #ff69b4; /* pink */
 }
 
 .card .dates,
@@ -84,68 +83,38 @@
 }
 
 /* ================================
-   DARK MODE — YOUR BLOG GLASS STYLE
+   DARK MODE (when .dark exists)
 ================================ */
-.dark .card {
-  /* Matches your .blog gradient */
-  background: linear-gradient(
-    160deg,
-    rgba(14, 32, 74, 0.92),
-    rgba(8, 14, 38, 0.88)
-  );
-
-  border: 1px solid rgba(160, 200, 255, 0.22);
-
+body.dark-mode .card {
+  background: rgba(10, 15, 35, 0.15); /* dark glass */
+  border: 1.5px solid rgba(160, 200, 255, 0.18);
   box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.55),
-    0 0 22px rgba(160, 200, 255, 0.25);
+    0 10px 40px rgba(0, 0, 0, 0.7),
+    inset 0 0 1px rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-/* ================================
-   DARK MODE TEXT
-================================ */
-.dark .card h2,
-.dark .card h3,
-.dark .card p,
-.dark .card li,
-.dark .card .dates,
-.dark .card .skills {
-  color: #eaf2ff; /* equivalent to --text-light */
+/* Dark text & accents */
+body.dark-mode .card h2 {
+  color: #49d150;
 }
 
-/* Preserve accent colors */
-.dark .card h2 {
-  color: #7df58a;
+body.dark-mode .card h3,
+body.dark-mode .card a {
+  color: #ff69b4;
 }
 
-.dark .card h3,
-.dark .card a {
-  color: #ff82c6;
+body.dark-mode .card p,
+body.dark-mode .card li,
+body.dark-mode .card .dates,
+body.dark-mode .card .skills {
+  color: #e5e5e5;
 }
 
-.dark .card a:hover {
+body.dark-mode .card a:hover {
   color: #69cbff;
-}
-
-/* ================================
-   Glass effect ONLY when supported
-   (prevents white cards on mobile)
-================================ */
-@media (max-width: 768px) {
-  .dark .card {
-    background: linear-gradient(
-      160deg,
-      rgba(10, 15, 35, 0.98),
-      rgba(5, 8, 25, 0.98)
-    ) !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-
-    border: 1px solid rgba(160, 200, 255, 0.18);
-    box-shadow:
-      0 8px 22px rgba(0, 0, 0, 0.65);
-  }
 }
 
 /* ================================
