@@ -31,8 +31,8 @@ body.dark-mode {
   --card-bg: rgba(10, 15, 35, 0.15); /* translucent dark glass */
   --card-border: rgba(160, 200, 255, 0.18);
 
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-primary: #94dafd;
+  --text-secondary: rgb(254, 124, 193);
   --text-dark: #ffffff;
 
   --accent: #ff69b4;
