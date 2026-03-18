@@ -12,30 +12,6 @@
 
   let activeItem = null;
 
-  /* ── Move all panels inside their nav items on mobile ── */
-  function setupMobilePanels() {
-    if (!isMobile()) return;
-    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
-      const key   = item.dataset.menu;
-      const panel = mega.querySelector(`[data-panel="${key}"]`);
-      if (panel && !item.contains(panel)) {
-        item.appendChild(panel);
-      }
-    });
-  }
-
-  /* ── Move panels back to mega on desktop ── */
-  function setupDesktopPanels() {
-    if (isMobile()) return;
-    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
-      const key   = item.dataset.menu;
-      const panel = item.querySelector(`[data-panel="${key}"]`);
-      if (panel) {
-        mega.insertBefore(panel, mega.querySelector('.mega__backdrop'));
-      }
-    });
-  }
-
   /* ── Desktop: open panel on hover ── */
   function openPanel(item) {
     if (activeItem === item) return;
@@ -80,57 +56,93 @@
 
   backdrop.addEventListener('click', closePanel);
 
-  /* ── Mobile: burger toggle ── */
+  /* ── Mobile burger toggle ── */
   burger.addEventListener('click', function() {
     const open = navLinks.classList.toggle('open');
     burger.classList.toggle('open', open);
 
     if (open) {
-      setupMobilePanels();
-      document.body.style.overflow = 'hidden'; /* prevent background scroll */
+      document.body.style.overflow = 'hidden';
     } else {
-      /* close all panels */
-      document.querySelectorAll('.mega__panel').forEach(p => p.classList.remove('visible'));
-      document.querySelectorAll('.navbar__item').forEach(i => i.classList.remove('active'));
+      closeAllMobilePanels();
       document.body.style.overflow = '';
     }
   });
 
-  /* ── Mobile: tap to expand panel ── */
-  navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
-    item.querySelector('.navbar__link').addEventListener('click', function(e) {
-      if (!isMobile()) return;
-      e.preventDefault();
+  /* ── Mobile: close all panels ── */
+  function closeAllMobilePanels() {
+    navLinks.querySelectorAll('.navbar__item').forEach(function(item) {
+      item.classList.remove('active');
+      const sub = item.querySelector('.navbar__submenu');
+      if (sub) sub.style.display = 'none';
+    });
+  }
 
-      const panel  = item.querySelector('.mega__panel');
+  /* ── Mobile: build submenu inside each item ── */
+  function buildMobileMenus() {
+    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
+      if (item.querySelector('.navbar__submenu')) return; /* already built */
+
+      const key   = item.dataset.menu;
+      const panel = mega.querySelector(`[data-panel="${key}"]`);
       if (!panel) return;
 
-      const isOpen = panel.classList.contains('visible');
+      /* Clone the panel links into a submenu div */
+      const sub = document.createElement('div');
+      sub.className = 'navbar__submenu';
+      sub.style.display = 'none';
 
-      /* close all */
-      document.querySelectorAll('.mega__panel').forEach(p => p.classList.remove('visible'));
-      navLinks.querySelectorAll('.navbar__item').forEach(i => i.classList.remove('active'));
+      /* Copy all mega items */
+      const items = panel.querySelectorAll('.mega__item');
+      items.forEach(function(mi) {
+        const link = document.createElement('a');
+        link.href      = mi.getAttribute('href');
+        link.className = 'navbar__subitem';
+        const icon = mi.querySelector('.mega__icon');
+        const name = mi.querySelector('.mega__name');
+        const desc = mi.querySelector('.mega__desc');
+        link.innerHTML = `
+          <span class="navbar__subicon">${icon ? icon.textContent : ''}</span>
+          <span>
+            <span class="navbar__subname">${name ? name.textContent : ''}</span>
+            <span class="navbar__subdesc">${desc ? desc.textContent : ''}</span>
+          </span>
+        `;
+        sub.appendChild(link);
+      });
 
-      /* open this one if it was closed */
-      if (!isOpen) {
-        panel.classList.add('visible');
-        item.classList.add('active');
-      }
+      item.appendChild(sub);
+
+      /* Tap to toggle */
+      item.querySelector('.navbar__link').addEventListener('click', function(e) {
+        if (!isMobile()) return;
+        e.preventDefault();
+
+        const isOpen = sub.style.display === 'block';
+
+        /* close all */
+        closeAllMobilePanels();
+
+        if (!isOpen) {
+          sub.style.display = 'block';
+          item.classList.add('active');
+        }
+      });
     });
-  });
+  }
 
-  /* ── Resize handler ── */
+  /* ── Resize ── */
   window.addEventListener('resize', function() {
     if (!isMobile()) {
-      setupDesktopPanels();
       navLinks.classList.remove('open');
       burger.classList.remove('open');
       document.body.style.overflow = '';
+      closePanel();
     }
   });
 
   /* ── Init ── */
-  setupMobilePanels();
+  buildMobileMenus();
 
   /* ── Active page highlight ── */
   const page = window.location.pathname.split('/').pop() || 'index.html';
