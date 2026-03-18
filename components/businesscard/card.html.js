@@ -15,7 +15,7 @@ function renderCard() {
           <div class="card__logo">
             <img src="${b}assets/logo.png" alt="Logo">
           </div>
-          <h1 class="card__brand">My Portfolio</h1>
+          <h1 class="card__brand">ORitvik</h1>
         </div>
 
         <div class="card__tagline">&#9733; Resilience turns setbacks into Bounce-backs &#9733;</div>
