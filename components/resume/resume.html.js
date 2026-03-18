@@ -75,13 +75,13 @@ function renderResume() {
         <!-- Right: Preview panel -->
         <div class="resume__preview">
           <div class="resume__preview-bar">
-            <span class="resume__preview-label" id="previewLabel">General MBA Resume</span>
-            <a href="https://drive.google.com/file/d/YOUR_FILE_ID_1/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
+            <span class="resume__preview-label" id="previewLabel">General</span>
+            <a href="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
           </div>
           <iframe
             class="resume__frame"
             id="resumeFrame"
-            src="https://drive.google.com/file/d/YOUR_FILE_ID_1/preview"
+            src="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/preview"
             allow="autoplay">
           </iframe>
         </div>
