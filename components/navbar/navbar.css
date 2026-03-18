@@ -194,8 +194,8 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
 
-  .navbar { padding: 0 1.25rem; height: 1000px; }
-  .navbar__links.open { z-index: 9998; }
+  .navbar { padding: 0 1.25rem; height: 999px; }
+  .navbar__links.open { z-index: 1000; }
   .navbar__cta   { display: none; }
   .navbar__burger { display: flex; }
 
