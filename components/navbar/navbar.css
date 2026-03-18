@@ -194,8 +194,8 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
 
-  .navbar { padding: 0 1.25rem; height: 999px; }
-  .navbar__links.open { z-index: 1000; }
+  .navbar { padding: 0 1.25rem; height: 60px; }
+  .navbar__links.open { z-index: 999; }
   .navbar__cta   { display: none; }
   .navbar__burger { display: flex; }
 
@@ -204,7 +204,7 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 60px; left: 0; right: 0; bottom: 0;
+  top: 1000px; left: 0; right: 0; bottom: 0;
   background: #ffffff;
   overflow-y: auto;
   overflow-x: hidden;
