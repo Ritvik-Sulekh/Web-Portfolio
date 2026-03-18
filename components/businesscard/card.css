@@ -1,0 +1,143 @@
+/* ── Card wrapper — fixed business card size ── */
+.card {
+  width: 638px;
+  height: 340px;
+  background: #f0f0eb;
+  border: 1px solid #ccc;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Inner border ── */
+.card__inner {
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem 0.9rem;
+}
+
+/* ── Top right: Name & title ── */
+.card__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.card__name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a4a1a;   /* dark green */
+  line-height: 1.2;
+}
+
+.card__title {
+  font-size: 0.68rem;
+  color: #2d6a2d;
+  letter-spacing: 0.04em;
+  margin-top: 0.4rem;
+}
+
+/* ── Center: Logo + Brand ── */
+.card__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.card__logo {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.card__logo img {
+  height: 75px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.card__brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1a4a1a;         /* dark green like reference */
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* ── Tagline banner — red strip like reference ── */
+.card__tagline {
+  background: #c0392b;    /* red banner */
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 1rem;
+  text-align: center;
+  margin: 0 -1.2rem;      /* bleeds to edges */
+}
+
+/* ── Bottom: Contact ── */
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  border-top: 2px solid #2d6a2d;   /* green line */
+  padding-top: 0.6rem;
+  text-align: center;
+}
+
+.card__address,
+.card__contact {
+  font-size: 0.7rem;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+/* ── Page: center the card ── */
+.card-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d0d0d0;
+  padding: 2rem;
+}
+
+.card__bottom a {
+  color: #1a4a1a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 74, 26, 0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.card__bottom a:hover {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* ── Mobile scale down ── */
+@media (max-width: 680px) {
+  .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 638 / 340;
+  }
+  .card__brand { font-size: 1.6rem; }
+  .card__name  { font-size: 1.1rem; }
+}

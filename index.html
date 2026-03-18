@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <script>const BASE_PATH = '';</script>
+  <script src="data/profile.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f8f8f8; font-family: 'Inter', sans-serif; }
+    .page { padding-top: 88px; min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-slot"></div>
+  <div class="page">
+    <div id="summary-slot"></div>
+    <div id="deckcards-slot"></div>
+  </div>
+
+  <script src="components/navbar/navbar.html.js"></script>
+  <script src="components/summary/summary.html.js"></script>
+  <script src="components/deckcards/deckcards.html.js"></script>
+
+  <script>
+    document.getElementById('navbar-slot').innerHTML    = renderNavbar();
+    document.getElementById('summary-slot').innerHTML   = renderSummary();
+    document.getElementById('deckcards-slot').innerHTML = renderDeckcards();
+  </script>
+
+  <script src="components/navbar/navbar.js"></script>
+  <script src="components/summary/summary.js"></script>
+  <script src="components/deckcards/deckcards.js"></script>
+
+</body>
+</html>

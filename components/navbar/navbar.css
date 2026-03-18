@@ -1,0 +1,299 @@
+/* components/navbar/navbar.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 68px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo */
+.navbar__logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #16a34a;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+.navbar__logo:hover { color: #FFB6C1; }
+
+/* Links row */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+.navbar__item { position: relative; }
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #16a34a;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+.navbar__link:hover,
+.navbar__item.active > .navbar__link {
+  background: #f0fdf4;
+  color: #FFB6C1;
+}
+
+.navbar__arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.navbar__item.active > .navbar__link .navbar__arrow {
+  transform: rotate(90deg);
+}
+
+/* CTA */
+.navbar__cta {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  background: #16a34a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+.navbar__cta:hover {
+  background: #FFB6C1;
+  transform: translateY(-1px);
+}
+
+/* Burger */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  padding: 6px;
+  border: none; background: none;
+  cursor: pointer; border-radius: 6px;
+  transition: background 0.18s;
+  z-index: 1001;
+}
+.navbar__burger:hover { background: #f0fdf4; }
+.navbar__burger span {
+  display: block;
+  width: 100%; height: 2px;
+  background: #16a34a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.navbar__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__burger.open span:nth-child(2) { opacity: 0; }
+.navbar__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mega menu — desktop ── */
+.mega {
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.mega__panel {
+  display: none;
+  padding: 2rem 3rem 2.5rem;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+  border-top: 2px solid #16a34a;
+  animation: megaFadeIn 0.2s ease;
+  pointer-events: all;
+}
+.mega__panel.visible { display: block; }
+
+@keyframes megaFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mega__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #16a34a;
+  margin-bottom: 1.25rem;
+}
+
+.mega__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.mega__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+.mega__item:hover { background: #f0fdf4; }
+
+.mega__icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.mega__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #16a34a;
+  margin-bottom: 0.2rem;
+}
+.mega__desc {
+  font-size: 0.775rem;
+  color: #888;
+  line-height: 1.4;
+}
+.mega__item:hover .mega__name { color: #FFB6C1; }
+
+/* Backdrop */
+.mega__backdrop {
+  display: none;
+  position: fixed;
+  top: 68px; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+.mega__backdrop.visible { display: block; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 1.25rem;
+    height: 60px;
+  }
+
+  /* Hide desktop links & CTA */
+  .navbar__links { display: none; }
+  .navbar__cta   { display: none; }
+  .navbar__burger { display: flex; }
+
+  /* Mobile menu — full screen overlay */
+  .navbar__links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    position: fixed;
+    top: 60px; left: 0; right: 0; bottom: 0;  /* full screen */
+    background: #ffffff;
+    overflow-y: auto;                           /* scrollable */
+    padding: 1rem 0 2rem;
+    z-index: 1000;
+    box-shadow: none;
+    border-top: 2px solid #16a34a;
+  }
+
+  /* Each mobile nav item */
+  .navbar__item {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .navbar__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0;
+    color: #1a1a1a;
+  }
+  .navbar__link:hover {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
+
+  /* Mobile mega panel — inline below each item */
+  .mega {
+    position: static;
+    pointer-events: all;
+  }
+
+  .mega__panel {
+    display: none;
+    border-top: none;
+    border-left: 3px solid #16a34a;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin: 0 1.5rem 0.5rem;
+    box-shadow: none;
+    background: #f9fdf9;
+    border-radius: 0 8px 8px 0;
+    animation: none;
+    pointer-events: all;
+  }
+
+  .mega__panel.visible {
+    display: block;
+  }
+
+  .mega__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .mega__item {
+    padding: 0.75rem 0.75rem;
+    border-radius: 6px;
+    gap: 0.75rem;
+  }
+
+  .mega__icon { font-size: 1.1rem; }
+
+  .mega__name {
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .mega__desc { font-size: 0.72rem; }
+
+  /* Hide backdrop on mobile */
+  .mega__backdrop { display: none !important; }
+
+  /* Show CTA at bottom of mobile menu */
+  .navbar__links.open::after {
+    content: '';
+    display: block;
+    height: 80px;
+  }
+}
