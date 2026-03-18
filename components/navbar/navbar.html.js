@@ -116,7 +116,7 @@ function renderNavbar() {
       <div class="mega__panel" data-panel="tools">
         <div class="mega__label">Quick Access</div>
         <div class="mega__grid">
-          <a href="${b}assets/resume.pdf" target="_blank" class="mega__item">
+          <a href="${b}pages/ats-resume.html" target="_blank" class="mega__item">
             <span class="mega__icon">📄</span>
             <div><div class="mega__name">ATS Resume</div><div class="mega__desc">View my resume PDF</div></div>
           </a>
