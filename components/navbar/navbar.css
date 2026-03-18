@@ -105,15 +105,14 @@
 .navbar__burger span {
   display: block;
   width: 100%; height: 2px;
-  background: #16a34a;
-  border-radius: 2px;
+  background: #16a34a; border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .navbar__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .navbar__burger.open span:nth-child(2) { opacity: 0; }
 .navbar__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mega menu — desktop ── */
+/* ── Desktop mega menu ── */
 .mega {
   position: fixed;
   top: 68px; left: 0; right: 0;
@@ -148,7 +147,7 @@
 
 .mega__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 0.5rem;
 }
 
@@ -164,11 +163,7 @@
 }
 .mega__item:hover { background: #f0fdf4; }
 
-.mega__icon {
-  font-size: 1.3rem;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+.mega__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
 
 .mega__name {
   font-size: 0.875rem;
@@ -176,14 +171,9 @@
   color: #16a34a;
   margin-bottom: 0.2rem;
 }
-.mega__desc {
-  font-size: 0.775rem;
-  color: #888;
-  line-height: 1.4;
-}
+.mega__desc { font-size: 0.775rem; color: #888; line-height: 1.4; }
 .mega__item:hover .mega__name { color: #FFB6C1; }
 
-/* Backdrop */
 .mega__backdrop {
   display: none;
   position: fixed;
@@ -197,36 +187,30 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
 
-  .navbar {
-    padding: 0 1.25rem;
-    height: 60px;
-  }
-
-  /* Hide desktop links & CTA */
+  .navbar { padding: 0 1.25rem; height: 60px; }
   .navbar__links { display: none; }
   .navbar__cta   { display: none; }
   .navbar__burger { display: flex; }
 
-  /* Mobile menu — full screen overlay */
+  /* Full screen mobile menu */
   .navbar__links.open {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 60px; left: 0; right: 0; bottom: 0;
+    background: #ffffff;
+    overflow-y: auto;
+    z-index: 999;
+    border-top: 2px solid #16a34a;
+    padding-bottom: 2rem;
     align-items: stretch;
     gap: 0;
-
-    position: fixed;
-    top: 60px; left: 0; right: 0; bottom: 0;  /* full screen */
-    background: #ffffff;
-    overflow-y: auto;                           /* scrollable */
-    padding: 1rem 0 2rem;
-    z-index: 1000;
-    box-shadow: none;
-    border-top: 2px solid #16a34a;
   }
 
-  /* Each mobile nav item */
   .navbar__item {
     border-bottom: 1px solid #f0f0f0;
+    flex-direction: column;
+    display: flex;
   }
 
   .navbar__link {
@@ -238,33 +222,33 @@
     font-weight: 600;
     border-radius: 0;
     color: #1a1a1a;
+    width: 100%;
   }
-  .navbar__link:hover {
-    background: #f0fdf4;
-    color: #16a34a;
-  }
+  .navbar__link:hover { background: #f0fdf4; color: #16a34a; }
 
-  /* Mobile mega panel — inline below each item */
-  .mega {
-    position: static;
-    pointer-events: all;
-  }
-
+  /* Mobile mega panel — inline inside each item */
   .mega__panel {
+    position: static;
     display: none;
     border-top: none;
     border-left: 3px solid #16a34a;
-    padding: 0.5rem 0 0.5rem 1rem;
-    margin: 0 1.5rem 0.5rem;
+    margin: 0 1rem 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     box-shadow: none;
     background: #f9fdf9;
     border-radius: 0 8px 8px 0;
     animation: none;
     pointer-events: all;
+    width: auto;
   }
 
-  .mega__panel.visible {
-    display: block;
+  .mega__panel.visible { display: block; }
+
+  /* Override fixed positioning on mobile */
+  .mega {
+    position: static;
+    pointer-events: all;
+    z-index: auto;
   }
 
   .mega__grid {
@@ -273,27 +257,29 @@
   }
 
   .mega__item {
-    padding: 0.75rem 0.75rem;
+    padding: 0.65rem 0.5rem;
     border-radius: 6px;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
-  .mega__icon { font-size: 1.1rem; }
+  .mega__icon { font-size: 1rem; }
+  .mega__name { font-size: 0.82rem; }
+  .mega__desc { font-size: 0.7rem; }
 
-  .mega__name {
-    font-size: 0.85rem;
-    margin-bottom: 0.1rem;
-  }
-
-  .mega__desc { font-size: 0.72rem; }
-
-  /* Hide backdrop on mobile */
   .mega__backdrop { display: none !important; }
 
-  /* Show CTA at bottom of mobile menu */
-  .navbar__links.open::after {
-    content: '';
+  /* CTA at bottom of mobile menu */
+  .navbar__mobile-cta {
     display: block;
-    height: 80px;
+    margin: 1rem 1.5rem;
+    padding: 0.85rem;
+    background: #16a34a;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
   }
+  .navbar__mobile-cta:hover { background: #FFB6C1; }
 }
