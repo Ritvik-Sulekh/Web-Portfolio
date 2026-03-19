@@ -7,6 +7,7 @@ function renderNavbar() {
       <a href="${b}index.html" class="navbar__logo">ORitvik</a>
 
       <ul class="navbar__links" id="navLinks">
+
         <li class="navbar__item" data-menu="experience">
           <a href="#" class="navbar__link">Experience <span class="navbar__arrow">›</span></a>
         </li>
@@ -22,8 +23,15 @@ function renderNavbar() {
         <li class="navbar__item" data-menu="tools">
           <a href="#" class="navbar__link">Quick Access <span class="navbar__arrow">›</span></a>
         </li>
+
+        <!-- CTA inside dropdown — mobile only -->
+        <li class="mega__mobile-cta">
+          <a href="${b}pages/business-card.html">Let's Connect</a>
+        </li>
+
       </ul>
 
+      <!-- CTA in navbar bar — desktop only -->
       <a href="${b}pages/business-card.html" class="navbar__cta">Let's Connect</a>
 
       <button class="navbar__burger" id="navBurger" aria-label="Toggle menu">
@@ -125,11 +133,6 @@ function renderNavbar() {
             <div><div class="mega__name">Business Card</div><div class="mega__desc">Digital card & contact info</div></div>
           </a>
         </div>
-      </div>
-
-      <!-- Mobile CTA — inside mega, shown only on mobile -->
-      <div class="mega__mobile-cta" id="mobileCta">
-        <a href="${b}pages/business-card.html">Let's Connect</a>
       </div>
 
       <div class="mega__backdrop" id="megaBackdrop"></div>
