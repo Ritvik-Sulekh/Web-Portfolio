@@ -2,6 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* Safari vh fix */
+  function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }
+  setVH();
+  window.addEventListener('resize', setVH);
+
   const nav      = document.getElementById('mainNav');
   const burger   = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
