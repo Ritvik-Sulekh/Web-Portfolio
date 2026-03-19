@@ -63,6 +63,9 @@
 
 .navbar__item { position: relative; }
 
+/* Hide CTA list item on desktop */
+.navbar__item--cta { display: none; }
+
 .navbar__link {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -97,7 +100,7 @@
   transform: rotate(90deg);
 }
 
-/* CTA */
+/* CTA — desktop only */
 .navbar__cta {
   padding: 0.5rem 1.25rem;
   border-radius: 8px;
@@ -245,7 +248,7 @@
     overscroll-behavior: contain;
     z-index: 9998;
     border-top: 2px solid #16a34a;
-    padding: 0 0 4rem 0;
+    padding: 0 0 2rem 0;
     -webkit-align-items: stretch;
     align-items: stretch;
     gap: 0;
@@ -260,6 +263,33 @@
     flex-direction: column;
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
+  }
+
+  /* Let's Connect item — show on mobile */
+  .navbar__item--cta {
+    display: block;
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+    margin-top: auto;  /* pushes to bottom */
+  }
+
+  .navbar__item--cta .navbar__mobile-cta {
+    display: block;
+    padding: 1rem;
+    background: #16a34a;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 100%;
+    -webkit-transition: background 0.18s;
+    transition: background 0.18s;
+  }
+
+  .navbar__item--cta .navbar__mobile-cta:hover {
+    background: #FFB6C1;
   }
 
   /* Bucket label */
@@ -334,18 +364,4 @@
   .mega__desc { font-size: 0.68rem; }
 
   .mega__backdrop { display: none !important; }
-
-  .navbar__mobile-cta {
-    display: block;
-    margin: 1rem 1.25rem;
-    padding: 0.85rem;
-    background: #16a34a;
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-  .navbar__mobile-cta:hover { background: #FFB6C1; }
 }
