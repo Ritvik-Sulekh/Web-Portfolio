@@ -24,6 +24,14 @@ function renderNavbar() {
         </li>
       </ul>
 
+      <!-- Let's Connect — shows only on mobile -->
+      <li class="navbar__item navbar__item--cta">
+        <a href="${b}pages/business-card.html" class="navbar__mobile-cta">Let's Connect</a>
+      </li>
+
+      </ul>
+
+      <!-- Let's Talk — shows only on desktop -->
       <a href="${b}pages/business-card.html" class="navbar__cta">Let's Connect</a>
 
       <button class="navbar__burger" id="navBurger" aria-label="Toggle menu">
