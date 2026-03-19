@@ -1,12 +1,14 @@
 /* components/navbar/navbar.js */
 
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
 
   const nav      = document.getElementById('mainNav');
   const burger   = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
   const mega     = document.getElementById('megaMenu');
   const backdrop = document.getElementById('megaBackdrop');
+
+  if (!nav || !burger || !navLinks || !mega) return;
 
   const isMobile = () => window.innerWidth <= 768;
 
@@ -35,6 +37,27 @@
     activeItem = null;
   }
 
+  /* ── Move panels into nav items for mobile ── */
+  function movePanelsToItems() {
+    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
+      const key   = item.dataset.menu;
+      const panel = mega.querySelector(`[data-panel="${key}"]`);
+      if (panel && !item.contains(panel)) {
+        item.appendChild(panel);
+      }
+    });
+  }
+
+  /* ── Move panels back to mega for desktop ── */
+  function movePanelsToMega() {
+    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
+      const panel = item.querySelector('.mega__panel');
+      if (panel) {
+        mega.insertBefore(panel, mega.querySelector('.mega__backdrop'));
+      }
+    });
+  }
+
   /* ── Desktop hover ── */
   navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
     item.addEventListener('mouseenter', function() {
@@ -56,93 +79,60 @@
 
   backdrop.addEventListener('click', closePanel);
 
-  /* ── Mobile burger toggle ── */
+  /* ── Mobile burger ── */
   burger.addEventListener('click', function() {
     const open = navLinks.classList.toggle('open');
     burger.classList.toggle('open', open);
 
     if (open) {
+      movePanelsToItems();
       document.body.style.overflow = 'hidden';
     } else {
-      closeAllMobilePanels();
+      closeAllPanels();
       document.body.style.overflow = '';
     }
   });
 
-  /* ── Mobile: close all panels ── */
-  function closeAllMobilePanels() {
-    navLinks.querySelectorAll('.navbar__item').forEach(function(item) {
-      item.classList.remove('active');
-      const sub = item.querySelector('.navbar__submenu');
-      if (sub) sub.style.display = 'none';
-    });
+  function closeAllPanels() {
+    document.querySelectorAll('.mega__panel').forEach(p => p.classList.remove('visible'));
+    navLinks.querySelectorAll('.navbar__item').forEach(i => i.classList.remove('active'));
   }
 
-  /* ── Mobile: build submenu inside each item ── */
-  function buildMobileMenus() {
-    navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
-      if (item.querySelector('.navbar__submenu')) return; /* already built */
+  /* ── Mobile: tap bucket to expand panel ── */
+  navLinks.querySelectorAll('.navbar__item[data-menu]').forEach(function(item) {
+    item.querySelector('.navbar__link').addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      e.preventDefault();
 
-      const key   = item.dataset.menu;
-      const panel = mega.querySelector(`[data-panel="${key}"]`);
+      const panel  = item.querySelector('.mega__panel');
       if (!panel) return;
 
-      /* Clone the panel links into a submenu div */
-      const sub = document.createElement('div');
-      sub.className = 'navbar__submenu';
-      sub.style.display = 'none';
+      const isOpen = panel.classList.contains('visible');
 
-      /* Copy all mega items */
-      const items = panel.querySelectorAll('.mega__item');
-      items.forEach(function(mi) {
-        const link = document.createElement('a');
-        link.href      = mi.getAttribute('href');
-        link.className = 'navbar__subitem';
-        const icon = mi.querySelector('.mega__icon');
-        const name = mi.querySelector('.mega__name');
-        const desc = mi.querySelector('.mega__desc');
-        link.innerHTML = `
-          <span class="navbar__subicon">${icon ? icon.textContent : ''}</span>
-          <span>
-            <span class="navbar__subname">${name ? name.textContent : ''}</span>
-            <span class="navbar__subdesc">${desc ? desc.textContent : ''}</span>
-          </span>
-        `;
-        sub.appendChild(link);
-      });
+      closeAllPanels();
 
-      item.appendChild(sub);
-
-      /* Tap to toggle */
-      item.querySelector('.navbar__link').addEventListener('click', function(e) {
-        if (!isMobile()) return;
-        e.preventDefault();
-
-        const isOpen = sub.style.display === 'block';
-
-        /* close all */
-        closeAllMobilePanels();
-
-        if (!isOpen) {
-          sub.style.display = 'block';
-          item.classList.add('active');
-        }
-      });
+      if (!isOpen) {
+        panel.classList.add('visible');
+        item.classList.add('active');
+      }
     });
-  }
+  });
 
   /* ── Resize ── */
   window.addEventListener('resize', function() {
     if (!isMobile()) {
+      movePanelsToMega();
       navLinks.classList.remove('open');
       burger.classList.remove('open');
       document.body.style.overflow = '';
       closePanel();
+    } else {
+      movePanelsToItems();
     }
   });
 
   /* ── Init ── */
-  buildMobileMenus();
+  if (isMobile()) movePanelsToItems();
 
   /* ── Active page highlight ── */
   const page = window.location.pathname.split('/').pop() || 'index.html';
@@ -151,4 +141,4 @@
     if (href.endsWith(page)) a.style.background = '#f0fdf4';
   });
 
-})();
+});
