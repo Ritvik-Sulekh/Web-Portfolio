@@ -22,16 +22,14 @@ function renderNavbar() {
         <li class="navbar__item" data-menu="tools">
           <a href="#" class="navbar__link">Quick Access <span class="navbar__arrow">›</span></a>
         </li>
-      </ul>
 
-      <!-- Let's Connect — shows only on mobile -->
-      <li class="navbar__item navbar__item--cta">
-        <a href="${b}pages/business-card.html" class="navbar__mobile-cta">Let's Connect</a>
-      </li>
+        <li class="navbar__item navbar__item--cta">
+          <a href="${b}pages/business-card.html" class="navbar__mobile-cta">Let's Connect</a>
+        </li>
 
       </ul>
 
-      <!-- Let's Talk — shows only on desktop -->
+      <!-- Let's Connect — shows only on desktop -->
       <a href="${b}pages/business-card.html" class="navbar__cta">Let's Connect</a>
 
       <button class="navbar__burger" id="navBurger" aria-label="Toggle menu">
