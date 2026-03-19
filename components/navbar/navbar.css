@@ -256,7 +256,7 @@
     animation: none !important;
     pointer-events: all;
     width: 100%;
-    min-height: 500px;       /* increase this number to stretch more */
+    min-height: 100vh;       /* increase this number to stretch more */
   }
   
   .mega__panel.visible { display: block; }
