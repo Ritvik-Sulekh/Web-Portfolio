@@ -194,40 +194,41 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
 
-  .navbar { padding: 0 1.25rem; height: 100px; }
-  .navbar__links.open { z-index: 9998; }
+  .navbar { padding: 0 1.25rem; height: 60px; }
+  .navbar__links { display: none; }
   .navbar__cta   { display: none; }
   .navbar__burger { display: flex; }
 
-  /* Full screen mobile menu */
+  /* Full screen scrollable menu */
   .navbar__links.open {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 60px; left: 0; right: 0; bottom: 0;
-  background: #ffffff;
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: 999;
-  border-top: 2px solid #16a34a;
-  padding-bottom: 4rem;
-  align-items: stretch;
-  gap: 0;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-}
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px; left: 0; right: 0; bottom: 0;
+    background: #ffffff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9998;
+    border-top: 2px solid #16a34a;
+    padding: 0 0 4rem 0;
+    align-items: stretch;
+    gap: 0;
+  }
 
   .navbar__item {
     border-bottom: 1px solid #f0f0f0;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
   }
 
+  /* Each bucket link */
   .navbar__link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
     font-weight: 600;
     border-radius: 0;
     color: #1a1a1a;
@@ -235,59 +236,72 @@
   }
   .navbar__link:hover { background: #f0fdf4; color: #16a34a; }
 
-  /* Mobile mega panel — inline inside each item */
+  /* Mega panel — same design, just resized for mobile */
+  .mega {
+    position: static !important;
+    pointer-events: all !important;
+    display: block !important;
+  }
+
   .mega__panel {
-    position: static;
+    position: static !important;
     display: none;
-    border-top: none;
-    border-left: 3px solid #16a34a;
-    margin: 0 1rem 0.75rem 1rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 1rem 1rem;
+    background: #ffffff;
     box-shadow: none;
-    background: #f9fdf9;
+    border-top: none;
+    border-left: 2px solid #16a34a;
+    margin: 0 1rem 0.5rem 1rem;
     border-radius: 0 8px 8px 0;
-    animation: none;
+    animation: none !important;
     pointer-events: all;
-    width: auto;
   }
 
   .mega__panel.visible { display: block; }
 
-  /* Override fixed positioning on mobile */
-  .mega {
-    position: static;
-    pointer-events: all;
-    z-index: auto;
+  /* Panel label */
+  .mega__label {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
   }
 
+  /* Grid — single column on mobile */
   .mega__grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 0.25rem;
   }
 
+  /* Each item — smaller but same layout */
   .mega__item {
-    padding: 0.65rem 0.5rem;
-    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
     gap: 0.65rem;
   }
 
-  .mega__icon { font-size: 1rem; }
-  .mega__name { font-size: 0.82rem; }
-  .mega__desc { font-size: 0.7rem; }
+  .mega__icon { font-size: 1.1rem; }
 
+  .mega__name {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .mega__desc { font-size: 0.68rem; }
+
+  /* Hide backdrop on mobile */
   .mega__backdrop { display: none !important; }
 
-  /* CTA at bottom of mobile menu */
+  /* Let's Talk CTA at bottom */
   .navbar__mobile-cta {
     display: block;
-    margin: 1rem 1.5rem;
+    margin: 1rem 1.25rem;
     padding: 0.85rem;
     background: #16a34a;
     color: #fff;
     text-align: center;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-decoration: none;
   }
   .navbar__mobile-cta:hover { background: #FFB6C1; }
