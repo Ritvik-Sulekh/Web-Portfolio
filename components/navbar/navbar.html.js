@@ -22,14 +22,8 @@ function renderNavbar() {
         <li class="navbar__item" data-menu="tools">
           <a href="#" class="navbar__link">Quick Access <span class="navbar__arrow">›</span></a>
         </li>
-
-        <li class="navbar__item navbar__item--cta">
-          <a href="${b}pages/business-card.html" class="navbar__mobile-cta">Let's Connect</a>
-        </li>
-
       </ul>
 
-      <!-- Let's Connect — shows only on desktop -->
       <a href="${b}pages/business-card.html" class="navbar__cta">Let's Connect</a>
 
       <button class="navbar__burger" id="navBurger" aria-label="Toggle menu">
@@ -131,6 +125,11 @@ function renderNavbar() {
             <div><div class="mega__name">Business Card</div><div class="mega__desc">Digital card & contact info</div></div>
           </a>
         </div>
+      </div>
+
+      <!-- Mobile CTA — inside mega, shown only on mobile -->
+      <div class="mega__mobile-cta" id="mobileCta">
+        <a href="${b}pages/business-card.html">Let's Connect</a>
       </div>
 
       <div class="mega__backdrop" id="megaBackdrop"></div>
