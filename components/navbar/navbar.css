@@ -269,8 +269,8 @@
   .navbar__item--cta {
     display: block;
     border-bottom: none;
+    border-top: 2px solid #f0f0f0;
     padding: 1.25rem 1.5rem;
-    margin-top: auto;  /* pushes to bottom */
   }
 
   .navbar__item--cta .navbar__mobile-cta {
