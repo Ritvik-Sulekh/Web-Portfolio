@@ -206,6 +206,7 @@
     position: fixed;
     top: 60px; left: 0; right: 0; bottom: 0;
     background: #ffffff;
+    font-size: 1.05rem;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -217,23 +218,31 @@
   }
 
   .navbar__item {
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    flex-direction: column;
+  border-bottom: 2px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
   }
 
   /* Each bucket link */
   .navbar__link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.9rem 1.25rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 0;
-    color: #1a1a1a;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;   /* taller rows */
+  font-size: 1.05rem;        /* bigger text */
+  font-weight: 600;
+  border-radius: 0;
+  color: #1a1a1a;
+  width: 100%;
+  min-height: 60px;          /* minimum tap height */
   }
+
+  .navbar__arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  }
+
   .navbar__link:hover { background: #f0fdf4; color: #16a34a; }
 
   /* Mega panel — same design, just resized for mobile */
@@ -256,9 +265,9 @@
     animation: none !important;
     pointer-events: all;
     width: 100%;
-    min-height: 100vh;       /* increase this number to stretch more */
+    min-height: 280px;       /* increase this number to stretch full screen */
   }
-  
+
   .mega__panel.visible { display: block; }
 
   /* Panel label */
