@@ -1,0 +1,15 @@
+/* components/footer/footer.css */
+
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  padding: 1.25rem 2rem;
+  text-align: center;
+}
+
+.footer__copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #027700;
+  letter-spacing: 0.04em;
+}

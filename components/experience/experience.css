@@ -1,0 +1,221 @@
+/* components/experience/experience.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.exp {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── Header ── */
+.exp__rule {
+  width: 40px;
+  height: 3px;
+  background: #16a34a;
+  margin-bottom: 1rem;
+}
+
+.exp__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.exp__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  letter-spacing: -0.02em;
+}
+
+.exp__sub {
+  font-size: 0.875rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+/* ── Badge ── */
+.exp__badge {
+  background: #f0fdf4;
+  border: 1.5px solid #16a34a;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.exp__badge-val {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16a34a;
+  display: block;
+  line-height: 1;
+}
+
+.exp__badge-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* ── Timeline ── */
+.exp__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp__item {
+  display: grid;
+  grid-template-columns: 160px 1px 1fr;
+  gap: 0 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #f0f0f0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.exp__item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exp__item:last-child { border-bottom: 1px solid #f0f0f0; }
+
+/* Date column */
+.exp__date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.5;
+  padding-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exp__duration {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+/* Timeline line */
+.exp__line {
+  background: #e5e7eb;
+  position: relative;
+}
+
+.exp__line::before {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #16a34a;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.exp__item:hover .exp__line::before {
+  background: #16a34a;
+}
+
+/* Content */
+.exp__content { padding-left: 0.5rem; }
+
+.exp__role {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  margin-bottom: 0.2rem;
+}
+
+.exp__company {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #16a34a;
+  margin-bottom: 0.2rem;
+  transition: color 0.2s;
+}
+
+.exp__item:hover .exp__company { color: #FFB6C1; }
+
+.exp__location {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 0.6rem;
+}
+
+.exp__desc {
+  font-size: 0.825rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Gap item */
+.exp__item--gap .exp__line::before {
+  border-color: #FFB6C1;
+  border-style: dashed;
+}
+
+.exp__item--gap:hover .exp__line::before {
+  background: #FFB6C1;
+}
+
+.exp__gap-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #FFB6C1;
+  background: #fff0f3;
+  border: 1px solid #FFB6C1;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.exp__gap-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.exp__gap-desc {
+  font-size: 0.825rem;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .exp__item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .exp__line { display: none; }
+  .exp__content { padding-left: 0; }
+  .exp__top { flex-direction: column; }
+}

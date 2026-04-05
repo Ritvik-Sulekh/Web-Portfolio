@@ -1,0 +1,211 @@
+/* components/deckcards/deckcards.css */
+
+.deckcards {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* Header */
+.deckcards__header {
+  margin-bottom: 2rem;
+}
+
+.deckcards__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.deckcards__title {
+  text-align: left;
+}
+
+.deckcards__sub {
+  text-align: left;
+}
+
+.deckcards__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.deckcards__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* Grid */
+.deckcards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Single card */
+.dc {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1.5px solid #16a34a;
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.dc:hover {
+  border-color: #FFB6C1;
+  box-shadow: 0 8px 24px rgba(255, 182, 193, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Image / color block */
+.dc__img {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dc__emoji {
+  font-size: 2.5rem;
+}
+
+/* Body */
+.dc__body {
+  padding: 1rem 1.1rem 0.5rem;
+  flex: 1;
+}
+
+.dc__tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.18rem 0.6rem;
+  border-radius: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.dc:hover .dc__tag {
+  color: #FFB6C1;
+  background: #fff0f3;
+  border-color: #FFB6C1;
+}
+
+.dc__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.dc__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.55;
+}
+
+/* Footer */
+.dc__footer {
+  padding: 0.75rem 1.1rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0.75rem;
+}
+
+.dc__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #16a34a;
+  transition: color 0.18s ease;
+}
+
+.dc:hover .dc__link {
+  color: #FFB6C1;
+}
+
+/* ── Cross browser fixes ── */
+.dc {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.dc__emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji",
+               "Noto Color Emoji", "Android Emoji", sans-serif;
+  font-style: normal;
+  text-rendering: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .deckcards__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.deckcards__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.deckcards__badge {
+  background: #f0fdf4;
+  border: 1.5px solid #16a34a;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.deckcards__badge-val {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16a34a;
+  display: block;
+  line-height: 1;
+}
+
+.deckcards__badge-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.deckcards__rule {
+  width: 40px;
+  height: 3px;
+  background: #16a34a;
+  margin-bottom: 1rem;
+}
