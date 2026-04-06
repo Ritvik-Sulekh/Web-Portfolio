@@ -18,25 +18,25 @@
   pointer-events: none;
 }
 
-/* ── Turtle SVG wrapper ── */
 .loader__turtle {
-  width: 180px;
-  height: 130px;
-  animation: turtleFloat 2s ease-in-out infinite;
+  width: 220px;
+  height: auto;
+  animation: turtleFloat 2.5s ease-in-out infinite;
+}
+
+.loader__turtle img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-user-drag: none;
 }
 
 @keyframes turtleFloat {
-  0%   { transform: translateY(0px) rotate(-2deg); }
-  50%  { transform: translateY(-10px) rotate(2deg); }
-  100% { transform: translateY(0px) rotate(-2deg); }
+  0%   { transform: translateY(0px)   rotate(-1deg); }
+  50%  { transform: translateY(-12px) rotate(1deg);  }
+  100% { transform: translateY(0px)   rotate(-1deg); }
 }
 
-.loader__turtle svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* ── Text ── */
 .loader__text {
   margin-top: 1.75rem;
   font-family: 'Inter', sans-serif;
