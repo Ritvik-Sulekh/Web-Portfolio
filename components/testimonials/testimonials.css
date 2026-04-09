@@ -142,3 +142,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .testi__header > div:last-child {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+}
