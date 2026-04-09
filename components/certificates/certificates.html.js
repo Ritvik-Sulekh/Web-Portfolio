@@ -47,7 +47,7 @@ function renderCertificates() {
             <h1 class="certs__title">Certifications</h1>
             <p class="certs__sub">Click any certificate to preview it. Not available for download.</p>
           </div>
-          <div class="certs__total-badge">
+          <div class="certs__total-badge" style="margin-bottom:1.5rem;">
             <span class="certs__total-val" id="certTotalVal">${certificates.length}</span>
             <span class="certs__total-label">Total Certificates</span>
           </div>
