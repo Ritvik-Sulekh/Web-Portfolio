@@ -12,7 +12,7 @@ function renderTestimonials() {
             <h1 class="testi__title">Testimonials</h1>
             <p class="testi__sub">What people say about working with me.</p>
           </div>
-          <div style="background:#f0fdf4;border:1.5px solid #16a34a;border-radius:12px;padding:0.75rem 1.25rem;text-align:center;flex-shrink:0;">
+          <div style="background:#f0fdf4;border:1.5px solid #16a34a;border-radius:12px;padding:0.75rem 1.25rem;text-align:center;flex-shrink:0;margin-bottom:1.5rem;">
             <span id="testiCount" style="font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;color:#16a34a;display:block;line-height:1;">—</span>
             <span style="font-family:'Inter',sans-serif;font-size:0.68rem;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-top:0.3rem;display:block;">Total Testimonials</span>
           </div>
