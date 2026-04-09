@@ -367,3 +367,14 @@
   border-color: #16a34a;
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+  .certs__total-badge {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .certs__header-row {
+    flex-direction: column;
+  }
+}
