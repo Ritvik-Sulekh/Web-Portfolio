@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#16a34a">
+  <title>Work Experience</title>
+  <script>const BASE_PATH = '../';</script>
+  <script src="../data/profile.js?v=2"></script>
+  
+  <!-- Load dots loader CSS early so it shows instantly -->
+  <script src="../components/loader/dots.html.js?v=2"></script>
+
+  <style>
+    *, *::before, *::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+    body {
+      background: #f8f8f8; font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { -webkit-tap-highlight-color: transparent; }
+    button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .page { padding-top: 88px; min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+    <!-- Loader slot — must be first in body -->
+  <div id="loader-slot"></div>
+  
+  <div id="navbar-slot"></div>
+  <div class="page">
+    <div id="exp-slot"></div>
+  </div>
+
+  <div id="footer-slot"></div>
+
+  <script src="../components/navbar/navbar.html.js?v=2"></script>
+  <script src="../components/experience/experience.html.js?v=2"></script>
+  <script src="../components/footer/footer.html.js?v=2"></script>
+
+  <script>
+    document.getElementById('loader-slot').innerHTML = renderLoader();
+    document.getElementById('navbar-slot').innerHTML = renderNavbar();
+    document.getElementById('exp-slot').innerHTML = renderExperience();
+    document.getElementById('footer-slot').innerHTML = renderFooter();
+  </script>
+
+  <script src="../components/navbar/navbar.js?v=2"></script>
+  <script src="../components/experience/experience.js?v=2"></script>
+  <script src="../components/loader/loader.js?v=2"></script>
+
+</body>
+</html>

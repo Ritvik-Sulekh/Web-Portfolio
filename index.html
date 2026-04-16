@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#16a34a">
+  <title>My Portfolio</title>
+
+  <script>const BASE_PATH = '';</script>
+  <script src="data/profile.js?v=2"></script>
+  <script>
+    window.COUNTS = {
+      pors: 0, projects: 0, certificates: 0,
+      caseStudies: 0, publications: 0, testimonials: 0,
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+    body {
+      background: #f8f8f8; font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+    }
+    img    { max-width: 100%; height: auto; display: block; }
+    a      { -webkit-tap-highlight-color: transparent; }
+    button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .page  { padding-top: 88px; min-height: 100vh; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-transition-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader slot — filled by renderLoader() -->
+  <div id="loader-slot"></div>
+
+  <div id="navbar-slot"></div>
+  <div class="page">
+    <div id="summary-slot"></div>
+  </div>
+
+  <div id="footer-slot"></div>
+
+  <!-- Step 1: render functions -->
+  <script src="components/loader/loader.html.js?v=2"></script>
+  <script src="components/navbar/navbar.html.js?v=2"></script>
+  <script src="components/summary/summary.html.js?v=2"></script>
+  <script src="components/footer/footer.html.js?v=2"></script>
+
+  <!-- Step 2: mount HTML -->
+  <script>
+    document.getElementById('loader-slot').innerHTML  = renderLoader();
+    document.getElementById('navbar-slot').innerHTML  = renderNavbar();
+    document.getElementById('summary-slot').innerHTML = renderSummary();
+    document.getElementById('footer-slot').innerHTML = renderFooter();
+  </script>
+
+  <!-- Step 3: behaviour -->
+  <script src="components/navbar/navbar.js?v=2"></script>
+  <script src="components/summary/summary.js?v=2"></script>
+
+  <!-- Step 4: counter reads all html.js files → updates summary -->
+  <script src="data/counter.js?v=2"></script>
+
+  <!-- Step 5: hide loader -->
+  <script src="components/loader/loader.js?v=2"></script>
+  <script src="../components/footer/footer.html.js?v=2"></script>
+
+</body>
+</html>
