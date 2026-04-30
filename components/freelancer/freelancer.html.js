@@ -23,40 +23,14 @@ function renderFreelancer() {
 
         <div class="freelancer__item">
           <div class="freelancer__date">
-            2023 — 2024
-            <span class="freelancer__duration">1 yr</span>
+            Mar 2025 — Apr 2025
+            <span class="freelancer__duration">2 months</span>
           </div>
           <div class="freelancer__line"></div>
           <div class="freelancer__content">
-            <div class="freelancer__role">Growth Strategy Consultant</div>
-            <div class="freelancer__company">Startup A — EdTech</div>
-            <div class="freelancer__desc">Advised on go-to-market strategy for a B2C edtech product. Built fundraising deck that helped secure seed funding.</div>
-          </div>
-        </div>
-
-        <div class="freelancer__item">
-          <div class="freelancer__date">
-            2022 — 2023
-            <span class="freelancer__duration">6 mo</span>
-          </div>
-          <div class="freelancer__line"></div>
-          <div class="freelancer__content">
-            <div class="freelancer__role">Brand & Marketing Consultant</div>
-            <div class="freelancer__company">Startup B — D2C Brand</div>
-            <div class="freelancer__desc">Developed brand identity and digital marketing strategy. Grew Instagram following from 0 to 8K in 3 months.</div>
-          </div>
-        </div>
-
-        <div class="freelancer__item">
-          <div class="freelancer__date">
-            2022
-            <span class="freelancer__duration">3 mo</span>
-          </div>
-          <div class="freelancer__line"></div>
-          <div class="freelancer__content">
-            <div class="freelancer__role">Business Development Advisor</div>
-            <div class="freelancer__company">Startup C — FinTech</div>
-            <div class="freelancer__desc">Identified partnership opportunities and built outreach strategy. Closed 2 pilot partnerships within the engagement period.</div>
+            <div class="freelancer__role">Design & Branding</div>
+            <div class="freelancer__company">FISC Capital</div>
+            <div class="freelancer__desc">Crafting visual identities that speak—logos, brand decks, and design systems that turn ideas into memorable brands.</div>
           </div>
         </div>
 
