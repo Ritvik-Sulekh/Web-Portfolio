@@ -23,29 +23,57 @@ function renderEducation() {
 
         <div class="edu__item">
           <div class="edu__date">
-            2023 — 2025
-            <span class="edu__duration">2 yrs</span>
+            2021 — 2024
+            <span class="edu__duration">3 yrs</span>
           </div>
           <div class="edu__line"></div>
           <div class="edu__content">
             <div class="edu__degree">MBA</div>
             <div class="edu__school">IIM Udaipur</div>
             <div class="edu__location">📍 Udaipur, Rajasthan</div>
-            <div class="edu__desc">Specialisation in Strategy & Marketing. Top 0.2% nationally in CAT entrance examination. Dean's List, top 5% of batch.</div>
+            <div class="edu__desc">Specialisation in Marketing & Consulting</div>
           </div>
         </div>
 
         <div class="edu__item">
           <div class="edu__date">
-            2018 — 2022
+            2016 — 2020
             <span class="edu__duration">4 yrs</span>
           </div>
           <div class="edu__line"></div>
           <div class="edu__content">
-            <div class="edu__degree">B.Tech — Computer Science</div>
-            <div class="edu__school">Sample University</div>
-            <div class="edu__location">📍 City, State</div>
-            <div class="edu__desc">Graduated with distinction. Active member of the coding and entrepreneurship clubs. Final year project on NLP-based resume screening.</div>
+            <div class="edu__degree">B.Tech</div>
+            <div class="edu__school">SRM University</div>
+            <div class="edu__location">📍 Sonipat, Haryana</div>
+            <div class="edu__desc">Specialisation in Computer Science & Engineering (CSE). Graduated with distinction. Active member of the coding and entrepreneurship clubs. Final year project on Cyber-Security & Systems. With my major in (DSA + AI) & minor in Network Security, I build each project with my passion</div>
+          </div>
+        </div>
+
+        <div class="edu__item">
+          <div class="edu__date">
+            2016
+            <span class="edu__duration">1 yr</span>
+          </div>
+          <div class="edu__line"></div>
+          <div class="edu__content">
+            <div class="edu__degree">XII Standard (PCM)</div>
+            <div class="edu__school">Ryan International School</div>
+            <div class="edu__location">📍 Kandivali (E), Mumbai</div>
+            <div class="edu__desc">I participated in World Scholar Cup & Social Service Camp. In classical group dance, we secured 3rd position in the inter-school competitions.</div>
+          </div>
+        </div>
+
+        <div class="edu__item">
+          <div class="edu__date">
+            2014
+            <span class="edu__duration">1 yr</span>
+          </div>
+          <div class="edu__line"></div>
+          <div class="edu__content">
+            <div class="edu__degree">X Standard</div>
+            <div class="edu__school">Ryan International School</div>
+            <div class="edu__location">📍 Kandivali (E), Mumbai</div>
+            <div class="edu__desc">Led the Green House Team on Inter-School Sports Day, in absence of actual Green House Captain.</div>
           </div>
         </div>
 
