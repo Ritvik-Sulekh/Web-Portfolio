@@ -22,8 +22,8 @@ function renderCard() {
 
         <div class="card__bottom">
           <p class="card__address">
-            Address: <a href="https://maps.app.goo.gl/KoM7JYoLpRZkrzmF8" target="_blank">
-              Vadodara, India
+            Address: <a href="https://maps.app.goo.gl/ue8Pv3w6ZsCuDjSQ9" target="_blank">
+              Ahmedabad, India
             </a>
           </p>
           <p class="card__contact">
