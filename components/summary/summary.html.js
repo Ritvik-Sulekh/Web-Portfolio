@@ -12,7 +12,7 @@ function renderSummary() {
         <div class="summary__text">
           <h1 class="summary__name">Ritvik Singh Sulekh</h1>
           <a href="${b}pages/education.html" class="summary__degree" id="s-degree">MBA (IIM Udaipur)</a>
-          <p class="summary__tagline">“Resilience turns setbacks into Bounce-backs.”</p>
+          <p class="summary__tagline"> 1. Better Late than Never <br> 2. Resilience turns setbacks into Bounce-backs</p>
         </div>
       </div>
 
