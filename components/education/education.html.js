@@ -23,8 +23,8 @@ function renderEducation() {
 
         <div class="edu__item">
           <div class="edu__date">
-            2021 — 2024
-            <span class="edu__duration">3 yrs</span>
+            2023 — 2024
+            <span class="edu__duration">1 yr</span>
           </div>
           <div class="edu__line"></div>
           <div class="edu__content">
@@ -32,6 +32,30 @@ function renderEducation() {
             <div class="edu__school">IIM Udaipur</div>
             <div class="edu__location">📍 Udaipur, Rajasthan</div>
             <div class="edu__desc">Specialisation in Marketing & Consulting</div>
+          </div>
+        </div>
+
+        <div class="edu__item edu__item--gap">
+          <div class="edu__date">2022 — 2023</div>
+          <div class="edu__line"></div>
+          <div class="edu__content">
+            <span class="edu__gap-badge">Gap Year</span>
+            <div class="edu__gap-title">Uprising, Resilience & Self Developments</div>
+            <div class="edu__gap-desc">Dedicated my year to bounce back with personal developments.</div>
+          </div>
+        </div>
+
+        <div class="edu__item">
+          <div class="edu__date">
+            2021 — 2022
+            <span class="edu__duration">1 yr</span>
+          </div>
+          <div class="edu__line"></div>
+          <div class="edu__content">
+            <div class="edu__degree">MBA</div>
+            <div class="edu__school">IIM Udaipur</div>
+            <div class="edu__location">📍 Udaipur, Rajasthan</div>
+            <div class="edu__desc">Clear CAT in 1st attempt! Secured 17 IIM calls & 11 IIM conversions out of 20 IIMs. That's a 64.7% conversion rate.</div>
           </div>
         </div>
 
