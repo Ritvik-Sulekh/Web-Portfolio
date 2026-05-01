@@ -31,7 +31,7 @@ function renderEducation() {
             <div class="edu__degree">MBA</div>
             <div class="edu__school">IIM Udaipur</div>
             <div class="edu__location">📍 Udaipur, Rajasthan</div>
-            <div class="edu__desc">Specialisation in Marketing & Consulting</div>
+            <div class="edu__desc">Graduated from IIM Udaipur. Specialisation in Marketing & Consulting</div>
           </div>
         </div>
 
