@@ -2,11 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  const items = document.querySelectorAll('.edu__item');
+  const items    = document.querySelectorAll('.edu__item');
+  const degrees  = document.querySelectorAll('.edu__item:not(.edu__item--gap)');
 
-  localStorage.setItem('count_education', items.length);
+  /* Count only real degrees, not gap years */
+  localStorage.setItem('count_education', degrees.length);
   const badge = document.getElementById('eduTotal');
-  if (badge) badge.textContent = items.length;
+  if (badge) badge.textContent = degrees.length;
 
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
