@@ -29,7 +29,7 @@ function renderExperience() {
             <div class="exp__role">Associate S&O (A4)</div>
             <div class="exp__company">7Span</div>
             <div class="exp__location">📍 Ahmedabad, Gujarat, India</div>
-            <div class="exp__desc">Working on Audit in IT Sales & Operations</div>
+            <div class="exp__desc">Working on Audits in IT Sales & Operations</div>
           </div>
         </div>
 
