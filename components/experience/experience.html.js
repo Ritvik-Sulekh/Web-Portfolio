@@ -1,79 +1,89 @@
-function renderEducation() {
+function renderExperience() {
   const b = typeof BASE_PATH !== 'undefined' ? BASE_PATH : '';
   return `
-    <link rel="stylesheet" href="${b}components/education/education.css">
+    <link rel="stylesheet" href="${b}components/experience/experience.css">
 
-    <section class="edu">
+    <section class="exp">
 
-      <div class="edu__header">
-        <div class="edu__rule"></div>
-        <div class="edu__top">
+      <div class="exp__header">
+        <div class="exp__rule"></div>
+        <div class="exp__top">
           <div>
-            <h1 class="edu__title">Education</h1>
-            <p class="edu__sub">Academic background & qualifications</p>
+            <h1 class="exp__title">Work Experience</h1>
+            <p class="exp__sub">My professional journey so far</p>
           </div>
-          <div class="edu__badge">
-            <span class="edu__badge-val" id="eduTotal">—</span>
-            <span class="edu__badge-label">Total certificates</span>
+          <div class="exp__badge" id="expBadge">
+            <span class="exp__badge-val" id="expTotal">—</span>
+            <span class="exp__badge-label">Total Experience</span>
           </div>
         </div>
       </div>
 
-      <div class="edu__list">
-
-        <div class="edu__item">
-          <div class="edu__date">
-            2021 — 2024
-            <span class="edu__duration">3 yrs</span>
+      <div class="exp__item" data-start="2026-04-01" data-end="">
+          <div class="exp__date">
+            Apr 2026 — Present
+            <span class="exp__duration" id="dur-0"></span>
           </div>
-          <div class="edu__line"></div>
-          <div class="edu__content">
-            <div class="edu__degree">MBA</div>
-            <div class="edu__school">IIM Udaipur</div>
-            <div class="edu__location">📍 Udaipur, Rajasthan</div>
-            <div class="edu__desc">Specialisation in Marketing & Consulting</div>
+          <div class="exp__line"></div>
+          <div class="exp__content">
+            <div class="exp__role">Associate S&O (A4)</div>
+            <div class="exp__company">7Span</div>
+            <div class="exp__location">📍 Ahmedabad, Gujarat, India</div>
+            <div class="exp__desc">Working on Audit in IT Sales & Operations</div>
           </div>
         </div>
 
-        <div class="edu__item">
-          <div class="edu__date">
-            2016 — 2020
-            <span class="edu__duration">4 yrs</span>
+      <div class="exp__list">
+
+        <div class="exp__item" data-start="2026-03-01" data-end="2026-04-01">
+          <div class="exp__date">
+            Mar 2026 — Mar 2026
+            <span class="exp__duration" id="dur-0"></span>
           </div>
-          <div class="edu__line"></div>
-          <div class="edu__content">
-            <div class="edu__degree">B.Tech</div>
-            <div class="edu__school">SRM University</div>
-            <div class="edu__location">📍 Sonipat, Haryana</div>
-            <div class="edu__desc">Specialisation in Computer Science & Engineering (CSE). Graduated with distinction. Active member of the coding and entrepreneurship clubs. Final year project on Cyber-Security & Systems. With my major in (DSA + AI) & minor in Network Security, I build each project with my passion</div>
+          <div class="exp__line"></div>
+          <div class="exp__content">
+            <div class="exp__role">Jr. Associate (A2)</div>
+            <div class="exp__company">7Span</div>
+            <div class="exp__location">📍 Ahmedabad, Gujarat, India</div>
+            <div class="exp__desc">Optimized IT Sales</div>
           </div>
         </div>
 
-        <div class="edu__item">
-          <div class="edu__date">
-            2016
-            <span class="edu__duration">1 yr</span>
-          </div>
-          <div class="edu__line"></div>
-          <div class="edu__content">
-            <div class="edu__degree">XII Standard (PCM)</div>
-            <div class="edu__school">Ryan International School</div>
-            <div class="edu__location">📍 Kandivali (E), Mumbai</div>
-            <div class="edu__desc">I participated in World Scholar Cup & Social Service Camp. In classical group dance, we secured 3rd position in the inter-school competitions.</div>
+        <div class="exp__item exp__item--gap">
+          <div class="exp__date">2025</div>
+          <div class="exp__line"></div>
+          <div class="exp__content">
+            <span class="exp__gap-badge">Career Gap</span>
+            <div class="exp__gap-title">Job/AI Preparation & Travel</div>
+            <div class="exp__gap-desc">Took a planned break to prepare for various jobs, exams, AI and travelled across India.</div>
           </div>
         </div>
 
-        <div class="edu__item">
-          <div class="edu__date">
-            2014
-            <span class="edu__duration">1 yr</span>
+        <div class="exp__item" data-start="2024-09-01" data-end="2024-12-31">
+          <div class="exp__date">
+            Oct 2024 — Dec 2024
+            <span class="exp__duration" id="dur-1"></span>
           </div>
-          <div class="edu__line"></div>
-          <div class="edu__content">
-            <div class="edu__degree">X Standard</div>
-            <div class="edu__school">Ryan International School</div>
-            <div class="edu__location">📍 Kandivali (E), Mumbai</div>
-            <div class="edu__desc">Led the Green House Team on Inter-School Sports Day, in absence of actual Green House Captain.</div>
+          <div class="exp__line"></div>
+          <div class="exp__content">
+            <div class="exp__role">FinOps Manager</div>
+            <div class="exp__company">Harley's Fine Baking</div>
+            <div class="exp__location">📍 Hyderabad, Telangana, India</div>
+            <div class="exp__desc">Won Guinness World Record on Dec 06, 2024 for Harley's.</div>
+          </div>
+        </div>
+
+        <div class="exp__item" data-start="2024-08-01" data-end="2024-09-01">
+          <div class="exp__date">
+            Sept 2024 — Sept 2024
+            <span class="exp__duration" id="dur-1"></span>
+          </div>
+          <div class="exp__line"></div>
+          <div class="exp__content">
+            <div class="exp__role">Marketing Manager</div>
+            <div class="exp__company">Harley's Fine Baking</div>
+            <div class="exp__location">📍 Hyderabad, Telangana, India</div>
+            <div class="exp__desc">Build Master file for tracking various activities.</div>
           </div>
         </div>
 
