@@ -176,3 +176,38 @@
   .edu__top { flex-direction: column; }
   .edu__badge { width: 100%; margin-bottom: 1rem; }
 }
+
+/* ── Gap year ── */
+.edu__item--gap .edu__line::before {
+  border-color: #FFB6C1;
+  border-style: dashed;
+}
+
+.edu__item--gap:hover .edu__line::before {
+  background: #FFB6C1;
+}
+
+.edu__gap-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #FFB6C1;
+  background: #fff0f3;
+  border: 1px solid #FFB6C1;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  margin-bottom: 0.5rem;
+}
+
+.edu__gap-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.edu__gap-desc {
+  font-size: 0.825rem;
+  color: #9ca3af;
+  line-height: 1.7;
+}
