@@ -11,8 +11,8 @@
   const SLIDE_ID = 'SAMPLE_ID';
 
   const URLS = {
-    normal: `https://docs.google.com/presentation/d/${SLIDE_ID}/embed?start=false&loop=false&delayms=3000&rm=minimal`,
-    slide:  `https://docs.google.com/presentation/d/${SLIDE_ID}/embed?start=false&loop=false&delayms=3000`,
+    normal: `https://docs.google.com/presentation/d/1-rjLnaFlQklU_Vj32Wknu7pHZcRh-1ktigm9IvwpiR0/embed?start=false&loop=false&delayms=3000&rm=minimal`,
+    slide:  `https://docs.google.com/presentation/d/1-rjLnaFlQklU_Vj32Wknu7pHZcRh-1ktigm9IvwpiR0/embed?start=false&loop=false&delayms=3000`,
   };
 
   /* ── Normal view — shows all slides at once ── */
