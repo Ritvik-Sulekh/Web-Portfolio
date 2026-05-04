@@ -66,7 +66,7 @@ function renderExperience() {
           </div>
           <div class="exp__line"></div>
           <div class="exp__content">
-            <div class="exp__role">Finnace & Operations Manager</div>
+            <div class="exp__role">Finance & Operations Manager</div>
             <div class="exp__company">Harley's Fine Baking</div>
             <div class="exp__location">📍 Hyderabad, Telangana, India</div>
             <div class="exp__desc">Won Guinness World Record on Dec 06, 2024 for Harley's.</div>
