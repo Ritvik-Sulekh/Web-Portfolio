@@ -1,0 +1,135 @@
+/* components/workportfolio/workportfolio.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.portfolio {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── Header ── */
+.portfolio__rule {
+  width: 40px;
+  height: 3px;
+  background: #16a34a;
+  margin-bottom: 1rem;
+}
+
+.portfolio__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.portfolio__sub {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+/* ── Viewer ── */
+.portfolio__viewer {
+  border: 1.5px solid #16a34a;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* ── Controls bar ── */
+.portfolio__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background: #f9fdf9;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.portfolio__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f0f0f;
+}
+
+.portfolio__bar-right {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio__btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: 1.5px solid #16a34a;
+  background: #ffffff;
+  color: #16a34a;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portfolio__btn:hover {
+  background: #f0fdf4;
+}
+
+.portfolio__btn--active {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.portfolio__btn--active:hover {
+  background: #15803d;
+}
+
+.portfolio__btn--fullscreen {
+  border-color: #FFB6C1;
+  color: #FFB6C1;
+}
+
+.portfolio__btn--fullscreen:hover {
+  background: #fff0f3;
+}
+
+/* ── Frame ── */
+.portfolio__frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  background: #f0f0f0;
+}
+
+.portfolio__frame {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .portfolio__bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .portfolio__bar-right {
+    width: 100%;
+  }
+  .portfolio__btn {
+    flex: 1;
+    text-align: center;
+  }
+}

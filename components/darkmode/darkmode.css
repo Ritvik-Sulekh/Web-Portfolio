@@ -1,0 +1,1467 @@
+/* components/darkmode/darkmode.css */
+
+/* ── Dark mode toggle button ── */
+.darkmode-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #16a34a;
+  background: #ffffff;
+  color: #16a34a;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.darkmode-btn:hover {
+  transform: scale(1.1);
+  background: #f0fdf4;
+}
+
+body.dark .darkmode-btn {
+  background: #1a1a1a;
+  border-color: #f5f5f0;
+  color: #f5f5f0;
+}
+
+body.dark .darkmode-btn:hover {
+  background: #2a2a2a;
+}
+
+/* ── CSS Variables ── */
+:root {
+  --bg:           #f8f8f8;
+  --bg-white:     #ffffff;
+  --bg-card:      #ffffff;
+  --bg-light:     #f0fdf4;
+  --bg-input:     #ffffff;
+  --bg-nav:       #ffffff;
+
+  --text-primary:   #0f0f0f;
+  --text-secondary: #555;
+  --text-muted:     #888;
+  --text-faint:     #aaa;
+
+  --border:         #e5e7eb;
+  --border-light:   #f0f0f0;
+  --border-green:   #16a34a;
+
+  --green:          #16a34a;
+  --green-light:    #f0fdf4;
+  --green-border:   #bbf7d0;
+
+  --accent:         #FFB6C1;
+  --accent-hover:   #FFB6C1;
+
+  --shadow:         rgba(0,0,0,0.06);
+  --shadow-hover:   rgba(22,163,74,0.1);
+}
+
+body.dark {
+  --bg:           #0f0f0f;
+  --bg-white:     #1a1a1a;
+  --bg-card:      #1e1e1e;
+  --bg-light:     #1a2a1a;
+  --bg-input:     #2a2a2a;
+  --bg-nav:       #111111;
+
+  --text-primary:   #f5f5f0;
+  --text-secondary: #c0c0b8;
+  --text-muted:     #888880;
+  --text-faint:     #666660;
+
+  --border:         #2a2a2a;
+  --border-light:   #222222;
+  --border-green:   #f5f5f0;
+
+  --green:          #f5f5f0;
+  --green-light:    #1a2a1a;
+  --green-border:   #2a3a2a;
+
+  --accent:         #cfb53b;
+  --accent-hover:   #cfb53b;
+
+  --shadow:         rgba(0,0,0,0.3);
+  --shadow-hover:   rgba(245,245,240,0.08);
+}
+
+/* ── Base body ── */
+body {
+  background: var(--bg) !important;
+  color: var(--text-primary) !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Navbar ── */
+body.dark .navbar {
+  background: var(--bg-nav) !important;
+  border-bottom-color: var(--border) !important;
+}
+
+body.dark .navbar__logo,
+body.dark .navbar__link,
+body.dark .mega__name {
+  color: var(--text-primary) !important;
+}
+
+body.dark .navbar__link:hover,
+body.dark .mega__item:hover .mega__name {
+  color: var(--accent) !important;
+}
+
+body.dark .navbar__cta {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+body.dark .navbar__cta:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #000000 !important;
+}
+
+body.dark .navbar__logo {
+  color: #ffffff !important;
+}
+
+body.dark .navbar__logo:hover {
+  color: var(--accent) !important;
+}
+
+body.dark .summary__avatar {
+  border-color: var(--accent) !important;
+}
+
+body.dark .mega__panel,
+body.dark .mega__mobile-panel {
+  background: var(--bg-nav) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .mega__desc { color: var(--text-muted) !important; }
+
+body.dark .navbar__burger span {
+  background: var(--text-primary) !important;
+}
+
+/* ── Summary ── */
+body.dark .summary__card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-green) !important;
+}
+
+body.dark .summary__card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 4px 16px rgba(255,215,0,0.15) !important;
+}
+
+body.dark .summary__card:hover .summary__label,
+body.dark .summary__card:hover .summary__value {
+  color: var(--accent) !important;
+}
+
+body.dark .summary__name    { color: var(--text-primary) !important; }
+body.dark .summary__tagline { color: var(--text-muted)   !important; }
+body.dark .summary__label   { color: var(--text-muted)   !important; }
+body.dark .summary__value   { color: var(--text-primary) !important; }
+body.dark .summary__unit    { color: var(--green)        !important; }
+
+body.dark a.summary__degree,
+body.dark .summary__degree,
+body.dark a.summary__top02,
+body.dark .summary__top02 {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+  color: #ffffff          !important;
+}
+
+body.dark a.summary__degree:hover,
+body.dark .summary__degree:hover,
+body.dark a.summary__top02:hover,
+body.dark .summary__top02:hover {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000000              !important;
+}
+
+body.dark .summary__col-title {
+  color: var(--green) !important;
+  border-bottom-color: var(--border-green) !important;
+}
+
+/* ── Cards general ── */
+body.dark .dc,
+body.dark .blog-card,
+body.dark .testi__card,
+body.dark .cert-list__item,
+body.dark .case-list__item,
+body.dark .proj-list__item,
+body.dark .resume__card,
+body.dark .skill__card,
+body.dark .top02__step,
+body.dark .pors__item,
+body.dark .edu__item,
+body.dark .intern__item,
+body.dark .exp__item,
+body.dark .freelancer__item,
+body.dark .pubs__item {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ── Hover on all cards ── */
+body.dark .dc:hover,
+body.dark .blog-card:hover,
+body.dark .skill__card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 8px 28px rgba(255,215,0,0.12) !important;
+}
+
+/* ── Timeline lines ── */
+body.dark .exp__line,
+body.dark .intern__line,
+body.dark .pors__line,
+body.dark .edu__line,
+body.dark .freelancer__line,
+body.dark .pubs__line {
+  background: var(--border) !important;
+}
+
+/* ── Badges ── */
+body.dark .exp__badge,
+body.dark .intern__badge,
+body.dark .pors__badge,
+body.dark .edu__badge,
+body.dark .freelancer__badge,
+body.dark .pubs__badge,
+body.dark .certs__total-badge,
+body.dark .cases__total-badge,
+body.dark .projects__total-badge,
+body.dark .skills__badge,
+body.dark .blogs__badge,
+body.dark .resume__badge,
+body.dark .deckcards__badge,
+body.dark .testi__header div[style] {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+}
+
+body.dark .exp__badge-val,
+body.dark .intern__badge-val,
+body.dark .pors__badge-val,
+body.dark .edu__badge-val,
+body.dark .freelancer__badge-val,
+body.dark .pubs__badge-val,
+body.dark .certs__total-val,
+body.dark .cases__total-val,
+body.dark .projects__total-val,
+body.dark .skills__badge-val,
+body.dark .blogs__badge-val,
+body.dark .resume__badge-val,
+body.dark .deckcards__badge-val {
+  color: var(--green) !important;
+}
+
+/* ── Green rule lines ── */
+body.dark .exp__rule,
+body.dark .intern__rule,
+body.dark .pors__rule,
+body.dark .edu__rule,
+body.dark .freelancer__rule,
+body.dark .pubs__rule,
+body.dark .certs__rule,
+body.dark .cases__rule,
+body.dark .projects__rule,
+body.dark .skills__rule,
+body.dark .blogs__rule,
+body.dark .testi__rule,
+body.dark .top02__rule,
+body.dark .deckcards__rule,
+body.dark .resume__rule,
+body.dark .portfolio__rule,
+body.dark .card__rule {
+  background: var(--green) !important;
+}
+
+/* ── Page titles ── */
+body.dark .exp__title,
+body.dark .intern__title,
+body.dark .pors__title,
+body.dark .edu__title,
+body.dark .freelancer__title,
+body.dark .pubs__title,
+body.dark .certs__title,
+body.dark .cases__title,
+body.dark .projects__title,
+body.dark .skills__title,
+body.dark .blogs__title,
+body.dark .testi__title,
+body.dark .top02__title,
+body.dark .deckcards__title,
+body.dark .resume__title,
+body.dark .portfolio__title {
+  color: var(--text-primary) !important;
+}
+
+/* ── Page subtitles ── */
+body.dark .exp__sub,
+body.dark .intern__sub,
+body.dark .pors__sub,
+body.dark .edu__sub,
+body.dark .freelancer__sub,
+body.dark .pubs__sub,
+body.dark .certs__sub,
+body.dark .cases__sub,
+body.dark .projects__sub,
+body.dark .skills__sub,
+body.dark .blogs__sub,
+body.dark .testi__sub,
+body.dark .top02__sub,
+body.dark .resume__sub,
+body.dark .portfolio__sub {
+  color: var(--text-muted) !important;
+}
+
+/* ── Inputs & search ── */
+body.dark .certs__search,
+body.dark .cases__search,
+body.dark .projects__search,
+body.dark .skills__search {
+  background: var(--bg-input) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary)  !important;
+}
+
+body.dark .certs__search:focus,
+body.dark .cases__search:focus,
+body.dark .projects__search:focus,
+body.dark .skills__search:focus {
+  border-color: var(--green) !important;
+}
+
+body.dark .certs__search-wrap,
+body.dark .cases__search-wrap,
+body.dark .projects__search-wrap {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .certs__count,
+body.dark .cases__count,
+body.dark .projects__count,
+body.dark .skills__search-count {
+  color: var(--text-faint) !important;
+}
+
+/* ── Left panels ── */
+body.dark .certs__left,
+body.dark .cases__left,
+body.dark .projects__left {
+  background: var(--bg-card)        !important;
+  border-color: var(--border-green) !important;
+}
+
+/* ── Right preview panels ── */
+body.dark .certs__right,
+body.dark .cases__right,
+body.dark .projects__right,
+body.dark .resume__preview-wrap {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .certs__preview-bar,
+body.dark .cases__preview-bar,
+body.dark .projects__preview-bar,
+body.dark .portfolio__bar {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .certs__preview-name,
+body.dark .cases__preview-name,
+body.dark .projects__preview-name {
+  color: var(--text-primary) !important;
+}
+
+body.dark .certs__preview-issuer,
+body.dark .cases__preview-result,
+body.dark .projects__preview-tech {
+  color: var(--green) !important;
+}
+
+/* ── Pagination ── */
+body.dark .certs__page-btn,
+body.dark .certs__page-num,
+body.dark .cases__page-btn,
+body.dark .cases__page-num,
+body.dark .projects__page-btn,
+body.dark .projects__page-num {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary)  !important;
+}
+
+body.dark .certs__page-num.active,
+body.dark .cases__page-num.active,
+body.dark .projects__page-num.active {
+  background: var(--green)   !important;
+  border-color: var(--green) !important;
+  color: var(--bg)           !important;
+}
+
+body.dark .certs__pagination,
+body.dark .cases__pagination,
+body.dark .projects__pagination {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Skills filter buttons ── */
+body.dark .skills__filter-btn {
+  background: var(--bg-card)          !important;
+  border-color: var(--border)         !important;
+  color: var(--text-secondary)        !important;
+}
+
+body.dark .skills__filter-btn:hover {
+  border-color: var(--green) !important;
+  color: var(--green)        !important;
+  background: var(--bg-light) !important;
+}
+
+body.dark .skills__filter-btn.active {
+  background: var(--green)   !important;
+  border-color: var(--green) !important;
+  color: var(--bg)           !important;
+}
+
+/* ── Skill badges ── */
+body.dark .skill__cert-badge {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+body.dark .skill__cert-badge:hover {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000                 !important;
+}
+
+body.dark .skill__level-badge {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+body.dark .skill__bar-wrap { background: var(--border) !important; }
+body.dark .skill__pct      { color: var(--text-faint)  !important; }
+
+body.dark .skill__name { color: #ffffff !important; }
+
+/* ── Top 0.2% funnel ── */
+body.dark .top02__bar { background: var(--border) !important; }
+
+body.dark .top02__step {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .top02__step:hover { border-color: var(--green) !important; }
+body.dark .top02__num        { color: var(--text-primary) !important; }
+body.dark .top02__label      { color: var(--text-muted)   !important; }
+body.dark .top02__pct        { color: var(--green)        !important; }
+
+body.dark .top02__me {
+  background: linear-gradient(135deg, #0f1f0f, #1a1500) !important;
+  border-color: var(--accent) !important;
+}
+
+body.dark .top02__me-name { color: #ffffff      !important; }
+body.dark .top02__me-pct  { color: var(--accent) !important; }
+
+body.dark .top02__me-badge {
+  background: var(--accent) !important;
+  color: #000000            !important;
+}
+
+body.dark .top02__me-name { color: var(--text-primary) !important; }
+body.dark .top02__me-pct  { color: var(--green)        !important; }
+
+body.dark .top02__me-badge {
+  background: var(--green) !important;
+  color: var(--bg)         !important;
+}
+
+/* ── Testimonials ── */
+body.dark .testi__card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .testi__card:hover { border-color: var(--accent) !important; }
+body.dark .testi__text       { color: var(--text-secondary) !important; }
+body.dark .testi__name       { color: var(--text-primary)   !important; }
+body.dark .testi__quote      { color: var(--green)          !important; }
+
+/* ── Blog cards ── */
+body.dark .blog-card {
+  background: var(--bg-card)        !important;
+  border-color: var(--border-green) !important;
+}
+
+body.dark .blog-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 8px 28px rgba(255,215,0,0.1) !important;
+}
+
+body.dark .blog-card__title   { color: var(--text-primary)   !important; }
+body.dark .blog-card__excerpt { color: var(--text-secondary) !important; }
+body.dark .blog-card__time    { color: var(--text-faint)     !important; }
+body.dark .blog-card__footer  { border-color: var(--border)  !important; }
+
+body.dark .blog-card__tag {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+body.dark .blog-card:hover .blog-card__tag {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000                 !important;
+}
+
+body.dark .blog-card__read              { color: var(--green)  !important; }
+body.dark .blog-card:hover .blog-card__read { color: var(--accent) !important; }
+
+/* ── Deck cards ── */
+body.dark .dc {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .dc:hover { border-color: var(--accent) !important; }
+body.dark .dc__name { color: var(--text-primary)   !important; }
+body.dark .dc__desc { color: var(--text-secondary) !important; }
+
+body.dark .dc__tag {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+body.dark .dc:hover .dc__tag {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000                 !important;
+}
+
+body.dark .dc__link              { color: var(--green)  !important; }
+body.dark .dc:hover .dc__link    { color: var(--accent) !important; }
+
+/* ── Work portfolio ── */
+body.dark .portfolio__viewer {
+  background: var(--bg-card)        !important;
+  border-color: var(--border-green) !important;
+}
+
+body.dark .portfolio__btn {
+  background: var(--bg-card)        !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+body.dark .portfolio__btn--active {
+  background: var(--green) !important;
+  color: var(--bg)         !important;
+}
+
+body.dark .portfolio__btn--fullscreen {
+  border-color: var(--accent) !important;
+  color: var(--accent)        !important;
+}
+
+body.dark .portfolio__name { color: var(--text-primary) !important; }
+
+/* ── Business card ── */
+body.dark .card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Footer ── */
+body.dark .footer {
+  background: var(--bg-white) !important;
+  border-color: var(--border)  !important;
+}
+
+body.dark .footer__copy { color: var(--text-faint) !important; }
+
+/* ── Gap badges ── */
+body.dark .exp__gap-badge,
+body.dark .edu__gap-badge {
+  color: var(--accent)   !important;
+  background: #1a1000    !important;
+  border-color: var(--accent) !important;
+}
+
+body.dark .exp__gap-title,
+body.dark .edu__gap-title { color: var(--text-muted)  !important; }
+body.dark .exp__gap-desc,
+body.dark .edu__gap-desc  { color: var(--text-faint)  !important; }
+
+/* ── Duration badges ── */
+body.dark .exp__duration,
+body.dark .intern__duration,
+body.dark .pors__duration,
+body.dark .edu__duration,
+body.dark .freelancer__duration {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+  color: #ffffff          !important;
+}
+
+/* ── Loader ── */
+body.dark #loader { background: var(--bg-white) !important; }
+body.dark .loader__dot  { background: var(--green) !important; }
+body.dark .loader__text { color: var(--green)      !important; }
+
+body.dark .loader__hourglass::before { border-top-color: var(--green)    !important; }
+body.dark .loader__hourglass::after  { border-bottom-color: var(--green) !important; }
+body.dark .loader__bar-left,
+body.dark .loader__bar-right,
+body.dark .loader__cap-top,
+body.dark .loader__cap-bottom { background: var(--green) !important; }
+
+/* ── Scrollbar ── */
+body.dark .cert-list::-webkit-scrollbar-track,
+body.dark .resume__list::-webkit-scrollbar-track { background: var(--border) !important; }
+body.dark .cert-list::-webkit-scrollbar-thumb,
+body.dark .resume__list::-webkit-scrollbar-thumb { background: var(--green)  !important; }
+
+/* ── Empty states ── */
+body.dark .pubs__empty {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+body.dark .pubs__empty-text { color: var(--text-secondary) !important; }
+body.dark .pubs__empty-sub  { color: var(--text-faint)     !important; }
+
+/* ── No lag transition ── */
+body,
+body * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* ── All text white in dark mode ── */
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark li {
+  color: #ffffff !important;
+}
+
+body.dark a:not(.navbar__cta):not(.summary__degree):not(.summary__top02):not(.skill__cert-badge):not(.blog-card__tag):not(.mega__item):not(.navbar__logo):not(.summary__card):not(.cta-block__btn):not(.por-ref__btn) {
+  color: #ffffff !important;
+}
+
+/* ── Exceptions ── */
+body.dark .navbar__cta,
+body.dark .navbar__cta:hover          { color: #000000 !important; }
+body.dark .skill__level-badge         { color: var(--accent) !important; }
+body.dark .skill__cert-badge          { color: var(--accent) !important; }
+body.dark .blog-card__tag             { color: var(--accent) !important; }
+body.dark .dc__tag                    { color: var(--accent) !important; }
+body.dark .exp__gap-badge,
+body.dark .edu__gap-badge             { color: var(--accent) !important; }
+body.dark .cases__page-num.active,
+body.dark .certs__page-num.active,
+body.dark .projects__page-num.active  { color: #000000 !important; }
+body.dark .skills__filter-btn.active  { color: #000000 !important; }
+
+/* ── Timeline text fixes ── */
+body.dark .exp__date,
+body.dark .intern__date,
+body.dark .pors__date,
+body.dark .edu__date,
+body.dark .freelancer__date           { color: #ffffff !important; }
+
+body.dark .exp__role,
+body.dark .intern__role,
+body.dark .pors__role,
+body.dark .edu__degree,
+body.dark .freelancer__role           { color: #ffffff !important; }
+
+body.dark .exp__company,
+body.dark .intern__company,
+body.dark .pors__org,
+body.dark .edu__school,
+body.dark .freelancer__company        { color: #ffffff !important; }
+
+body.dark .exp__location,
+body.dark .intern__location,
+body.dark .edu__location,
+body.dark .freelancer__location       { color: #aaaaaa !important; }
+
+body.dark .exp__desc,
+body.dark .intern__desc,
+body.dark .pors__desc,
+body.dark .edu__desc,
+body.dark .freelancer__desc           { color: #cccccc !important; }
+
+/* ── Hover company turns gold ── */
+body.dark .exp__item:hover .exp__company,
+body.dark .intern__item:hover .intern__company,
+body.dark .pors__item:hover .pors__org,
+body.dark .edu__item:hover .edu__school,
+body.dark .freelancer__item:hover .freelancer__company { color: var(--accent) !important; }
+
+/* ── Freelance / Internship / Work Experience — grey box green to gold ── */
+body.dark .exp__badge,
+body.dark .intern__badge,
+body.dark .freelancer__badge {
+  background: #1a1a0a        !important;
+  border-color: var(--accent) !important;
+}
+
+body.dark .exp__badge-val,
+body.dark .intern__badge-val,
+body.dark .freelancer__badge-val {
+  color: var(--accent) !important;
+}
+
+body.dark .exp__badge-label,
+body.dark .intern__badge-label,
+body.dark .freelancer__badge-label {
+  color: var(--accent) !important;
+}
+
+/* ── Skills — fix colors ── */
+
+body.dark .skill__card:hover {
+  border-color: var(--accent)                        !important;
+  box-shadow: 0 4px 16px rgba(207,181,59,0.15)       !important;
+}
+
+/* ── Resume — tags green & pink to gold & white ── */
+body.dark .resume__tag,
+body.dark .resume__badge,
+body.dark .resume__item-tag {
+  background: #1a1a0a        !important;
+  border-color: var(--accent) !important;
+  color: var(--accent)        !important;
+}
+
+body.dark .resume__card.active,
+body.dark .resume__card:hover {
+  border-color: var(--accent)                  !important;
+  box-shadow: 0 4px 16px rgba(207,181,59,0.15) !important;
+}
+
+/* ── Testimonials — fix full black background ── */
+body.dark .testi__grid,
+body.dark .testimonials,
+body.dark .testi {
+  background: var(--bg) !important;
+}
+
+body.dark .testi__card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Experience journey chart — green & pink to white & gold ── */
+
+body.dark .top02__step--1 { border-left-color: var(--accent)  !important; }
+body.dark .top02__step--2 { border-left-color: var(--accent)  !important; }
+body.dark .top02__step--3 { border-left-color: #ffffff        !important; }
+body.dark .top02__step--4 { border-left-color: #ffffff        !important; }
+body.dark .top02__step--5 { border-left-color: #ffffff        !important; }
+
+body.dark .top02__arrow { color: var(--accent) !important; }
+
+/* ── Timeline dot colors — green to white, hover to gold ── */
+body.dark .exp__line::before,
+body.dark .intern__line::before,
+body.dark .pors__line::before,
+body.dark .edu__line::before,
+body.dark .freelancer__line::before {
+  background: var(--bg-card) !important;
+  border-color: #ffffff      !important;
+}
+
+body.dark .exp__item:hover .exp__line::before,
+body.dark .intern__item:hover .intern__line::before,
+body.dark .pors__item:hover .pors__line::before,
+body.dark .edu__item:hover .edu__line::before,
+body.dark .freelancer__item:hover .freelancer__line::before {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ── Item border top — grey to dark ── */
+body.dark .exp__item,
+body.dark .intern__item,
+body.dark .pors__item,
+body.dark .edu__item,
+body.dark .freelancer__item {
+  border-top-color: var(--border) !important;
+}
+
+body.dark .exp__item:last-child,
+body.dark .intern__item:last-child,
+body.dark .pors__item:last-child,
+body.dark .edu__item:last-child,
+body.dark .freelancer__item:last-child {
+  border-bottom-color: var(--border) !important;
+}
+
+/* ── Fix grey boxes on timeline pages ── */
+body.dark .exp__item,
+body.dark .intern__item,
+body.dark .pors__item,
+body.dark .edu__item,
+body.dark .freelancer__item {
+  background: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Fix green box on testimonials header ── */
+body.dark .testi__header,
+body.dark .testi__header div,
+body.dark .testi__header > div {
+  background: var(--bg) !important;
+  background-color: var(--bg) !important;
+}
+
+/* ── Fix testimonials page full background ── */
+body.dark .testi {
+  background: var(--bg) !important;
+}
+
+body.dark .testimonials {
+  background: var(--bg) !important;
+}
+
+/* ── Fix testi badge inside header ── */
+body.dark .testi__header div[style*="background"] {
+  background: var(--bg-card) !important;
+  border-color: #ffffff      !important;
+}
+
+body.dark #testiCount {
+  color: #ffffff !important;
+}
+
+/* ── Fix blogs badge green background ── */
+body.dark .blogs__badge {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+}
+
+body.dark .blogs__badge-val   { color: #ffffff !important; }
+body.dark .blogs__badge-label { color: #ffffff !important; }
+
+/* ── Fix green box on testimonials header ── */
+/* ── Fix green box on testimonials header ── */
+body.dark .testi__header {
+  background: transparent !important;
+}
+
+body.dark .testi__header div {
+  background: transparent !important;
+}
+
+/* ── Force testi rule to show as white bar ── */
+body.dark .testi__header .testi__rule,
+body.dark .testi .testi__rule,
+body.dark .testi__rule {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  width: 40px        !important;
+  height: 3px        !important;
+  display: block     !important;
+  opacity: 1         !important;
+  visibility: visible !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ── Fix testi rule line — keep white not green ── */
+body.dark .testi__rule {
+  background: #ffffff !important;
+}
+
+body.dark .testi__badge {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+}
+
+body.dark .testi__badge-val   { color: #ffffff !important; }
+body.dark .testi__badge-label { color: #ffffff !important; }
+
+/* ── Testimonials white rule bar ── */
+body.dark .testi__rule {
+  background: #ffffff !important;
+}
+
+/* ── Testimonial avatar — green to white, pink to gold ── */
+body.dark .testi__avatar {
+  background: #ffffff !important;
+  color: #000000      !important;
+}
+
+/* ── Testimonial avatar — white normally, gold on hover ── */
+body.dark .testi__avatar {
+  background: #ffffff !important;
+  color: #000000      !important;
+}
+
+body.dark .testi__card:hover .testi__avatar {
+  background: var(--accent) !important;
+  color: #000000            !important;
+}
+
+/* ── Testimonial footer ── */
+body.dark .testi__footer { background: transparent !important; }
+body.dark .testi__name   { color: #ffffff          !important; }
+
+/* ── Testimonials rule bar — white in dark mode ── */
+body.dark .testi__rule {
+  background: #ffffff !important;
+  display: block      !important;
+  opacity: 1          !important;
+  visibility: visible !important;
+}
+
+body.dark .testi__header-row {
+  background: transparent !important;
+}
+
+body.dark .testi__header {
+  background: transparent !important;
+}
+
+/* ── Mobile burger fix in dark mode ── */
+body.dark .navbar__burger {
+  background: transparent !important;
+}
+
+body.dark .navbar__burger:hover {
+  background: #2a2a2a !important;
+}
+
+body.dark #darkModeBtnMobile {
+  border-color: #ffffff !important;
+  color: #ffffff        !important;
+}
+
+/* ── Mobile dropdown — dark background, white text ── */
+body.dark .navbar__links.open {
+  background: var(--bg-nav)   !important;
+  border-top-color: var(--accent) !important;
+}
+
+body.dark .navbar__item {
+  border-bottom-color: var(--border) !important;
+}
+
+body.dark .navbar__link {
+  color: #ffffff !important;
+}
+
+body.dark .navbar__link:hover {
+  background: #2a2a2a !important;
+  color: var(--accent) !important;
+}
+
+body.dark li.mega__mobile-cta {
+  border-top-color: var(--border) !important;
+  background: var(--bg-nav) !important;
+}
+
+body.dark li.mega__mobile-cta a {
+  background: var(--accent) !important;
+  color: #000000 !important;
+}
+
+body.dark .mega__panel {
+  background: var(--bg-nav)   !important;
+  border-left-color: var(--accent) !important;
+}
+
+body.dark .mega__name  { color: #ffffff       !important; }
+body.dark .mega__desc  { color: var(--text-muted) !important; }
+
+body.dark .mega__panel .mega__label,
+body.dark .mega__label {
+  color: var(--accent) !important;
+}
+
+body.dark .mega__item:hover {
+  background: #2a2a2a !important;
+}
+
+/* ── Resume cards — white border normally, gold on hover ── */
+body.dark .resume__card {
+  background: var(--bg-card) !important;
+  border-color: #ffffff      !important;
+}
+
+body.dark .resume__card:hover,
+body.dark .resume__card.active {
+  border-color: var(--accent)                  !important;
+  box-shadow: 0 4px 16px rgba(207,181,59,0.2) !important;
+}
+
+/* ── Resume card badge (Modern, Classic etc) ── */
+body.dark .resume__card-badge {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+  color: #ffffff          !important;
+}
+
+body.dark .resume__card:hover .resume__card-badge,
+body.dark .resume__card.active .resume__card-badge {
+  border-color: var(--accent) !important;
+  color: var(--accent)        !important;
+}
+
+/* ── Resume tags (Management, Structured etc) ── */
+body.dark .resume__tag {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+  color: #ffffff          !important;
+}
+
+body.dark .resume__card:hover .resume__tag,
+body.dark .resume__card.active .resume__tag {
+  border-color: var(--accent) !important;
+  color: var(--accent)        !important;
+}
+
+/* ── Resume card name & desc ── */
+body.dark .resume__card-name { color: #ffffff          !important; }
+body.dark .resume__card-desc { color: #cccccc          !important; }
+body.dark .resume__card-icon { color: #ffffff          !important; }
+
+/* ── Click to preview hint ── */
+body.dark .resume__card-hint { color: #ffffff !important; }
+
+body.dark .resume__card:hover .resume__card-hint,
+body.dark .resume__card.active .resume__card-hint {
+  color: var(--accent) !important;
+}
+
+/* ── Download button ── */
+body.dark .resume__card-dl {
+  background: transparent !important;
+  border-color: #ffffff   !important;
+  color: #ffffff          !important;
+}
+
+body.dark .resume__card:hover .resume__card-dl,
+body.dark .resume__card.active .resume__card-dl {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000000              !important;
+}
+
+/* ── Resume card footer divider ── */
+body.dark .resume__card-footer {
+  border-top-color: #333333 !important;
+}
+
+/* ── Certificate / Case / Project list — active item gold not green ── */
+body.dark .cert-list__item.active .cert-list__item-name,
+body.dark .case-list__item.active .case-list__item-name,
+body.dark .proj-list__item.active .proj-list__item-name {
+  color: var(--accent) !important;
+}
+
+body.dark .cert-list__item.active,
+body.dark .case-list__item.active,
+body.dark .proj-list__item.active {
+  border-left-color: var(--accent) !important;
+  background: #1a1a0a             !important;
+}
+
+body.dark .cert-list__item.active .cert-list__item-arrow,
+body.dark .case-list__item.active .case-list__item-arrow,
+body.dark .proj-list__item.active .proj-list__item-arrow {
+  color: var(--accent) !important;
+}
+
+/* ── Hover state — gold ── */
+body.dark .cert-list__item:hover .cert-list__item-name,
+body.dark .case-list__item:hover .case-list__item-name,
+body.dark .proj-list__item:hover .proj-list__item-name {
+  color: var(--accent) !important;
+}
+
+body.dark .cert-list__item:hover,
+body.dark .case-list__item:hover,
+body.dark .proj-list__item:hover {
+  background: #1a1a0a !important;
+}
+
+body.dark .cert-list__item:hover .cert-list__item-arrow,
+body.dark .case-list__item:hover .case-list__item-arrow,
+body.dark .proj-list__item:hover .proj-list__item-arrow {
+  color: var(--accent) !important;
+}
+
+/* ── Pagination active page — gold not green ── */
+body.dark .certs__page-num.active,
+body.dark .cases__page-num.active,
+body.dark .projects__page-num.active {
+  background: var(--accent)   !important;
+  border-color: var(--accent) !important;
+  color: #000000              !important;
+}
+
+/* ── Item names white normally ── */
+body.dark .cert-list__item-name,
+body.dark .case-list__item-name,
+body.dark .proj-list__item-name {
+  color: #ffffff !important;
+}
+
+body.dark .cert-list__item-meta,
+body.dark .case-list__item-meta,
+body.dark .proj-list__item-meta {
+  color: #888880 !important;
+}
+
+/* ── Grouped roles dark mode ── */
+body.dark .exp__roles {
+  border-left-color: var(--border) !important;
+}
+
+body.dark .exp__role-divider {
+  background: var(--border) !important;
+}
+
+body.dark .exp__role-date {
+  color: #888880 !important;
+}
+
+body.dark .exp__role-item:not(:last-child) .exp__role::after {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+/* ── PORs grouped roles dark mode ── */
+body.dark .pors__roles {
+  border-left-color: var(--border) !important;
+}
+
+body.dark .pors__role-divider {
+  background: var(--border) !important;
+}
+
+body.dark .pors__role-date {
+  color: #888880 !important;
+}
+
+body.dark .pors__role-item:not(:last-child) .pors__role::after {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+
+/* ── Education grouped roles dark mode ── */
+body.dark .edu__roles {
+  border-left-color: var(--border) !important;
+}
+
+body.dark .edu__role-divider {
+  background: var(--border) !important;
+}
+
+body.dark .edu__role {
+  color: #ffffff !important;
+}
+
+body.dark .edu__role-date {
+  color: #888880 !important;
+}
+
+body.dark .edu__role-item--gap .edu__gap-badge {
+  color: var(--accent)   !important;
+  background: #1a1000    !important;
+  border-color: var(--accent) !important;
+}
+
+body.dark .edu__role-item--gap .edu__gap-title {
+  color: #aaaaaa !important;
+}
+
+body.dark .edu__role-item--gap .edu__gap-desc {
+  color: #666660 !important;
+}
+
+/* ── Achievement highlight buttons ── */
+body.dark .summary__achievements-title {
+  color: var(--accent)            !important;
+  border-bottom-color: var(--accent) !important;
+}
+
+body.dark .summary__achievement-btn {
+  background: var(--bg-card)  !important;
+  border-color: #ffffff        !important;
+}
+
+body.dark .summary__achievement-btn:hover {
+  border-color: var(--accent)                    !important;
+  box-shadow: 0 4px 16px rgba(207,181,59,0.15)  !important;
+}
+
+body.dark .summary__achievement-text { color: #ffffff      !important; }
+body.dark .summary__achievement-arrow { color: #ffffff     !important; }
+
+body.dark .summary__achievement-btn:hover .summary__achievement-text,
+body.dark .summary__achievement-btn:hover .summary__achievement-arrow {
+  color: var(--accent) !important;
+}
+
+body.dark .portfolio__loading::before {
+  background: var(--bg-card) !important;
+}
+
+body.dark .portfolio__loading::after {
+  border-color: var(--border)  !important;
+  border-top-color: var(--accent) !important;
+}
+
+body.dark .frame__cover {
+  background: #1e1e1e !important;
+}
+
+body.dark .cases__open-btn {
+  background: var(--accent) !important;
+  color: #000000            !important;
+}
+
+body.dark .cases__open-btn:hover {
+  background: #ffffff !important;
+  color: #000000      !important;
+}
+
+body.dark .proj-open-btn {
+  background: var(--accent) !important;
+  color: #000000            !important;
+}
+
+body.dark .proj-open-btn:hover {
+  background: #ffffff    !important;
+  color: #000000         !important;
+}
+
+/* ════════════════════════════════
+   DARK MODE — IIM Graduation Blog
+   ════════════════════════════════ */
+ 
+/* ── Nav ── */
+body.dark .blog-nav {
+  background: rgba(17,17,17,0.85) !important;
+  border-bottom-color: var(--border) !important;
+}
+ 
+body.dark .nav__back { color: #ffffff !important; }
+body.dark .nav__back:hover { color: var(--accent) !important; opacity: 1 !important; }
+body.dark .nav__tag  { color: #888880 !important; }
+ 
+/* ── Hero ── */
+body.dark .hero__title    { color: #ffffff !important; }
+body.dark .hero__title em { color: var(--accent) !important; }
+body.dark .hero__sub      { color: #888880 !important; }
+ 
+body.dark .hero__pill {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+body.dark .hero__date { color: #666660 !important; }
+ 
+/* ── Photo ── */
+body.dark .photo-wrap {
+  border-color: #ffffff !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+}
+body.dark .photo-caption { color: #666660 !important; }
+ 
+/* ── Divider ── */
+body.dark .divider__line    { background: var(--border) !important; }
+body.dark .divider__ornament { color: #ffffff !important; }
+ 
+/* ── Article text ── */
+body.dark .article p         { color: #c0c0b8 !important; }
+body.dark .article__lead     { color: #ffffff !important; }
+ 
+/* ── Section labels ── */
+body.dark .section-label__bar  { background: #ffffff !important; }
+body.dark .section-label__text { color: #ffffff !important; }
+ 
+/* ── Gratitude cards ── */
+body.dark .gratitude-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+body.dark .gratitude-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 6px 20px rgba(207,181,59,0.12) !important;
+}
+body.dark .gratitude-card__label { color: var(--accent) !important; }
+body.dark .gratitude-card__names { color: #888880 !important; }
+ 
+/* ── Pull quote ── */
+body.dark .pull-quote {
+  background: var(--bg-light) !important;
+  border-left-color: #ffffff  !important;
+}
+body.dark .pull-quote p { color: #ffffff !important; }
+ 
+/* ── IIM Graduation — CTA Button ── */
+body.dark .cta-block {
+  background: var(--bg-card) !important;
+  border-color: #ffffff      !important;
+}
+body.dark .cta-block__label { color: #666660 !important; }
+body.dark .cta-block__text  { color: #ffffff !important; }
+
+body.dark .cta-block__btn,
+body.dark a.cta-block__btn {
+  background: #ffffff !important;
+  color: #000000      !important;
+}
+body.dark .cta-block__btn svg { fill: #000000 !important; }
+
+body.dark .cta-block__btn:hover,
+body.dark a.cta-block__btn:hover {
+  background: var(--accent) !important;
+  color: #ffffff            !important;
+}
+body.dark .cta-block__btn:hover svg { fill: #ffffff !important; }
+
+/* ── Article footer ── */
+body.dark .article-footer { border-top-color: var(--border) !important; }
+ 
+body.dark .author-avatar {
+  background: var(--bg-light) !important;
+  border-color: #ffffff       !important;
+  color: #ffffff              !important;
+}
+body.dark .author-name { color: #ffffff !important; }
+body.dark .author-role { color: #666660 !important; }
+ 
+body.dark .tag {
+  background: var(--bg-card) !important;
+  color: #888880             !important;
+}
+
+/* ════════════════════════════
+   DARK MODE — Guinness Blog
+   ════════════════════════════ */
+
+body.dark .blog-nav {
+  background: rgba(17,17,17,0.85) !important;
+  border-bottom-color: var(--border) !important;
+}
+body.dark .nav__back { color: #ffffff !important; }
+body.dark .nav__back:hover { color: var(--accent) !important; opacity: 1 !important; }
+body.dark .nav__tag  { color: #888880 !important; }
+
+body.dark .hero__title    { color: #ffffff !important; }
+body.dark .hero__title em { color: var(--accent) !important; }
+body.dark .hero__sub      { color: #888880 !important; }
+body.dark .hero__pill {
+  background: var(--bg-light)       !important;
+  border-color: var(--border-green) !important;
+  color: var(--green)               !important;
+}
+body.dark .hero__date { color: #666660 !important; }
+
+body.dark .photo-wrap {
+  border-color: #ffffff !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+}
+body.dark .photo-caption { color: #666660 !important; }
+
+body.dark .divider__line     { background: var(--border) !important; }
+body.dark .divider__ornament { color: #ffffff !important; }
+
+body.dark .article p     { color: #c0c0b8 !important; }
+body.dark .article__lead { color: #ffffff !important; }
+
+body.dark .section-label__bar  { background: #ffffff !important; }
+body.dark .section-label__text { color: #ffffff !important; }
+
+body.dark .gratitude-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+body.dark .gratitude-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 6px 20px rgba(207,181,59,0.12) !important;
+}
+body.dark .gratitude-card__label { color: var(--accent) !important; }
+body.dark .gratitude-card__names { color: #888880 !important; }
+
+body.dark .pull-quote {
+  background: var(--bg-light) !important;
+  border-left-color: #ffffff  !important;
+}
+body.dark .pull-quote p { color: #ffffff !important; }
+
+body.dark .por-ref {
+  background: var(--bg-card) !important;
+  border-color: #ffffff      !important;
+}
+body.dark .por-ref__label { color: #666660 !important; }
+body.dark .por-ref__text  { color: #ffffff !important; }
+body.dark a.por-ref__btn {
+  background: #ffffff !important;
+  color: #000000      !important;
+}
+body.dark .por-ref__btn svg { fill: #000000 !important; }
+
+body.dark .por-ref__btn:hover,
+body.dark a.por-ref__btn:hover {
+  background: var(--accent) !important;
+  color: #ffffff            !important;
+}
+
+body.dark .article-footer { border-top-color: var(--border) !important; }
+body.dark .author-avatar {
+  background: var(--bg-light) !important;
+  border-color: #ffffff       !important;
+  color: #ffffff              !important;
+}
+body.dark .author-name { color: #ffffff !important; }
+body.dark .author-role { color: #666660 !important; }
+body.dark .tag {
+  background: var(--bg-card) !important;
+  color: #888880             !important;
+}
