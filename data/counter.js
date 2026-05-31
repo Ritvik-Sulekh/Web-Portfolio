@@ -14,17 +14,17 @@
   }
 
   /* ── Update fallbacks whenever you add new items ── */
-  fill('s-experience',   'count_experience',   '5 <span style="font-size:0.82rem;font-weight:500;color:#16a34a">mo</span>');
+  fill('s-experience',   'count_experience',   '6 <span style="font-size:0.82rem;font-weight:500;color:#16a34a">mo</span>');
   fill('s-internships',  'count_internships',  '1 <span style="font-size:0.82rem;font-weight:500;color:#16a34a">yr</span> 2 <span style="font-size:0.82rem;font-weight:500;color:#16a34a">mo</span>');
-  fill('s-pors',         'count_pors',         '16');
+  fill('s-pors',         'count_pors',         '13');
   fill('s-projects',     'count_projects',     '4');
-  fill('s-certificates', 'count_certificates', '14');
-  fill('s-casestudies',  'count_casestudies',  '5');
+  fill('s-certificates', 'count_certificates', '20');
+  fill('s-casestudies',  'count_casestudies',  '8');
   fill('s-publications', 'count_publications', '0');
   fill('s-testimonials', 'count_testimonials', '23');
   fill('s-skills', 'count_skills', '35');
   fill('s-freelance',    'count_freelance',     '1');
   fill('s-resumes',      'count_resumes',       '3');
-  fill('s-blogs',        'count_blogs',         '5');
+  fill('s-blogs',        'count_blogs',         '2');
 
 })();
