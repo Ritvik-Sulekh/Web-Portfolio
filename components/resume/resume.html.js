@@ -25,25 +25,7 @@ function renderResume() {
         <!-- Left: Resume cards -->
         <div class="resume__list">
 
-          <div class="resume__card active" data-src="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/preview">
-            <div class="resume__card-top">
-              <div class="resume__card-icon">📄</div>
-              <div class="resume__card-badge">Modern</div>
-            </div>
-            <h3 class="resume__card-name">Modern Two Columns Style</h3>
-            <p class="resume__card-desc">Optimized for MBA applications, featuring well-organized sections, achievement-driven content, and embedded hyperlinks to validate credentials and experiences.</p>
-            <div class="resume__card-tags">
-              <span class="resume__tag">Management</span>
-              <span class="resume__tag">Structured</span>
-              <span class="resume__tag">Impactful</span>
-            </div>
-            <div class="resume__card-footer">
-              <span class="resume__card-hint">Click to preview →</span>
-              <a href="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
-            </div>
-          </div>
-
-          <div class="resume__card" data-src="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/preview">
+          <div class="resume__card active" data-src="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/preview">
             <div class="resume__card-top">
               <div class="resume__card-icon">📄</div>
               <div class="resume__card-badge">General</div>
@@ -58,6 +40,24 @@ function renderResume() {
             <div class="resume__card-footer">
               <span class="resume__card-hint">Click to preview →</span>
               <a href="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
+            </div>
+          </div>
+
+          <div class="resume__card" data-src="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/preview">
+            <div class="resume__card-top">
+              <div class="resume__card-icon">📄</div>
+              <div class="resume__card-badge">Modern</div>
+            </div>
+            <h3 class="resume__card-name">Modern Two Columns Style</h3>
+            <p class="resume__card-desc">Optimized for MBA applications, featuring well-organized sections, achievement-driven content, and embedded hyperlinks to validate credentials and experiences.</p>
+            <div class="resume__card-tags">
+              <span class="resume__tag">Management</span>
+              <span class="resume__tag">Structured</span>
+              <span class="resume__tag">Impactful</span>
+            </div>
+            <div class="resume__card-footer">
+              <span class="resume__card-hint">Click to preview →</span>
+              <a href="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
             </div>
           </div>
 
@@ -85,12 +85,12 @@ function renderResume() {
         <div class="resume__preview">
           <div class="resume__preview-bar">
             <span class="resume__preview-label" id="previewLabel">General</span>
-            <a href="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
+            <a href="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
           </div>
           <iframe
             class="resume__frame"
             id="resumeFrame"
-            src="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/preview"
+            src="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/preview"
             allow="autoplay">
           </iframe>
         </div>
