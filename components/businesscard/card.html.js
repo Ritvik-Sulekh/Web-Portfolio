@@ -7,7 +7,7 @@ function renderCard() {
       <div class="card__inner">
 
         <div class="card__top">
-          <p class="card__name">Ritvik Singh Sulekh</p>
+          <p class="card__name">Ritvik Sulekh</p>
           <p class="card__title">MBA (IIM Udaipur)</p>
         </div>
 
@@ -33,7 +33,7 @@ function renderCard() {
             Email-ID : <a href="mailto:ritvik.sulekh@gmail.com">ritvik.sulekh@gmail.com</a>
           </p>
           <p class="card__contact">
-            LinkedIn: <a href="https://www.linkedin.com/in/ritviksinghsulekh/" target="_blank">in/ritviksinghsulekh/</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/ritviksulekh/" target="_blank">in/ritviksinghsulekh/</a>
           </p>
         </div>
 
