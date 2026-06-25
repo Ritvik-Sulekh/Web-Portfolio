@@ -10,7 +10,7 @@ function renderSummary() {
           <img src="${b}assets/profile.png" alt="Profile Photo">
         </div>
         <div class="summary__text">
-          <h1 class="summary__name">Ritvik Singh Sulekh</h1>
+          <h1 class="summary__name">Ritvik Sulekh</h1>
           
           <div class="summary__badges">
             <a href="${b}pages/education.html" class="summary__degree" id="s-degree">Education 📚</a>
