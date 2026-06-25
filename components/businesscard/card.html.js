@@ -33,7 +33,7 @@ function renderCard() {
             Email-ID : <a href="mailto:ritvik.sulekh@gmail.com">ritvik.sulekh@gmail.com</a>
           </p>
           <p class="card__contact">
-            LinkedIn: <a href="https://www.linkedin.com/in/ritviksulekh/" target="_blank">in/ritviksinghsulekh/</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/ritviksulekh/" target="_blank">in/ritviksulekh/</a>
           </p>
         </div>
 
