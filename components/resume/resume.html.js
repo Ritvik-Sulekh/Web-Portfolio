@@ -85,12 +85,12 @@ function renderResume() {
         <div class="resume__preview">
           <div class="resume__preview-bar">
             <span class="resume__preview-label" id="previewLabel">General</span>
-            <a href="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
+            <a href="https://drive.google.com/file/d/1AfyA6O5E8-brY73WCEfhhruyrqKtnLyD/view" target="_blank" class="resume__preview-open" id="previewOpen">Open in Drive ↗</a>
           </div>
           <iframe
             class="resume__frame"
             id="resumeFrame"
-            src="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/preview"
+            src="https://drive.google.com/file/d/1AfyA6O5E8-brY73WCEfhhruyrqKtnLyD/preview"
             allow="autoplay">
           </iframe>
         </div>
