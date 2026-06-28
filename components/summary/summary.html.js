@@ -51,21 +51,28 @@ function renderSummary() {
 
           <a href="${b}pages/work-experience.html" class="summary__card">
             <span class="summary__value" id="s-experience"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Work Experience</span>
           </a>
 
           <a href="${b}pages/internships.html" class="summary__card">
-            <span class="summary__value" id="s-internships"></span>
+            <div class="summary__value summary__value--stack">
+              <span class="summary__val-line1" id="s-internships"></span>
+              <span class="summary__val-line2" id="s-internships-2"></span>
+            </div>
+            <div class="summary__divider"></div>
             <span class="summary__label">Internships</span>
           </a>
 
           <a href="${b}pages/freelancer.html" class="summary__card">
             <span class="summary__value" id="s-freelance"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Freelance</span>
           </a>
 
           <a href="${b}pages/pors.html" class="summary__card">
             <span class="summary__value" id="s-pors"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">PORs</span>
           </a>
 
@@ -77,24 +84,28 @@ function renderSummary() {
 
           <a href="${b}pages/skills.html" class="summary__card">
             <span class="summary__value" id="s-skills"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Skills</span>
           </a>
 
           <a href="${b}pages/testimonials.html" class="summary__card">
             <span class="summary__value" id="s-testimonials"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Testimonials</span>
           </a>
-          
+
           <a href="${b}pages/blogs.html" class="summary__card">
             <span class="summary__value" id="s-blogs"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Blogs</span>
           </a>
 
           <a href="${b}pages/publications.html" class="summary__card">
             <span class="summary__value" id="s-publications"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Publications</span>
           </a>
-          
+
         </div>
 
         <!-- Column 3: Credentials -->
@@ -102,22 +113,26 @@ function renderSummary() {
           <div class="summary__col-title">Credentials</div>
 
           <a href="${b}pages/ats-resume.html" class="summary__card">
-          <span class="summary__value" id="s-resumes"></span>
-          <span class="summary__label">ATS Resumes</span>
+            <span class="summary__value" id="s-resumes"></span>
+            <div class="summary__divider"></div>
+            <span class="summary__label">ATS Resumes</span>
           </a>
-          
+
           <a href="${b}pages/projects.html" class="summary__card">
             <span class="summary__value" id="s-projects"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Projects</span>
           </a>
 
           <a href="${b}pages/case-competitions.html" class="summary__card">
             <span class="summary__value" id="s-casestudies"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Case Studies</span>
           </a>
 
           <a href="${b}pages/certifications.html" class="summary__card">
             <span class="summary__value" id="s-certificates"></span>
+            <div class="summary__divider"></div>
             <span class="summary__label">Certificates</span>
           </a>
 
