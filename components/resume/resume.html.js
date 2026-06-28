@@ -43,7 +43,7 @@ function renderResume() {
             </div>
           </div>
 
-          <div class="resume__card" data-src="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/preview">
+          <div class="resume__card" data-src="https://drive.google.com/file/d/1OpE5WDUF0BeBEVS2kTUtPnT9_gW3eMFc/preview">
             <div class="resume__card-top">
               <div class="resume__card-icon">📄</div>
               <div class="resume__card-badge">General</div>
@@ -57,11 +57,11 @@ function renderResume() {
             </div>
             <div class="resume__card-footer">
               <span class="resume__card-hint">Click to preview →</span>
-              <a href="https://drive.google.com/file/d/1yqY3-tFMl5SVZxhvRJa19hu531N-DxLE/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
+              <a href="https://drive.google.com/file/d/1OpE5WDUF0BeBEVS2kTUtPnT9_gW3eMFc/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
             </div>
           </div>
 
-          <div class="resume__card" data-src="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/preview">
+          <div class="resume__card" data-src="https://drive.google.com/file/d/1DSI0do0N2v627Pk4loxzLJBKGw8aGsJE/preview">
             <div class="resume__card-top">
               <div class="resume__card-icon">📄</div>
               <div class="resume__card-badge">Modern</div>
@@ -75,7 +75,7 @@ function renderResume() {
             </div>
             <div class="resume__card-footer">
               <span class="resume__card-hint">Click to preview →</span>
-              <a href="https://drive.google.com/file/d/1jFnZCkPkuZpTJhHZ7Izq2Yogzx6qjCfJ/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
+              <a href="https://drive.google.com/file/d/1DSI0do0N2v627Pk4loxzLJBKGw8aGsJE/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
             </div>
           </div>
 
