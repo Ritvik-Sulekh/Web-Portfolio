@@ -12,7 +12,7 @@
 /* ── Profile row ── */
 .summary__profile {
   display: flex;
-  flex-direction: row;   /* pic left, text right */
+  flex-direction: row;
   align-items: center;
   gap: 1.5rem;
   text-align: left;
@@ -23,7 +23,7 @@
   height: 120px;
   border-radius: 50%;
   background: #16a34a;
-  overflow: hidden;        /* clips image to circle */
+  overflow: hidden;
   flex-shrink: 0;
   border: 3px solid #16a34a;
 }
@@ -31,7 +31,7 @@
 .summary__avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills circle without stretching */
+  object-fit: cover;
   display: block;
 }
 
@@ -93,105 +93,11 @@
   line-height: 1.5;
 }
 
-/* ── Metrics grid ── */
-.summary__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-/* Each card */
-.summary__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 1.4rem 1rem;
-  border-radius: 14px;
-  background: #ffffff;
-  border: 1.5px solid #16a34a;   /* green outline always visible */
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
-}
-
-.summary__card:hover {
-  border-color: #FFB6C1;                          /* pink outline on hover */
-  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
-  transform: translateY(-2px);
-}
-
-.summary__card:hover .summary__label {
-  color: #FFB6C1;   /* label turns pink on hover too */
-}
-
-.summary__card:hover .summary__value {
-  color: #FFB6C1;   /* number turns pink on hover */
-}
-
-.summary__value {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #16a34a;
-  line-height: 1;
-  text-align: center;
-}
-
-.summary__unit {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #16a34a;
-}
-
-.summary__label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #16a34a;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-
-.summary__card:hover .summary__label {
-  color: #16a34a;
-}
-
-/* ── Cross browser fixes ── */
-.summary__card {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.summary__avatar img {
-  -webkit-user-drag: none;
-}
-
-/* ── Responsive ── */
-@media (max-width: 700px) {
-  .summary__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .summary__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .summary__profile {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 /* ── Metrics table layout ── */
 .summary__table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 /* ── Column ── */
@@ -204,34 +110,122 @@
 /* ── Column title ── */
 .summary__col-title {
   font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 1.0625rem;       /* 17px */
+  font-weight: 700;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: #16a34a;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #16a34a;
   margin-bottom: 0.25rem;
+  white-space: nowrap;
 }
 
-/* ── Remove old grid ── */
-.summary__grid {
-  display: none;
+/* ── Card ── */
+.summary__card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1.1rem;
+  background: #ffffff;
+  border: 1.5px solid #16a34a;
+  border-radius: 14px;
+  cursor: pointer;
+  height: 80px;               /* fixed — all cards identical */
+  box-sizing: border-box;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-/* ── Mobile ── */
-@media (max-width: 700px) {
-  .summary__table {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
+.summary__card:hover {
+  border-color: #FFB6C1;
+  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+  transform: translateX(3px);
 }
 
-@media (max-width: 400px) {
-  .summary__profile {
-    flex-direction: column;
-    text-align: center;
-  }
+/* ── Value (number/duration) ── */
+.summary__value {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4375rem;       /* 23px */
+  font-weight: 700;
+  color: #16a34a;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 5rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* ── Stacked value (e.g. "1 yr / 2 mo") ── */
+.summary__value--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 5rem;
+  flex-shrink: 0;
+}
+
+.summary__val-line1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1875rem;       /* 19px */
+  font-weight: 700;
+  color: #16a34a;
+  line-height: 1.1;
+}
+
+.summary__val-line2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.0625rem;       /* 17px */
+  font-weight: 600;
+  color: #16a34a;
+  line-height: 1.1;
+}
+
+/* ── Divider between value and label ── */
+.summary__divider {
+  width: 1.5px;
+  height: 40px;
+  background: #bbf7d0;
+  flex-shrink: 0;
+  border-radius: 2px;
+  margin-right: 1rem;
+}
+
+/* ── Label ── */
+.summary__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.0625rem;       /* 17px */
+  font-weight: 600;
+  color: #16a34a;
+  line-height: 1.3;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+/* ── Hover states ── */
+.summary__card:hover .summary__value,
+.summary__card:hover .summary__val-line1,
+.summary__card:hover .summary__val-line2,
+.summary__card:hover .summary__label {
+  color: #FFB6C1;
+}
+
+.summary__card:hover .summary__divider {
+  background: #FFB6C1;
+}
+
+/* ── Cross browser fixes ── */
+.summary__avatar img {
+  -webkit-user-drag: none;
 }
 
 /* ── Achievement highlights ── */
@@ -274,7 +268,7 @@
 
 .summary__achievement-btn:hover {
   border-color: #FFB6C1;
-  box-shadow: 0 4px 16px rgba(255,182,193,0.2);
+  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.2);
   transform: translateX(4px);
 }
 
@@ -306,6 +300,23 @@
 .summary__achievement-btn:hover .summary__achievement-arrow {
   color: #FFB6C1;
   transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .summary__table {
+    grid-template-columns: 1fr;
+  }
+  .summary__label {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .summary__profile {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
