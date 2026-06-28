@@ -25,7 +25,7 @@ function renderResume() {
         <!-- Left: Resume cards -->
         <div class="resume__list">
 
-          <div class="resume__card active" data-src="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/preview">
+          <div class="resume__card active" data-src="https://drive.google.com/file/d/1AfyA6O5E8-brY73WCEfhhruyrqKtnLyD/preview">
             <div class="resume__card-top">
               <div class="resume__card-icon">📄</div>
               <div class="resume__card-badge">Simplest</div>
@@ -39,7 +39,7 @@ function renderResume() {
             </div>
             <div class="resume__card-footer">
               <span class="resume__card-hint">Click to preview →</span>
-              <a href="https://drive.google.com/file/d/19ew-anMwVv_8Y4O-mB6I5qOZvxRqrSA2/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
+              <a href="https://drive.google.com/file/d/1AfyA6O5E8-brY73WCEfhhruyrqKtnLyD/view" target="_blank" class="resume__card-dl" onclick="event.stopPropagation()">⬇ Download</a>
             </div>
           </div>
 
