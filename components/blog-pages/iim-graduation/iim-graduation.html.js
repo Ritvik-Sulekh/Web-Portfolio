@@ -162,7 +162,7 @@ function renderIIMGraduation() {
         <div class="article-footer__author">
           <div class="author-avatar">RS</div>
           <div>
-            <div class="author-name">Ritvik Singh Sulekh</div>
+            <div class="author-name">Ritvik Sulekh</div>
             <div class="author-role">MBA · IIM Udaipur</div>
           </div>
         </div>
