@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ORitvik</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', sans-serif; background: #FAFAF8; color: #14181A; }
+  main { padding-top: 68px; } /* clears the fixed navbar */
+</style>
+</head>
+<body>
+
+<!-- BASE_PATH must be defined before any render function runs. Root page = '' -->
+<script>const BASE_PATH = '';</script>
+
+<!-- Live stats: must load before summary.js / footer.html.js use getStat() -->
+<script src="components/data/site-stats.js"></script>
+<script src="components/data/search-index.js"></script>
+
+<!-- Render functions -->
+<script src="components/navbar/navbar.html.js"></script>
+<script src="components/summary/summary.html.js"></script>
+<script src="components/footer/footer.html.js"></script>
+
+<!-- Mount points -->
+<div id="navbar-root"></div>
+<main id="summary-root"></main>
+<div id="footer-root"></div>
+
+<!-- Inject HTML into the mount points -->
+<script>
+  document.getElementById('navbar-root').innerHTML = renderNavbar();
+  document.getElementById('summary-root').innerHTML = renderSummary();
+  document.getElementById('footer-root').innerHTML = renderFooter();
+</script>
+
+<!-- Behavior scripts (attach on DOMContentLoaded, which fires after the above) -->
+<script src="components/navbar/navbar.js"></script>
+<script src="components/summary/summary.js"></script>
+
+</body>
+</html>
