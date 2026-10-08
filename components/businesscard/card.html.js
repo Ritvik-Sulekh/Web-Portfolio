@@ -27,13 +27,10 @@ function renderCard() {
             </a>
           </p>
           <p class="card__contact">
-            Mobile : <a href="tel:+91 7043929151">+91 7043929151</a>
+            Email-ID : <a href="mailto:ritvik.sulekh@outlook.com">ritvik.sulekh@outlook.com</a>
           </p>
           <p class="card__contact">
-            Email-ID : <a href="mailto:ritvik.sulekh@gmail.com">ritvik.sulekh@gmail.com</a>
-          </p>
-          <p class="card__contact">
-            LinkedIn: <a href="https://www.linkedin.com/in/ritviksulekh/" target="_blank">in/ritviksulekh/</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/ritviks555/" target="_blank">in/ritviks555/</a>
           </p>
         </div>
 
